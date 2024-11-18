@@ -12,6 +12,7 @@ import {
 
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
+import { TouchableWithoutFeedback } from "react-native";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 const cards = [
@@ -59,22 +60,23 @@ const App = () => {
   const renderTag = ({ item }) => {
     const isSelected = selectedTags.includes(item);
     return (
-      <TouchableOpacity
-        style={[
-          styles.tag,
-          isSelected && { backgroundColor: "#E03616" }, // Change background
-        ]}
-        onPress={() => toggleTag(item)}
-      >
-        <Text
+      <TouchableWithoutFeedback onPress={() => toggleTag(item)}>
+        <View
           style={[
-            styles.tagText,
-            isSelected && { color: "#FFFFFF" }, //changes it to red
+            styles.tag,
+            isSelected && { backgroundColor: "#E03616" }, // Change background instantly
           ]}
         >
-          {item}
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={[
+              styles.tagText,
+              isSelected && { color: "#FFFFFF" }, // Change text color instantly
+            ]}
+          >
+            {item}
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
     );
   };
 
