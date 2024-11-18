@@ -58,7 +58,7 @@ in those cases you can use the static font files for Roboto Serif:
   static/RobotoSerif-Regular.ttf
   static/RobotoSerif-Medium.ttf
   static/RobotoSerif-SemiBold.ttf
-  static/RobotoSerif-Bold.ttf
+  
   static/RobotoSerif-ExtraBold.ttf
   static/RobotoSerif-Black.ttf
   static/RobotoSerif_SemiExpanded-Thin.ttf

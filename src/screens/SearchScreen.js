@@ -10,7 +10,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-// bottom nav buttons ;)
 import * as icons from "../assets/icons";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    fontWeight: "bold",
+    fontFamily: "RobotoSerif-Bold",
     textAlign: "center",
     color: "#E03616",
     marginBottom: 10,
