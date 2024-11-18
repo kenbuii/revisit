@@ -84,9 +84,11 @@ const App = () => {
     <View style={styles.card}>
       <Image source={{ uri: item.image }} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{item.title}</Text>
-      <Text style={styles.cardDetails}>
-        {item.username} • {item.likes} likes
-      </Text>
+      <View style={styles.cardDetails}>
+        <Text style={styles.cardDetailsText}>
+          {item.username} • {item.likes} likes
+        </Text>
+      </View>
     </View>
   );
 
@@ -189,6 +191,10 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   cardDetails: {
+    flexGrow: 1,
+    justifyContent: "flex-end",
+  },
+  cardDetailsText: {
     fontSize: 12,
     color: "#888",
     marginBottom: 10,
