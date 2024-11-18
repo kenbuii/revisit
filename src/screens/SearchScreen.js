@@ -19,28 +19,28 @@ const cards = [
   {
     id: "1",
     title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/sfGolden.jpg"),
     username: "emilyinsf",
     likes: 289,
   },
   {
     id: "2",
     title: "rome - must visits ✈️",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/rome.jpeg"),
     username: "strawberry981",
     likes: 530,
   },
   {
     id: "3",
     title: "tokyo food tour 🍣 - taste of japan",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/japan.jpeg"),
     username: "sampow11",
     likes: 192,
   },
   {
     id: "4",
     title: "🗽 a walk through manhattan - new york sight seeing",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/manhattan.jpeg"),
     username: "worldoftshirts",
     likes: 48,
   },
@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
   cardImage: {
     height: Dimensions.get("window").width / 2 - 20,
     width: "100%",
+    resizeMode: "cover",
   },
   cardTitle: {
     fontSize: 12,
