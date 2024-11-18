@@ -10,12 +10,6 @@ const themes = StyleSheet.create({
     marginBottom: 15,
   },
 
-  mainSearch: {
-    fontSize: 12,
-    fontFamily: "RobotoMono-Regular",
-    textAlign: "center",
-  },
-
   mainFilter: {
     fontSize: 11,
     fontFamily: "RobotoMono-Regular",

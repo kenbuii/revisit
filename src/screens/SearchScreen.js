@@ -49,11 +49,10 @@ const App = () => {
   const [selectedTags, setSelectedTags] = useState([]);
 
   const toggleTag = (tag) => {
-    setSelectedTags(
-      (prevSelected) =>
-        prevSelected.includes(tag)
-          ? prevSelected.filter((t) => t !== tag) 
-          : [...prevSelected, tag] 
+    setSelectedTags((prevSelected) =>
+      prevSelected.includes(tag)
+        ? prevSelected.filter((t) => t !== tag)
+        : [...prevSelected, tag]
     );
   };
 
@@ -63,14 +62,14 @@ const App = () => {
       <TouchableOpacity
         style={[
           styles.tag,
-          isSelected && { backgroundColor: "#E03616" }, // Change background 
+          isSelected && { backgroundColor: "#E03616" }, // Change background
         ]}
         onPress={() => toggleTag(item)}
       >
         <Text
           style={[
             styles.tagText,
-            isSelected && { color: "#FFFFFF" }, //changes it to red  
+            isSelected && { color: "#FFFFFF" }, //changes it to red
           ]}
         >
           {item}
@@ -96,6 +95,7 @@ const App = () => {
       <TextInput
         style={styles.searchBar}
         placeholder="Where would you like to visit?"
+        placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <FlatList
         data={tags}
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-    paddingTop: 70,
+    paddingTop: 60,
   },
   searchBar: {
     height: 40,
@@ -142,6 +142,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     paddingHorizontal: 10,
     marginBottom: 20,
+    fontSize: 14,
+    fontFamily: "RobotoMono-Regular",
+    paddingLeft: 15,
+    color: "black",
   },
   tagList: {
     marginBottom: 10,
