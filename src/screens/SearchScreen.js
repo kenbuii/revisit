@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 import * as icons from "../assets/icons";
+import themes from "../assets/themes";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 const cards = [
@@ -91,7 +92,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <Text style={styles.title}>revisit</Text>
+      <Text style={themes.mainLogo}>revisit</Text>
       <TextInput
         style={styles.searchBar}
         placeholder="Where would you like to visit?"
@@ -132,13 +133,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     paddingTop: 70,
-  },
-  title: {
-    fontSize: 32,
-    fontFamily: "RobotoSerif-Bold",
-    textAlign: "center",
-    color: "#E03616",
-    marginBottom: 10,
   },
   searchBar: {
     height: 40,
