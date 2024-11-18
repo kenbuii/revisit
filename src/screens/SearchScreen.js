@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   searchBar: {
-    height: 40,
+    height: 35,
     borderRadius: 10,
     marginHorizontal: 20,
     paddingHorizontal: 10,
@@ -147,21 +147,21 @@ const styles = StyleSheet.create({
     color: "black",
   },
   tagList: {
-    marginBottom: 10,
+    marginBottom: 15,
     paddingHorizontal: 10,
   },
   tag: {
     backgroundColor: "#F5F5F5",
-    paddingVertical: 8,
     paddingHorizontal: 15,
-    borderRadius: 20,
+    borderRadius: 13,
     marginHorizontal: 5,
-    height: 35,
+    height: 31,
     justifyContent: "center",
   },
   tagText: {
-    fontSize: 14,
+    fontSize: 13,
     color: "#000",
+    fontWeight: "bold",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -170,9 +170,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 5,
     borderRadius: 10,
-    backgroundColor: "#FFF",
-    elevation: 2, // For shadow on Android
-    shadowColor: "#000", // For shadow on iOS
+    backgroundColor: "#F7F3F3",
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 3 },
@@ -200,6 +198,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderTopWidth: 1,
     borderColor: "#E0E0E0",
+    backgroundColor: "#F7F3F3",
   },
   navIcon: {
     fontSize: 24,
