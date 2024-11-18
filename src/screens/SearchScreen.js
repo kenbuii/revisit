@@ -85,7 +85,7 @@ const App = () => {
       <Image source={{ uri: item.image }} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{item.title}</Text>
       <Text style={styles.cardDetails}>
-        by {item.username} • {item.likes} likes
+        {item.username} • {item.likes} likes
       </Text>
     </View>
   );
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     height: 35,
-    borderRadius: 10,
+    borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     marginBottom: 20,
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   tagText: {
     fontSize: 13,
     color: "#000",
-    fontWeight: "bold",
+    fontWeight: "600",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   cardTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "bold",
     margin: 10,
   },
