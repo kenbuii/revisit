@@ -78,23 +78,63 @@ const styles = StyleSheet.create({
 
 export default SearchScreen;
 */
-import React from 'react';
-import { View, Text, StyleSheet, TextInput, FlatList, Image, Dimensions, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  FlatList,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 
-const tags = ["sunsets", "sightsee", "thrifting", "energetic", "pi"];
+// bottom nav buttons ;) 
+import StarIcon from '/Users/tylerhuang/Desktop/revisit/src/assets/icons/Star.png';
+import AddButton from '/Users/tylerhuang/Desktop/revisit/src/assets/icons/Add.png';
+import PlanetIcon from '/Users/tylerhuang/Desktop/revisit/src/assets/icons/Planet(Orange).png';
+
+const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 const cards = [
   { id: '1', title: 'around Golden Gate 🌟 SF local foods, exploring sausalito', image: 'https://via.placeholder.com/150', username: 'emilyinsf', likes: 289 },
   { id: '2', title: 'rome - must visits ✈️', image: 'https://via.placeholder.com/150', username: 'strawberry981', likes: 530 },
   { id: '3', title: 'tokyo food tour 🍣 - taste of japan', image: 'https://via.placeholder.com/150', username: 'sampow11', likes: 192 },
-  { id: '4', title: '🗽 a walk through manhattan - new york sight seeing', image: 'https://via.placeholder.com/150', username: 'caprazlers', likes: 48 },
+  { id: '4', title: '🗽 a walk through manhattan - new york sight seeing', image: 'https://via.placeholder.com/150', username: 'WorldofTshirts', likes: 48 },
 ];
 
 const App = () => {
-  const renderTag = ({ item }) => (
-    <TouchableOpacity style={styles.tag}>
-      <Text style={styles.tagText}>{item}</Text>
-    </TouchableOpacity>
-  );
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  const toggleTag = (tag) => {
+    setSelectedTags((prevSelected) =>
+      prevSelected.includes(tag)
+        ? prevSelected.filter((t) => t !== tag) // Remove tag if already selected
+        : [...prevSelected, tag] // Add tag if not selected
+    );
+  };
+
+  const renderTag = ({ item }) => {
+    const isSelected = selectedTags.includes(item);
+    return (
+      <TouchableOpacity
+        style={[
+          styles.tag,
+          isSelected && { backgroundColor: '#E03616' }, // Change background if selected
+        ]}
+        onPress={() => toggleTag(item)}
+      >
+        <Text
+          style={[
+            styles.tagText,
+            isSelected && { color: '#FFFFFF' }, // Change text color if selected
+          ]}
+        >
+          {item}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
 
   const renderCard = ({ item }) => (
     <View style={styles.card}>
@@ -130,13 +170,13 @@ const App = () => {
       {/* Bottom Navigation */}
       <View style={styles.bottomNav}>
         <TouchableOpacity>
-          <Text style={styles.navIcon}>🔴</Text>
+        <Image source={PlanetIcon} style={styles.navIconImage} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.navIcon}>➕</Text>
+        <Image source={AddButton} style={styles.navIconImage} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.navIcon}>⭐</Text>
+          <Image source={StarIcon} style={styles.navIconImage} />
         </TouchableOpacity>
       </View>
     </View>
@@ -176,6 +216,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginHorizontal: 5,
     height: 35,
+    justifyContent: 'center',
   },
   tagText: {
     fontSize: 14,
@@ -215,12 +256,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: 30,
     borderTopWidth: 1,
     borderColor: '#E0E0E0',
   },
   navIcon: {
     fontSize: 24,
+  },
+  navIconImage: {
+    width: 30, // Adjust as needed
+    height: 30, // Adjust as needed
+    resizeMode: 'contain',
   },
 });
 
