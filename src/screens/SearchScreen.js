@@ -39,7 +39,7 @@ const cards = [
     id: "4",
     title: "🗽 a walk through manhattan - new york sight seeing",
     image: "https://via.placeholder.com/150",
-    username: "WorldofTshirts",
+    username: "worldoftshirts",
     likes: 48,
   },
 ];
@@ -51,8 +51,8 @@ const App = () => {
     setSelectedTags(
       (prevSelected) =>
         prevSelected.includes(tag)
-          ? prevSelected.filter((t) => t !== tag) // Remove tag if already selected
-          : [...prevSelected, tag] // Add tag if not selected
+          ? prevSelected.filter((t) => t !== tag) 
+          : [...prevSelected, tag] 
     );
   };
 
@@ -62,14 +62,14 @@ const App = () => {
       <TouchableOpacity
         style={[
           styles.tag,
-          isSelected && { backgroundColor: "#E03616" }, // Change background if selected
+          isSelected && { backgroundColor: "#E03616" }, // Change background 
         ]}
         onPress={() => toggleTag(item)}
       >
         <Text
           style={[
             styles.tagText,
-            isSelected && { color: "#FFFFFF" }, // Change text color if selected
+            isSelected && { color: "#FFFFFF" }, //changes it to red  
           ]}
         >
           {item}
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
   },
   navIconImage: {
     width: 30, // Adjust as needed
-    height: 30, // Adjust as needed
+    height: 35, // Adjust as needed
     resizeMode: "contain",
   },
 });
