@@ -9,6 +9,7 @@
     "react-native": "0.76.2"
   },
   "devDependencies": {
-    "@react-native-community/cli": "^15.1.2"
+    "@react-native-community/cli": "^15.1.2",
+    "@react-native/metro-config": "^0.76.2"
   }
 }
