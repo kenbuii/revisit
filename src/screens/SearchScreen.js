@@ -13,7 +13,8 @@ import {
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
 import { TouchableWithoutFeedback } from "react-native";
-import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
+//import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
+import Navbar from '../components/navbar';
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"]; //currently hardcoded but can be changed LATER, after hi-fi
 const cards = [ //also hardcoded, change after A8 submission to use Locations object in src/assets/LocationCards/locations_index.js
@@ -132,18 +133,11 @@ const SearchScreen = ({ navigation }) => {
         numColumns={2}
         contentContainerStyle={styles.cardList}
       />
-      {/* Bottom Navigation */}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity>
-          <Image source={icons.planet} style={styles.navIconImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={icons.add} style={styles.navIconImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={icons.star} style={styles.navIconImage} />
-        </TouchableOpacity>
-      </View>
+      <Navbar 
+        onPlanetPress={() => {/* TODO: Add navigation logic */}}
+        onAddPress={() => {/* TODO: Add navigation logic */}}
+        onStarPress={() => {/* TODO: Add navigation logic */}}
+      />
     </View>
   );
 };
@@ -228,20 +222,6 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
-  },
-  bottomNav: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingVertical: 20,
-    borderTopWidth: 1,
-    borderColor: "#E0E0E0",
-    backgroundColor: "#F7F3F3",
-  },
-  navIconImage: {
-    width: 30,
-    height: 50,
-    resizeMode: "contain",
   },
 });
 
