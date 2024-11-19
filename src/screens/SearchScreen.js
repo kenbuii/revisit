@@ -11,9 +11,12 @@ import {
 } from "react-native";
 
 import * as icons from "../assets/icons";
+import themes from "../assets/themes";
+import { TouchableWithoutFeedback } from "react-native";
+import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 
-const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
-const cards = [
+const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"]; //currently hardcoded but can be changed LATER, after hi-fi
+const cards = [ //also hardcoded, change after A8 submission to use Locations object in src/assets/LocationCards/locations_index.js
   {
     id: "1",
     title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
