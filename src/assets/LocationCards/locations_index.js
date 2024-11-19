@@ -1,5 +1,5 @@
 export default Locations = {
-    sanfrancisco: {
+  sanfrancisco: {
     id: 1,
     title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
     image: require("../media/sfGolden.jpg"),
@@ -10,21 +10,21 @@ export default Locations = {
   rome: {
     id: "2",
     title: "rome - must visits ✈️",
-    image: require("../assets/media/rome.jpeg"),
+    image: require("../media/rome.jpeg"),
     username: "strawberry981",
     likes: 530,
   },
   tokyo: {
     id: "3",
     title: "tokyo food tour 🍣 - taste of japan",
-    image: require("../assets/media/japan.jpeg"),
+    image: require("../media/japan.jpeg"),
     username: "sampow11",
     likes: 192,
   },
   manhattan: {
     id: "4",
     title: "🗽 a walk through manhattan - new york sight seeing",
-    image: require("../assets/media/manhattan.jpeg"),
+    image: require("../media/manhattan.jpeg"),
     username: "worldoftshirts",
     likes: 48,
   },
