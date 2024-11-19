@@ -85,9 +85,13 @@ const App = () => {
       <Image source={{ uri: item.image }} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{item.title}</Text>
       <View style={styles.cardDetails}>
-        <Text style={styles.cardDetailsText}>
-          {item.username} • {item.likes} likes
-        </Text>
+        <View style={styles.profile}>
+          <Text style={styles.profileText}>{item.username}</Text>
+        </View>
+
+        <View style={styles.starred}>
+          <Text style={styles.starredText}>{item.likes}</Text>
+        </View>
       </View>
     </View>
   );
@@ -98,7 +102,7 @@ const App = () => {
       <Text style={themes.mainLogo}>revisit</Text>
       <TextInput
         style={styles.searchBar}
-        placeholder="Where would you like to visit?"
+        placeholder="where would you like to visit?"
         placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <FlatList
@@ -145,13 +149,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 20,
     backgroundColor: "#F7F3F3",
-    fontSize: 14,
-    fontFamily: "RobotoMono-Regular",
+    fontSize: 12,
+    fontFamily: "RobotoMono",
     paddingLeft: 15,
     color: "black",
   },
   tagList: {
-    marginBottom: 15,
     paddingHorizontal: 10,
   },
   tag: {
@@ -163,9 +166,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   tagText: {
-    fontSize: 13,
+    fontSize: 11,
     color: "#000",
     fontWeight: "600",
+    fontFamily: "RobotoMono-Medium",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -186,19 +190,35 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   cardTitle: {
-    fontSize: 12,
-    fontWeight: "bold",
-    margin: 10,
+    fontSize: 10,
+    fontFamily: "RobotoSerif-Bold",
+    margin: 8,
   },
   cardDetails: {
     flexGrow: 1,
-    justifyContent: "flex-end",
+    flexDirection: "row",
+    alignItems: "flex-end",
   },
-  cardDetailsText: {
-    fontSize: 12,
-    color: "#888",
+  profile: {
+    justifyContent: "flex-start",
+    flexGrow: 1,
+  },
+  profileText: {
+    fontSize: 8,
+    color: "black",
     marginBottom: 10,
     marginHorizontal: 10,
+    fontFamily: "RobotoMono",
+  },
+  starred: {
+    justifyContent: "flex-end",
+  },
+  starredText: {
+    fontSize: 8,
+    color: "rgba(0, 0, 0, 0.4)",
+    marginBottom: 10,
+    marginHorizontal: 10,
+    fontFamily: "RobotoMono",
   },
   bottomNav: {
     flexDirection: "row",

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const themes = StyleSheet.create({
   mainLogo: {
-    fontSize: 40,
+    fontSize: 35,
     fontFamily: "RobotoSerif-Bold",
     fontWeight: "bold",
     textAlign: "center",
@@ -12,7 +12,7 @@ const themes = StyleSheet.create({
 
   mainFilter: {
     fontSize: 11,
-    fontFamily: "RobotoMono-Regular",
+    fontFamily: "RobotoMono",
     textAlign: "center",
   },
 });
