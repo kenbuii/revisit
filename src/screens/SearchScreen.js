@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -13,43 +13,29 @@ import {
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
 import { TouchableWithoutFeedback } from "react-native";
+import { supabase } from "../services/supabaseClient";
 //import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
-import Navbar from '../components/navbar';
+import Navbar from "../components/navbar";
 
-const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"]; //currently hardcoded but can be changed LATER, after hi-fi
-const cards = [ //also hardcoded, change after A8 submission to use Locations object in src/assets/LocationCards/locations_index.js
-  {
-    id: "1",
-    title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
-    image: require("../assets/media/sfGolden.jpg"),
-    username: "emilyinsf",
-    likes: 289,
-  },
-  {
-    id: "2",
-    title: "rome - must visits ✈️",
-    image: require("../assets/media/rome.jpeg"),
-    username: "strawberry981",
-    likes: 530,
-  },
-  {
-    id: "3",
-    title: "tokyo food tour 🍣 - taste of japan",
-    image: require("../assets/media/japan.jpeg"),
-    username: "sampow11",
-    likes: 192,
-  },
-  {
-    id: "4",
-    title: "🗽 a walk through manhattan - new york sight seeing",
-    image: require("../assets/media/manhattan.jpeg"),
-    username: "worldoftshirts",
-    likes: 48,
-  },
-];
+const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
-const SearchScreen = ({ navigation }) => {
+const SearchScreen = () => {
   const [selectedTags, setSelectedTags] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Fetch cards from Supabase
+  const fetchCards = async () => {
+    setIsLoading(true);
+    const { data, error } = await supabase.from("cards").select("*");
+    console.log(data);
+    setCards(data);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchCards();
+  }, []);
 
   // Toggle tag selection
   const toggleTag = (tag) => {
@@ -92,17 +78,17 @@ const SearchScreen = ({ navigation }) => {
         onPress={() =>
           navigation.navigate("Details", {
             title: item.title,
-            image: item.image,
+            imageUrl: item.imageUrl,
             username: item.username,
-            likes: item.likes,
+            stars: item.stars,
           })
         }
       >
-        <Image source={item.image} style={styles.cardImage} />
+        <Image source={{ url: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
           <Text style={styles.profileText}>{item.username}</Text>
-          <Text style={styles.starredText}>{item.likes}</Text>
+          <Text style={styles.starredText}>{item.stars}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -110,7 +96,7 @@ const SearchScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>revisit</Text>
+      <Text style={themes.mainLogo}>revisit</Text>
       <TextInput
         style={styles.searchBar}
         placeholder="where would you like to visit?"
@@ -125,19 +111,28 @@ const SearchScreen = ({ navigation }) => {
         contentContainerStyle={styles.tagList}
         showsHorizontalScrollIndicator={false}
       />
-      {/* Render cards */}
-      <FlatList
-        data={cards}
-        renderItem={renderCard}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        contentContainerStyle={styles.cardList}
-      />
-      <Navbar 
-        onPlanetPress={() => {/* TODO: Add navigation logic */}}
-        onAddPress={() => {/* TODO: Add navigation logic */}}
-        onStarPress={() => {/* TODO: Add navigation logic */}}
-      />
+      {isLoading ? (
+        <Text style={{ textAlign: "center", marginTop: 20 }}>Loading...</Text>
+      ) : (
+        <FlatList
+          data={cards}
+          renderItem={renderCard}
+          keyExtractor={(item) => item.id.toString()}
+          numColumns={2}
+          contentContainerStyle={styles.cardList}
+        />
+      )}
+      <View style={styles.bottomNav}>
+        <TouchableOpacity>
+          <Image source={icons.planet} style={styles.navIconImage} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={icons.add} style={styles.navIconImage} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={icons.star} style={styles.navIconImage} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -148,27 +143,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingTop: 60,
   },
-  headerText: {
-    fontSize: 36,
-    fontFamily: "RobotoSerif-Bold",
-    textAlign: "center",
-    color: "#FF0000",
-    marginTop: 20,
-    marginBottom: 20,
-  },
   searchBar: {
     height: 35,
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 12,
     backgroundColor: "#F7F3F3",
     fontSize: 12,
-    fontFamily: "RobotoSerif-Regular",
+    fontFamily: "RobotoMono-Regular",
     color: "black",
   },
   tagList: {
     paddingHorizontal: 10,
+    marginBottom: 10,
   },
   tag: {
     backgroundColor: "#F5F5F5",
@@ -177,12 +165,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     height: 31,
     justifyContent: "center",
+    marginBottom: 15,
   },
   tagText: {
     fontSize: 11,
     color: "#000",
     fontWeight: "600",
-    fontFamily: "RobotoSerif-Medium",
+    fontFamily: "RobotoMono-Medium",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -223,8 +212,20 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
   },
+  bottomNav: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingVertical: 20,
+    borderTopWidth: 1,
+    borderColor: "#E0E0E0",
+    backgroundColor: "#F7F3F3",
+  },
+  navIconImage: {
+    width: 30,
+    height: 50,
+    resizeMode: "contain",
+  },
 });
 
 export default SearchScreen;
-
-
