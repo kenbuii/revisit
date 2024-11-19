@@ -12,34 +12,35 @@ import {
 
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
+import { TouchableWithoutFeedback } from "react-native";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 const cards = [
   {
     id: "1",
     title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/sfGolden.jpg"),
     username: "emilyinsf",
     likes: 289,
   },
   {
     id: "2",
     title: "rome - must visits ✈️",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/rome.jpeg"),
     username: "strawberry981",
     likes: 530,
   },
   {
     id: "3",
     title: "tokyo food tour 🍣 - taste of japan",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/japan.jpeg"),
     username: "sampow11",
     likes: 192,
   },
   {
     id: "4",
     title: "🗽 a walk through manhattan - new york sight seeing",
-    image: "https://via.placeholder.com/150",
+    image: require("../assets/media/manhattan.jpeg"),
     username: "worldoftshirts",
     likes: 48,
   },
@@ -59,42 +60,54 @@ const App = () => {
   const renderTag = ({ item }) => {
     const isSelected = selectedTags.includes(item);
     return (
-      <TouchableOpacity
-        style={[
-          styles.tag,
-          isSelected && { backgroundColor: "#E03616" }, // Change background
-        ]}
-        onPress={() => toggleTag(item)}
-      >
-        <Text
+      <TouchableWithoutFeedback onPress={() => toggleTag(item)}>
+        <View
           style={[
-            styles.tagText,
-            isSelected && { color: "#FFFFFF" }, //changes it to red
+            styles.tag,
+            isSelected && { backgroundColor: "#E03616" }, // Change background instantly
           ]}
         >
-          {item}
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={[
+              styles.tagText,
+              isSelected && { color: "#FFFFFF" }, // Change text color instantly
+            ]}
+          >
+            {item}
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
     );
   };
 
-  const renderCard = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={{ uri: item.image }} style={styles.cardImage} />
-      <Text style={styles.cardTitle}>{item.title}</Text>
-      <Text style={styles.cardDetails}>
-        by {item.username} • {item.likes} likes
-      </Text>
-    </View>
-  );
-
+  const renderCard = ({ item }) => {
+    if (!item.title || !item.username) {
+      console.error("Invalid card data:", item);
+      return null; // Skip invalid cards
+    }
+    return (
+      <View style={styles.card}>
+        <Image source={item.image} style={styles.cardImage} />
+        <Text style={styles.cardTitle}>{item.title}</Text>
+        <View style={styles.cardDetails}>
+          <View style={styles.profile}>
+            <Text style={styles.profileText}>{item.username}</Text>
+          </View>
+          <View style={styles.starred}>
+            <Text style={styles.starredText}>{item.likes}</Text>
+          </View>
+        </View>
+      </View>
+    );
+  };
+  
   return (
     <View style={styles.container}>
       {/* Header */}
       <Text style={themes.mainLogo}>revisit</Text>
       <TextInput
         style={styles.searchBar}
-        placeholder="Where would you like to visit?"
+        placeholder="where would you like to visit?"
         placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
       <FlatList
@@ -135,33 +148,33 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   searchBar: {
-    height: 40,
-    borderRadius: 10,
+    height: 35,
+    borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     marginBottom: 20,
     backgroundColor: "#F7F3F3",
-    fontSize: 14,
-    fontFamily: "RobotoMono-Regular",
+    fontSize: 12,
+    fontFamily: "RobotoMono",
     paddingLeft: 15,
     color: "black",
   },
   tagList: {
-    marginBottom: 10,
     paddingHorizontal: 10,
   },
   tag: {
     backgroundColor: "#F5F5F5",
-    paddingVertical: 8,
     paddingHorizontal: 15,
-    borderRadius: 20,
+    borderRadius: 13,
     marginHorizontal: 5,
-    height: 35,
+    height: 31,
     justifyContent: "center",
   },
   tagText: {
-    fontSize: 14,
+    fontSize: 11,
     color: "#000",
+    fontWeight: "600",
+    fontFamily: "RobotoMono-Medium",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -170,9 +183,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 5,
     borderRadius: 10,
-    backgroundColor: "#FFF",
-    elevation: 2, // For shadow on Android
-    shadowColor: "#000", // For shadow on iOS
+    backgroundColor: "#F7F3F3",
     shadowOpacity: 0.1,
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 3 },
@@ -181,17 +192,38 @@ const styles = StyleSheet.create({
   cardImage: {
     height: Dimensions.get("window").width / 2 - 20,
     width: "100%",
+    resizeMode: "cover",
   },
   cardTitle: {
-    fontSize: 14,
-    fontWeight: "bold",
-    margin: 10,
+    fontSize: 10,
+    fontFamily: "RobotoSerif-Bold",
+    margin: 8,
   },
   cardDetails: {
-    fontSize: 12,
-    color: "#888",
+    flexGrow: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+  },
+  profile: {
+    justifyContent: "flex-start",
+    flexGrow: 1,
+  },
+  profileText: {
+    fontSize: 8,
+    color: "black",
     marginBottom: 10,
     marginHorizontal: 10,
+    fontFamily: "RobotoMono",
+  },
+  starred: {
+    justifyContent: "flex-end",
+  },
+  starredText: {
+    fontSize: 8,
+    color: "rgba(0, 0, 0, 0.4)",
+    marginBottom: 10,
+    marginHorizontal: 10,
+    fontFamily: "RobotoMono",
   },
   bottomNav: {
     flexDirection: "row",
@@ -200,6 +232,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderTopWidth: 1,
     borderColor: "#E0E0E0",
+    backgroundColor: "#F7F3F3",
   },
   navIcon: {
     fontSize: 24,
