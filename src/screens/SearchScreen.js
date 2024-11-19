@@ -87,10 +87,12 @@ const SearchScreen = () => {
         }
       >
         <Image source={{ url: item.imageUrl }} style={styles.cardImage} />
-        <Text style={styles.cardTitle}>{item.title}</Text>
-        <View style={styles.cardDetails}>
-          <Text style={styles.profileText}>{item.username}</Text>
-          <Text style={styles.starredText}>{item.stars}</Text>
+        <View style={styles.cardText}>
+          <Text style={styles.cardTitle}>{item.title}</Text>
+          <View style={styles.cardDetails}>
+            <Text style={styles.profileText}>{item.username}</Text>
+            <Text style={styles.starredText}>{item.stars}</Text>
+          </View>
         </View>
       </TouchableOpacity>
     );
@@ -177,6 +179,7 @@ const styles = StyleSheet.create({
   },
   cardList: {
     paddingHorizontal: 10,
+    paddingBottom: 10,
   },
   card: {
     flex: 1,
@@ -189,28 +192,35 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    height: Dimensions.get("window").width / 2 - 20,
+    height: 180,
+    // height: Dimensions.get("window").width / 2 - 20,
     width: "100%",
     resizeMode: "cover",
   },
+  cardText: {
+    height: 50,
+  },
   cardTitle: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: "RobotoSerif-Bold",
-    margin: 8,
+    marginHorizontal: 8,
+    marginVertical: 4,
   },
   cardDetails: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 8,
-    paddingBottom: 8,
+    paddingBottom: 6,
+    flexGrow: 1,
+    alignItems: "flex-end",
   },
   profileText: {
-    fontSize: 8,
+    fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "black",
   },
   starredText: {
-    fontSize: 8,
+    fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
   },
