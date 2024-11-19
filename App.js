@@ -5,6 +5,7 @@ import SearchScreen from "./src/screens/SearchScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
+import { supabase } from "./src/services/supabaseClient";
 
 const Stack = createNativeStackNavigator();
 
