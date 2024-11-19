@@ -16,10 +16,12 @@ import { TouchableWithoutFeedback } from "react-native";
 import { supabase } from "../services/supabaseClient";
 //import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 import Navbar from "../components/navbar";
+import { useNavigation } from "@react-navigation/native";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
 const SearchScreen = () => {
+  const navigation = useNavigation();
   const [selectedTags, setSelectedTags] = useState([]);
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -122,17 +124,11 @@ const SearchScreen = () => {
           contentContainerStyle={styles.cardList}
         />
       )}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity>
-          <Image source={icons.planet} style={styles.navIconImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={icons.add} style={styles.navIconImage} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={icons.star} style={styles.navIconImage} />
-        </TouchableOpacity>
-      </View>
+      <Navbar
+        onPlanetPress={() => {/* TODO: Add navigation logic */}}
+        onAddPress={() => {/* TODO: Add navigation logic */}}
+        onStarPress={() => {/* TODO: Add navigation logic */}}
+      />
     </View>
   );
 };
@@ -212,20 +208,21 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
   },
-  bottomNav: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingVertical: 20,
-    borderTopWidth: 1,
-    borderColor: "#E0E0E0",
-    backgroundColor: "#F7F3F3",
-  },
-  navIconImage: {
-    width: 30,
-    height: 50,
-    resizeMode: "contain",
-  },
+  // REDUNDANT: hardcoded bottom nav/icons -- can remove during post-A8 refactor
+  // bottomNav: {
+  //   flexDirection: "row",
+  //   justifyContent: "space-around",
+  //   alignItems: "center",
+  //   paddingVertical: 20,
+  //   borderTopWidth: 1,
+  //   borderColor: "#E0E0E0",
+  //   backgroundColor: "#F7F3F3",
+  // },
+  // navIconImage: {
+  //   width: 30,
+  //   height: 50,
+  //   resizeMode: "contain",
+  
 });
 
 export default SearchScreen;

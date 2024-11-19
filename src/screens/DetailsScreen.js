@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   },
   dayWrapper: {
     flexDirection: 'row',
-    backgroundColor: '#F7F3F3',
+    backgroundColor: 'rgba(247, 243, 243, 0.5)',
     borderRadius: 20,
     overflow: 'hidden',
     borderWidth: 1,
