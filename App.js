@@ -1,11 +1,10 @@
-// App.js
 import React, { useCallback } from "react";
-import "react-native-get-random-values";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
-import { useFonts } from "expo-font";
+import DetailsScreen from "./src/screens/DetailsScreen";
 import * as SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
 
 const Stack = createNativeStackNavigator();
@@ -29,15 +28,29 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Search" component={SearchScreen} />
+      <Stack.Navigator>
+        {/* Search Screen with no header */}
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{ headerShown: false }}
+        />
+
+        {/* Details Screen with a default header */}
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            title: "", // Optionally set the title to an empty string
+            headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
+            headerTintColor: "black", // Set Back Button color
+            headerTitleStyle: { fontFamily: "RobotoMono-Medium", fontSize: 16 }, // Optional header text styling
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
+

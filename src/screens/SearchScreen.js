@@ -13,9 +13,10 @@ import {
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
 import { TouchableWithoutFeedback } from "react-native";
+import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 
-const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
-const cards = [
+const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"]; //currently hardcoded but can be changed LATER, after hi-fi
+const cards = [ //also hardcoded, change after A8 submission to use Locations object in src/assets/LocationCards/locations_index.js
   {
     id: "1",
     title: "around Golden Gate 🌟 SF local foods, exploring sausalito",
@@ -46,9 +47,10 @@ const cards = [
   },
 ];
 
-const App = () => {
+const SearchScreen = ({ navigation }) => {
   const [selectedTags, setSelectedTags] = useState([]);
 
+  // Toggle tag selection
   const toggleTag = (tag) => {
     setSelectedTags((prevSelected) =>
       prevSelected.includes(tag)
@@ -57,54 +59,63 @@ const App = () => {
     );
   };
 
+  // Render tag component
   const renderTag = ({ item }) => {
     const isSelected = selectedTags.includes(item);
     return (
-      <TouchableWithoutFeedback onPress={() => toggleTag(item)}>
+      <TouchableOpacity onPress={() => toggleTag(item)}>
         <View
           style={[
             styles.tag,
-            isSelected && { backgroundColor: "#E03616" }, // Change background instantly
+            isSelected && { backgroundColor: "#E03616" }, // Change background if selected
           ]}
         >
           <Text
             style={[
               styles.tagText,
-              isSelected && { color: "#FFFFFF" }, // Change text color instantly
+              isSelected && { color: "#FFFFFF" }, // Change text color if selected
             ]}
           >
             {item}
           </Text>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     );
   };
 
-  const renderCard = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={{ uri: item.image }} style={styles.cardImage} />
-      <Text style={styles.cardTitle}>{item.title}</Text>
-      <View style={styles.cardDetails}>
-        <View style={styles.profile}>
+  // Render card component
+  const renderCard = ({ item }) => {
+    return (
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() =>
+          navigation.navigate("Details", {
+            title: item.title,
+            image: item.image,
+            username: item.username,
+            likes: item.likes,
+          })
+        }
+      >
+        <Image source={item.image} style={styles.cardImage} />
+        <Text style={styles.cardTitle}>{item.title}</Text>
+        <View style={styles.cardDetails}>
           <Text style={styles.profileText}>{item.username}</Text>
-        </View>
-
-        <View style={styles.starred}>
           <Text style={styles.starredText}>{item.likes}</Text>
         </View>
-      </View>
-    </View>
-  );
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <Text style={themes.mainLogo}>revisit</Text>
+      <Text style={styles.headerText}>revisit</Text>
       <TextInput
         style={styles.searchBar}
         placeholder="where would you like to visit?"
         placeholderTextColor="rgba(0, 0, 0, 0.4)"
       />
+      {/* Render tags */}
       <FlatList
         data={tags}
         horizontal
@@ -113,6 +124,7 @@ const App = () => {
         contentContainerStyle={styles.tagList}
         showsHorizontalScrollIndicator={false}
       />
+      {/* Render cards */}
       <FlatList
         data={cards}
         renderItem={renderCard}
@@ -142,6 +154,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     paddingTop: 60,
   },
+  headerText: {
+    fontSize: 36,
+    fontFamily: "RobotoSerif-Bold",
+    textAlign: "center",
+    color: "#FF0000",
+    marginTop: 20,
+    marginBottom: 20,
+  },
   searchBar: {
     height: 35,
     borderRadius: 12,
@@ -150,8 +170,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     backgroundColor: "#F7F3F3",
     fontSize: 12,
-    fontFamily: "RobotoMono",
-    paddingLeft: 15,
+    fontFamily: "RobotoSerif-Regular",
     color: "black",
   },
   tagList: {
@@ -169,7 +188,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: "#000",
     fontWeight: "600",
-    fontFamily: "RobotoMono-Medium",
+    fontFamily: "RobotoSerif-Medium",
   },
   cardList: {
     paddingHorizontal: 10,
@@ -195,48 +214,37 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   cardDetails: {
-    flexGrow: 1,
     flexDirection: "row",
-    alignItems: "flex-end",
-  },
-  profile: {
-    justifyContent: "flex-start",
-    flexGrow: 1,
+    justifyContent: "space-between",
+    paddingHorizontal: 8,
+    paddingBottom: 8,
   },
   profileText: {
     fontSize: 8,
+    fontFamily: "RobotoSerif-Regular",
     color: "black",
-    marginBottom: 10,
-    marginHorizontal: 10,
-    fontFamily: "RobotoMono",
-  },
-  starred: {
-    justifyContent: "flex-end",
   },
   starredText: {
     fontSize: 8,
+    fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
-    marginBottom: 10,
-    marginHorizontal: 10,
-    fontFamily: "RobotoMono",
   },
   bottomNav: {
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    paddingVertical: 30,
+    paddingVertical: 20,
     borderTopWidth: 1,
     borderColor: "#E0E0E0",
     backgroundColor: "#F7F3F3",
   },
-  navIcon: {
-    fontSize: 24,
-  },
   navIconImage: {
-    width: 30, // Adjust as needed
-    height: 35, // Adjust as needed
+    width: 30,
+    height: 50,
     resizeMode: "contain",
   },
 });
 
-export default App;
+export default SearchScreen;
+
+
