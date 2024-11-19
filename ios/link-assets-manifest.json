@@ -1,0 +1,2885 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Black.ttf",
+      "sha1": "29aca6043237b81c6497d004683b761cf236d75f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-BlackItalic.ttf",
+      "sha1": "90d833ffd8e5f65050db79a68302861bc8a137cc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Bold.ttf",
+      "sha1": "02e854e0010cd33051316700aadd44a9c1ac85c2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-BoldItalic.ttf",
+      "sha1": "9e67c9baeae242ace82f918bfb89c4703dc5ab37"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-ExtraBold.ttf",
+      "sha1": "829aa97535bde3f193f4ea9bce8802361645f4f9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-ExtraBoldItalic.ttf",
+      "sha1": "318647fb562a1015dd3beb8775e0af45441d9967"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-ExtraLight.ttf",
+      "sha1": "86e9c9e904dd011f57536c96da0bc07b6fe662db"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-ExtraLightItalic.ttf",
+      "sha1": "1c4a51f4722fca120ad8e3b89f79911ee262116d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Italic.ttf",
+      "sha1": "4bc3304291cbc3a7898c4d96d0e26d215d78023e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Light.ttf",
+      "sha1": "10bed9e4077a9a5f81adf41093680fbc9b0f45ae"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-LightItalic.ttf",
+      "sha1": "df66dfc7efb8df8f17b8427d723913a6848511b7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Medium.ttf",
+      "sha1": "e5a03258334af080d1708be9f1d7f7e24cc7a8de"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-MediumItalic.ttf",
+      "sha1": "47c80628ab7367f4c7245052a483d47d0a8d2e7d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Regular.ttf",
+      "sha1": "9a773041f969339bc85d6e4690b13fb07875c49b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-SemiBold.ttf",
+      "sha1": "0e100d2e8b4e069559a9c0e7ad4f1df84c60d6ea"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-SemiBoldItalic.ttf",
+      "sha1": "be2d33cec87b34d7ba6c96642515bbe90ecad1c4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-Thin.ttf",
+      "sha1": "f31e60774d9c40038c3a0dbb224a33d3895a6070"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif-ThinItalic.ttf",
+      "sha1": "510abe2bad72c18fd6db4110cf80dabe6f9c21b3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Black.ttf",
+      "sha1": "a56b23690ed541e14ccdffee5839b827ea6b3bd3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-BlackItalic.ttf",
+      "sha1": "f6d731c24d4d6e0256dd22c08514ee9b0a222bed"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Bold.ttf",
+      "sha1": "6cca4de82c5505c2269a99c7a27f9df93cc26962"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-BoldItalic.ttf",
+      "sha1": "6a9da8ac2a1b943abeafa95ca7bf2aad8725ba03"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-ExtraBold.ttf",
+      "sha1": "040b7aeb0ac74ec7a241327418122113d2e9d45a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-ExtraBoldItalic.ttf",
+      "sha1": "84584ebc514f90deb1afa34844b9d8deff199224"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-ExtraLight.ttf",
+      "sha1": "8558d5d81b316fd0b1a1fc2427247fe1fbfa50d6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-ExtraLightItalic.ttf",
+      "sha1": "6ef653959b031c61fded7871d26c4c1ad27e3cd6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Italic.ttf",
+      "sha1": "3b38ca812d9cf7da78ff0ac56b8bcf6d042b26dd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Light.ttf",
+      "sha1": "200bd0f3d2ad99f794d37f85fdf9948fe4d7f4cf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-LightItalic.ttf",
+      "sha1": "d1ef0099826235cf75fefb65d745094ff54b604f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Medium.ttf",
+      "sha1": "ebbad4c7da1000a68386e60ea3ec5b225ad8bfc9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-MediumItalic.ttf",
+      "sha1": "9b3d61e60c4a36e3c810ead5f378811d846645dc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Regular.ttf",
+      "sha1": "c4d1e23c8a2f3c37db739e3e512a9b89207597e0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-SemiBold.ttf",
+      "sha1": "7e8cdd7feda80c241f66eee97a4eb11c94b59e30"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-SemiBoldItalic.ttf",
+      "sha1": "9b12123301ab812f8690aa68a3dc1b3e87294d33"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-Thin.ttf",
+      "sha1": "8eb4f1cb6a6c95f1901cfdb0042862e08bcafa45"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt-ThinItalic.ttf",
+      "sha1": "d5d6c784117cb34e89d9fa744788ab851ae67aef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Black.ttf",
+      "sha1": "e5d53737d128335a386a3727f5467e6f2afad029"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-BlackItalic.ttf",
+      "sha1": "3fd1c3777c1aa3ddfa234f7ff9117f4655beed1c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Bold.ttf",
+      "sha1": "43059b55c350dff4ba3497259c54f169c679cc59"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-BoldItalic.ttf",
+      "sha1": "5a48a638a19486b457a3e1d2ca8bf5417b85028e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-ExtraBold.ttf",
+      "sha1": "2d3a4ac616b4f69f30c720afb5008013f331c4c6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "55fd819a5e368ce41a20879e8e4de2b4700f1218"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-ExtraLight.ttf",
+      "sha1": "5f25cf4b8b6adac723b580fcf176a19a56da00aa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-ExtraLightItalic.ttf",
+      "sha1": "1f6a79b9fc5e2a8492dcfc410fb52df28d49d357"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Italic.ttf",
+      "sha1": "6776ec2567b6d9573a804bfda3fda88a70d6603c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Light.ttf",
+      "sha1": "61bad0b6deabd03ff75fe1a2d172ab83f90729ef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-LightItalic.ttf",
+      "sha1": "a90a55c7f3af29891ef6ae219dd118c76be54ff7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Medium.ttf",
+      "sha1": "8ff929318fc0eb56b98190594abe53b41a88dde6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-MediumItalic.ttf",
+      "sha1": "55d11deb867b1897c9f6555805159aec1aa2c483"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Regular.ttf",
+      "sha1": "e3c0b72e779250259a1892a69f33f7061422fda5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-SemiBold.ttf",
+      "sha1": "80a81ab85bcbea6d5d99228f68cbb80a36780c59"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-SemiBoldItalic.ttf",
+      "sha1": "eb04e8fc26c5d3ab3dd88871142f4010381be563"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-Thin.ttf",
+      "sha1": "28d17441f8655e7efe766342c3005930d75530da"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Condensed-ThinItalic.ttf",
+      "sha1": "1cca25533dc0d2e838b15550ef63bbeb98f044f9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Black.ttf",
+      "sha1": "a2ff17d837f1b0fc8fde435b8e5a4a2e170c1b7d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-BlackItalic.ttf",
+      "sha1": "c190628d68e8dc6e9a6e575ed709040299396ba3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Bold.ttf",
+      "sha1": "a155911aa684f2a593b385f5057eb24a2c2f4314"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-BoldItalic.ttf",
+      "sha1": "84e7d0df5209325b4c526131e4de161a96759de1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-ExtraBold.ttf",
+      "sha1": "185883722b69148af9a492b88cab0895ccb65d27"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "a75cc394b173322492948b6123e2d256264ef07e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-ExtraLight.ttf",
+      "sha1": "7683fc37a66ac2f31fcda39b2dfde5ddacb46bd7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-ExtraLightItalic.ttf",
+      "sha1": "eeb63a112e392bcfbdd91febbdf0d7559e4af420"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Italic.ttf",
+      "sha1": "645bc26537dcc90471bd0f2bde48f71212231308"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Light.ttf",
+      "sha1": "3f5cc01ca8a2540d98e36e95513c743edb99b5be"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-LightItalic.ttf",
+      "sha1": "9578cd2f844c171b8e7ab6425bb15781583fb69f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Medium.ttf",
+      "sha1": "f447fe28b796610b40db2cebbacd68504ea657a5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-MediumItalic.ttf",
+      "sha1": "8eedd93c400b18b55e0e03cbf102e08e13c168b2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Regular.ttf",
+      "sha1": "8d90aa52b47e89c0482c407fdd77004459c75000"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-SemiBold.ttf",
+      "sha1": "2ebdc4a24a389c6f314091072ca7c8eeed3f66ef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-SemiBoldItalic.ttf",
+      "sha1": "bf5f03dc78745d4e924d0b47935d23230961c4a7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-Thin.ttf",
+      "sha1": "45b8d6e1a59336aa30971bdfb76b2b7e8b1e6bf0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_Expanded-ThinItalic.ttf",
+      "sha1": "95d5b47a045b3b684e60e26d7373c1067a5dc32e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Black.ttf",
+      "sha1": "e36a8adbb29d1a5efe7887953232a0446a33134e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "975b07e95b6352caa88743ae6aa5d09b86a28934"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Bold.ttf",
+      "sha1": "9ff50bebdc2325374e0e16b258e4401a41be8b19"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "615658968ba33119e7cd8c722d7be8861dbdc85e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "bf7be1211be281f08995871e29d309c751c44101"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "9e7f310718906f16dff775a00872625ef507cc76"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "09b97528663f10365fc23441f307c9652129e76f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "354b36b8f9865d3f9c7902352ba1bb2a5bb2fca9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Italic.ttf",
+      "sha1": "b5ae0e25950330234afeae8ca5b8a7030f772387"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Light.ttf",
+      "sha1": "506ae6b407c85234a4a376218b10559bac6e3936"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-LightItalic.ttf",
+      "sha1": "a8bc502218c6dccfbcec936b8ec98fb3b459a980"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Medium.ttf",
+      "sha1": "d05e56960e034fd5dabc89b4510f9d5a30c7efcb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "9c9451427391eb948b04b77dc7bf997faff5b5a0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Regular.ttf",
+      "sha1": "797150f11cc46e49bc8da8499ae3aad948157bdb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-SemiBold.ttf",
+      "sha1": "cb24449337632e5a07dbff0db46455ef5dd9548f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "3fd4b15e5be87a11c28fe0e858b47b7c737e3473"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-Thin.ttf",
+      "sha1": "ef7b02659245affe9a7101235699ae51c34ee41a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "3fa70e993fb0c8ea7e8b2592f1113d683c2b453a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Black.ttf",
+      "sha1": "12009a3b8e558192bb87e4ae2e35cdeaa0a50ce1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-BlackItalic.ttf",
+      "sha1": "0a093463882873f6f466bde6ac062c4505e4e473"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Bold.ttf",
+      "sha1": "7ca17ece5570c9c7a51b0ef8c1b62d8afe0e6128"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-BoldItalic.ttf",
+      "sha1": "292d83a4c45f136d8b6c97c818ebf79c03f7365d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-ExtraBold.ttf",
+      "sha1": "97328359c115410c34523f896e7bb4b331a49361"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-ExtraBoldItalic.ttf",
+      "sha1": "36c1a12d1146fac85856234485639c0be6d72722"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-ExtraLight.ttf",
+      "sha1": "0b3d3ce07a7297cc57f859aeb128e174b7c2b4bb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-ExtraLightItalic.ttf",
+      "sha1": "6e7564608508d1d83b2f4bf1ea23582925ae7b42"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Italic.ttf",
+      "sha1": "f40df13e64ecc6c9b106293ed485a9e83854c658"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Light.ttf",
+      "sha1": "128c351b04218d20074c83d651abe6eaeabda984"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-LightItalic.ttf",
+      "sha1": "05e32d7dcc92c7fe90cdb29342361f0728a0aaa1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Medium.ttf",
+      "sha1": "938cfac39259abad51d9201b1f16b53598fdc6b8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-MediumItalic.ttf",
+      "sha1": "7dd37f85236a3c89300a589b1e22ffab79350634"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Regular.ttf",
+      "sha1": "8fd623deb7eda7db59fe8f92d227a4476b3464d3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-SemiBold.ttf",
+      "sha1": "c8cdc10bbf7f7f6bb4e34b2c959c1dc9dc54850b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-SemiBoldItalic.ttf",
+      "sha1": "e927b3c456db55a99501bca6e17302738fd9cf8c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-Thin.ttf",
+      "sha1": "28e0077ea4c15a15c72f5dc01e8d1e5d00b52f26"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_ExtraExpanded-ThinItalic.ttf",
+      "sha1": "9b4c66ccc8edc8f4d48f06d7699d5aee72e6402c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Black.ttf",
+      "sha1": "9c77c1eabb1714f5258bee74f37290040b38fc06"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-BlackItalic.ttf",
+      "sha1": "c29ca5f56f8f1054a2c2666341c97e8d6c4d4b7b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Bold.ttf",
+      "sha1": "e7b3c3ffe1bab753afdf39f7ffe37663f45d0f87"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-BoldItalic.ttf",
+      "sha1": "b6541faad15f6d72d16808177b2c19b03356cbbc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-ExtraBold.ttf",
+      "sha1": "db6bc125fcb6ac549fcc6dda94d30845913a7443"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "068492a162a88b08d03d485e4f7d63684cfb28e8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-ExtraLight.ttf",
+      "sha1": "18249a0ec220c53d79c8c10c29922de28e338607"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "d54809416d5ac1e693f9d605b44994e5aca6c232"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Italic.ttf",
+      "sha1": "4b6702c70bd63de716c84e0d603a2fbf9c3a31bc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Light.ttf",
+      "sha1": "afe9a2d9f3acf3a93aa9153d4ba305e1ef09a756"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-LightItalic.ttf",
+      "sha1": "6039ea6ca63100e20b9f3d1c171eb2258252b0ae"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Medium.ttf",
+      "sha1": "3d77a205d17026504b7b26f8519b52d1ef0be2b9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-MediumItalic.ttf",
+      "sha1": "cbbfe9c493cbb1683cd90080d701c3a4eaf99a09"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Regular.ttf",
+      "sha1": "5ee8a96b9b359b1b0d72e0efeea98f51158df6ee"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-SemiBold.ttf",
+      "sha1": "e8fd971052dc017cb116bb1431361beee4a255ba"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "7ebfaee7e08eedb44addc97d86855797f55824b2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-Thin.ttf",
+      "sha1": "1f1d529f881d2134b20b71c4b1e649b09e0b4b8d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiCondensed-ThinItalic.ttf",
+      "sha1": "1b978cd607f39fe50635d01db39f19b9df951e38"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Black.ttf",
+      "sha1": "c5323c3b966ed7953387244ff8fd2db9b2f7ba96"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-BlackItalic.ttf",
+      "sha1": "081b01dbfd10ca7dabe64ae235db1f854b7fca64"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Bold.ttf",
+      "sha1": "1e3a4ed05fe601bfc95330c3f107058e0bd5f63a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-BoldItalic.ttf",
+      "sha1": "f0ab4b45da98af9bcdbd9b3b4d1e207f908c66d5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-ExtraBold.ttf",
+      "sha1": "0b3994997be6369da3c85eb41a8d9dd210b73778"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "985676b189bf3130bab8ed64b7e7e6962670cafa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-ExtraLight.ttf",
+      "sha1": "9b499777580001d1ef82337e166e0ba76c8b1e68"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "04e98b330adebafd4a601eabd3191685ee7965ec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Italic.ttf",
+      "sha1": "c2fdecd19eafd95ea103ce1b209212f9063a7a79"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Light.ttf",
+      "sha1": "9d454b73ddab5469c93982828bab42389f30bf90"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-LightItalic.ttf",
+      "sha1": "051f9130e92b0cbb029b0999290236f881d4e825"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Medium.ttf",
+      "sha1": "3aeb08b08b848551b7006b77a7c1df938eeea6d5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-MediumItalic.ttf",
+      "sha1": "b0b2d3a1b1c2c2e7068db129fd56cfe6c63c191c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Regular.ttf",
+      "sha1": "2984f22dccb59a3a50bea67ad7e6815560b89596"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-SemiBold.ttf",
+      "sha1": "487836f8e0f9e8a9aef974e91bb7bef1738947af"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "41753e61490965a8e41e61ca8ccbe84de2b0733d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-Thin.ttf",
+      "sha1": "b613a56d8491732a58492f52b5e898040c372622"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_SemiExpanded-ThinItalic.ttf",
+      "sha1": "8a414a28fcc98e5ff5b080db28b3af79eaa6f1a7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Black.ttf",
+      "sha1": "d14a31953b1dadc0fcb6450661c0828a5d4cdd50"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-BlackItalic.ttf",
+      "sha1": "a751841043f0923e02f6da212bbe5ad758ff86a4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Bold.ttf",
+      "sha1": "5d47a4fd8d0ab707ca909b5dcf0679ec653274ec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-BoldItalic.ttf",
+      "sha1": "df93869e95f12451d6b74a528b0dd030846ac9ba"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-ExtraBold.ttf",
+      "sha1": "a5181808bbc6c68baf49552f87dd40575ffa4abf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "b3d38e0392501911f47feb4458a969969ce37be9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-ExtraLight.ttf",
+      "sha1": "e1926f3dbeb258379c52b0cc891e5eb2c83eba9d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "785143552340480a941aaff3f70aad0e6dbd009f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Italic.ttf",
+      "sha1": "c89d819c10d7b8be0b43f85908a3bfffb60090a7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Light.ttf",
+      "sha1": "63531edcab1ef6de95ba91ea74c8e34ef526f3c3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-LightItalic.ttf",
+      "sha1": "5fe06758408a2a59542ed492ed55f56af203f9b6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Medium.ttf",
+      "sha1": "449128efd88a85299ec31698f02c95b081dbde3d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-MediumItalic.ttf",
+      "sha1": "9c50947e524470147159d4afee5d35240e01ca15"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Regular.ttf",
+      "sha1": "113b8d626b8df1c585fedc017dbe4764ab2b2b1f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-SemiBold.ttf",
+      "sha1": "4a604ec5cb17a2db98aaeca1fdb050b04c5216ef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "399d6a2653bfbe64db3dcfd5015d58ec16a651ab"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-Thin.ttf",
+      "sha1": "20787fd6d33b1c4f281bf574ae784bd7e19b4170"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_120pt_UltraCondensed-ThinItalic.ttf",
+      "sha1": "4eb8fd5e3b1806e4a70de12207749eb215dd135d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Black.ttf",
+      "sha1": "6c60ed004377470696fa7ef74014bf31fdd37a58"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-BlackItalic.ttf",
+      "sha1": "b10720423fb698f7aceaa7474a996205e3129ce9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Bold.ttf",
+      "sha1": "a828954f117b164f10e2c7d35a2a6f2838711511"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-BoldItalic.ttf",
+      "sha1": "e0b82ac46ba728d99139613062039f6185b6f69e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-ExtraBold.ttf",
+      "sha1": "1961480e3d8273b25af02bdd8582ad526ef0d077"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-ExtraBoldItalic.ttf",
+      "sha1": "fb1f193c5ced87cf16fe6ee4349c9e24f148a38c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-ExtraLight.ttf",
+      "sha1": "a58ca4e5592d9446a3c986833a1bb6736d765104"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-ExtraLightItalic.ttf",
+      "sha1": "51a2ab33fc90f0e4bc623a8bc2a7caf02acd7641"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Italic.ttf",
+      "sha1": "2f8a2e08893ab446d7cb0f21b3c7c320d4170beb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Light.ttf",
+      "sha1": "255107f19b5b113ad468973c3690abeea841ce0b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-LightItalic.ttf",
+      "sha1": "2452ed405af897b2c4f9949babe2d629dd52868a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Medium.ttf",
+      "sha1": "6081284cd3bb30a6dc22cc6ff5f23b8c4f82feb8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-MediumItalic.ttf",
+      "sha1": "f2c76bdcc9e166543825fe1704fa56bae0453f7d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Regular.ttf",
+      "sha1": "f024a2a983670808d3c14554bc9189838e56d92e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-SemiBold.ttf",
+      "sha1": "10021b82bea517c62eaf49453848c2c36ab95bbf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-SemiBoldItalic.ttf",
+      "sha1": "c9c540e307cc6e242f6153ffec26009defa877a4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-Thin.ttf",
+      "sha1": "c8ec99b3bb6cbc8c0350464364d3633309dee4b4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt-ThinItalic.ttf",
+      "sha1": "e7f80c6d7048f5860ae61db727a5160be461fe36"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Black.ttf",
+      "sha1": "a18cb95039bb77908c46fc711e84b9625cab0cc2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-BlackItalic.ttf",
+      "sha1": "269cef5832ee865aea6aef9c1043fb602b69539a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Bold.ttf",
+      "sha1": "b0105d5d6e3308409cf7d272ed377a00d46e667e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-BoldItalic.ttf",
+      "sha1": "50b614adcdd6f381325e41616071285daf5e5fff"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-ExtraBold.ttf",
+      "sha1": "30ec0d505fb855d17ccbce01bceb2190effb6957"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "66b4e9a41bea9b6834fbce662789d9d2b019c768"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-ExtraLight.ttf",
+      "sha1": "4149386da728dea0b9760d42aa5b2f918023fcba"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-ExtraLightItalic.ttf",
+      "sha1": "1448d2ed21d28098230ea6107b0b52c45c500320"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Italic.ttf",
+      "sha1": "23d6f2aa2af4d9fb422b9343ca248536909a5ce7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Light.ttf",
+      "sha1": "974595880c2ef1f5a8ad50a23833df7809574ec5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-LightItalic.ttf",
+      "sha1": "ffa26edb7805652ca93a80d13bf5614cbb0f20a8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Medium.ttf",
+      "sha1": "ff4e464a3c495f2f3e101b55c8c0dcbe388515eb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-MediumItalic.ttf",
+      "sha1": "825330735aa886bd79baa1c3312ba2aa85b848b5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Regular.ttf",
+      "sha1": "3b54ea2e6e049bb5a01bdc61690f2776e9aae6fc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-SemiBold.ttf",
+      "sha1": "3cb1b447bb8fd18e3a60ef64fa2c8dbbdbeb46ab"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-SemiBoldItalic.ttf",
+      "sha1": "3d088167f2bf7089dfdaf2870f74680922e5797a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-Thin.ttf",
+      "sha1": "32e2d5500899480a90359aac439b5761f5a17396"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Condensed-ThinItalic.ttf",
+      "sha1": "571723902ac4a54b08587e355b051fa591727476"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Black.ttf",
+      "sha1": "710c356e9b9485207580d253fdd24c4ca65a0eb9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-BlackItalic.ttf",
+      "sha1": "81e1190fd5f135d511e06ac45901cccf9d8d6d35"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Bold.ttf",
+      "sha1": "68a3355bed7acc59d3a5760045b5c870bf9180bc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-BoldItalic.ttf",
+      "sha1": "e5f8d3a299206c4b1779e96f33e642fd59d5658d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-ExtraBold.ttf",
+      "sha1": "99fc6357fd25c87f199936849d8424a0f95d00e1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "11a5e8a83c9c8d0189e6349e0c878b48ebe66f06"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-ExtraLight.ttf",
+      "sha1": "5cd3a2809891e4d02f1f8169bcfb8a8bd9b3d139"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-ExtraLightItalic.ttf",
+      "sha1": "9e8949df9c1637e34154fb557dbcc5b773e36341"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Italic.ttf",
+      "sha1": "7c607b309824cffb523d1c6131305032d5cf71c8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Light.ttf",
+      "sha1": "5c36b09dd10bcc59814d860e62e18496894896f2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-LightItalic.ttf",
+      "sha1": "ad81cac77150803c02bae54d4e756bcec406fc7f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Medium.ttf",
+      "sha1": "746bda4e9f7a895ba53d73bd445127678bae719b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-MediumItalic.ttf",
+      "sha1": "b63735f53a7fa99bfd893e4ceea6c0c9c7806146"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Regular.ttf",
+      "sha1": "d0a003037a3bc66b03d6f6cd214294921623a132"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-SemiBold.ttf",
+      "sha1": "78992169b3c9dd7eeaa0100ec866bb280a0c450c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-SemiBoldItalic.ttf",
+      "sha1": "780f31a3876a6cb48b8a79cdb1cae955768f3d50"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-Thin.ttf",
+      "sha1": "5f6d8da79c45a1e42fac25c8e19f0fe09de52b11"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_Expanded-ThinItalic.ttf",
+      "sha1": "8c32c4a00894d809ee152b8da0d5025116ef8250"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Black.ttf",
+      "sha1": "e3d5e657db09f2fd01338837abb0418912f47048"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "8363c9cd0d24c51c9f3bf7e4b2a12b45b4101dc0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Bold.ttf",
+      "sha1": "ff56c27c49a398516d737fef44a5e3797db43100"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "d2b84a86e6d2a038b7328920e6afecf352c2735e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "19b2421b94f4b40e5857b42844745c332f2aeceb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "5c47a97ddfad2ffff9867a55c393500781fb8be8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "9f3e9bdccbd34c6ae8ea5538e9ace52a236c11ab"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "cbe328426f6a26a381ce13936bb90ffc199e9bdc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Italic.ttf",
+      "sha1": "195abd00a874de77b0cd86000d8170d361ca4a02"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Light.ttf",
+      "sha1": "2645c6eb0fb85622142f88f004849917892ad2ea"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-LightItalic.ttf",
+      "sha1": "1b10bd24a24a1627192fe0f2985515f21658b10f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Medium.ttf",
+      "sha1": "5f1b766c07ce0fe0cc6d2c50d2a478848de12b67"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "7fb72c0e7f02b475cceaa0053f1cb093da6576bf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Regular.ttf",
+      "sha1": "c4fd5253b8c977adfcecca908eb798aa7ba3ddbc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-SemiBold.ttf",
+      "sha1": "fc5ba5c24c7533e98935f6ae441746ee09d81607"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "235570d0aa637d1e02acd0d379d20fffb62eb458"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-Thin.ttf",
+      "sha1": "126bb8a5d86b8c82aab05297fb7e5df47fffa90c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "4d0e522a3cf96c7bfaad9248d6efca14ec1af412"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Black.ttf",
+      "sha1": "8c30c739c39573303fce67a7db0dd277e7e2286f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-BlackItalic.ttf",
+      "sha1": "e6c5e8ad906fa22c03f25b8aa539e3a98d33c1ed"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Bold.ttf",
+      "sha1": "1d954dbf16af3ce101695157afeb85c60dacf36d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-BoldItalic.ttf",
+      "sha1": "c696ac27a3cfb05229e9697caf4ad3bb9253acb7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-ExtraBold.ttf",
+      "sha1": "ab79d495c1390a5c1fba96c44face2ff1d25c1ae"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-ExtraBoldItalic.ttf",
+      "sha1": "a26547c82e89017f7a3d6fe851887430310fbaf3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-ExtraLight.ttf",
+      "sha1": "add9a4c576489efb016109030eb0c04b3c07231a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-ExtraLightItalic.ttf",
+      "sha1": "adb0e152d458c5b1778d9c08d553c3d7df4bd30b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Italic.ttf",
+      "sha1": "447170cff0148d2b8f7e80dfb179d43a72e20206"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Light.ttf",
+      "sha1": "d57dcc5aa1acbec7fa5b10c0a1000745279d28c4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-LightItalic.ttf",
+      "sha1": "8869e9d8db3d3458af24f79a71f66f8968025fd2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Medium.ttf",
+      "sha1": "e256d2358979d03cb6591dfe778e7bf4b3b3bba8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-MediumItalic.ttf",
+      "sha1": "2edb88d670f914f6f09322adb273aa7835e7c816"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Regular.ttf",
+      "sha1": "2692aa12830695ebea7e6a855416612c66274c81"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-SemiBold.ttf",
+      "sha1": "f6777f15c791a88560c5ea5ac41799508843faa0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-SemiBoldItalic.ttf",
+      "sha1": "2e2c4b36fd8ad5f018c9ed6e5c4376bf9fe89569"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-Thin.ttf",
+      "sha1": "4748ec9cdb4668289be6108a55cfed734e3c40f7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_ExtraExpanded-ThinItalic.ttf",
+      "sha1": "d2c3ea7cdcd6a6c80c5291036f1868643c04cd9b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Black.ttf",
+      "sha1": "29e11e7f890dcc0dfeb5386b6178ca36d8bbcbc3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-BlackItalic.ttf",
+      "sha1": "778e181d61241ece4380982941eedc58646bfae3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Bold.ttf",
+      "sha1": "22422aff6e46ee018cd9491baaaefafeb661a456"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-BoldItalic.ttf",
+      "sha1": "dd1d5d73844bcb89bc735bd9b55b776794571493"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-ExtraBold.ttf",
+      "sha1": "05bff670abb5ac69f4fba390711ad98e033d584d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "cd299306d0f457678cf9ceb95ef2868fcadcffaa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-ExtraLight.ttf",
+      "sha1": "9914ad85dbfcf773e097f00644b90a91120d4192"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "c7bf6c1529f85fb0f91c4d43165142396c15f310"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Italic.ttf",
+      "sha1": "7b1b5650247fcf6b9fe191b09def9218da20470a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Light.ttf",
+      "sha1": "e2a646a3561d25bc20d029025774a6c7c028a8cc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-LightItalic.ttf",
+      "sha1": "9eb5dd3938a3d4e714bfc1d94904e7fe4588a237"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Medium.ttf",
+      "sha1": "dff91bf0cf0955e52ed345b64a9c9cb468347572"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-MediumItalic.ttf",
+      "sha1": "c219e0cdebdca1ef70dcb95946453443c90e57ca"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Regular.ttf",
+      "sha1": "a16542ee4947e34c6e2c9e43b93a4298494f254b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-SemiBold.ttf",
+      "sha1": "60a1dc76de2e6775d559899e91d0186d86b34b32"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "7cdda71b470fae751f776cf7ecd619301b42316c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-Thin.ttf",
+      "sha1": "2fa9b12ea6673005a109caabf45cead392c47b15"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiCondensed-ThinItalic.ttf",
+      "sha1": "9309cb40264592840c8c2b1a3d571962f2e9a03a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Black.ttf",
+      "sha1": "b74176a359165ba25bcf99d5d637881a230264b9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-BlackItalic.ttf",
+      "sha1": "f9095e522c2ab2862e83cd97349da51840ffdf3a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Bold.ttf",
+      "sha1": "63e88d299bf0b3861d4270b1f6689d369739c9e4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-BoldItalic.ttf",
+      "sha1": "0303036214a88301e5e98bd1d697d386fa8949ba"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-ExtraBold.ttf",
+      "sha1": "50c3264bb6e15875b2d96943254c67edb1d4613d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "85acd81a0cf1e20c243210a4e4235ade8f66d166"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-ExtraLight.ttf",
+      "sha1": "2d715dfd89d04058e57894a6604f3ceeaa749920"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "8ef4bdf9d8308d4d1ae53a963433f5b8972c89bb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Italic.ttf",
+      "sha1": "f36344f39e69a3f96f973d36285b66d5f27f71d1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Light.ttf",
+      "sha1": "e279958b232cd4e356df15028ace1185e1af9ea7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-LightItalic.ttf",
+      "sha1": "c50e8dba17c961b1cd109df0e525999d8225a555"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Medium.ttf",
+      "sha1": "ca29c7fc9af07b0470337bca730e97429bc44ae1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-MediumItalic.ttf",
+      "sha1": "c31377629f5132a1244de0021f35631aaba49580"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Regular.ttf",
+      "sha1": "566819d68abd86f10e4a8b1e11fcca3dd03dc2cc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-SemiBold.ttf",
+      "sha1": "8493eae911ccfa1c06ed80e8ebca499dc3bfd780"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "2354e7feda3e6351bc0adf2b14f167907e025574"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-Thin.ttf",
+      "sha1": "20f08c94b6e7d8a2bbd82836f0612b1d88a7f426"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_SemiExpanded-ThinItalic.ttf",
+      "sha1": "8b62fb8ad8a751aaa7f033580eb57ddb42b9bb1a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Black.ttf",
+      "sha1": "af0bb1d9f655c4854aea4ed480c6e12972197d46"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-BlackItalic.ttf",
+      "sha1": "f5cff6ba11692040ca87d70ce342ba873e78fde1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Bold.ttf",
+      "sha1": "30cd4ee902cd841bc6f646dda49c15af622edd63"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-BoldItalic.ttf",
+      "sha1": "b35c5a66bbe369dd7696d5b490e9b1b32fcf0619"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-ExtraBold.ttf",
+      "sha1": "d47aeb5e8e3e9a797b39971805abe3e49eb576d3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "26d8881f50d0bcc0b78ae5b3aafba87841063c0e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-ExtraLight.ttf",
+      "sha1": "59d3df0796c40a542899a99c9390886c33977c3b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "5f2664d1ef12d72f94a2194a106615ad2cd2f7cf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Italic.ttf",
+      "sha1": "68fb60c2002bf9b063b29fcb2a708597a1759036"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Light.ttf",
+      "sha1": "0213396425fa9c727353eddbeb9bf9d2a9c47568"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-LightItalic.ttf",
+      "sha1": "390bb87a143bc58b0789f056b005443f9b626b5b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Medium.ttf",
+      "sha1": "6b24c1bbeef671b5c7ee16dd0f15b95a5aa75f5a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-MediumItalic.ttf",
+      "sha1": "77c5bc208a12b256c266e24b4ef820b39c930d41"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Regular.ttf",
+      "sha1": "48d041cbed7e94970ffd776f905706623648db41"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-SemiBold.ttf",
+      "sha1": "9f163e244971e2ab9df99b39191565e079efee62"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "cf70eca8a78d78fe6be8ae8f67ca60dbb3eaa2b9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-Thin.ttf",
+      "sha1": "b0ebfec18b7ea1c5f45e848e617964098f16ec3d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_28pt_UltraCondensed-ThinItalic.ttf",
+      "sha1": "df0449e47c5a631a7c2b65602396efe926a9a058"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Black.ttf",
+      "sha1": "923eda232c53a4aafe9f6b70335e7bf8ee82430a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-BlackItalic.ttf",
+      "sha1": "2f1c5dcfe7a0ab6f864c0b8d74155c02abf45605"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Bold.ttf",
+      "sha1": "0e19f60f48709914fc598f48069057d83e38574c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-BoldItalic.ttf",
+      "sha1": "fe8d248770a2d86e6bf11c145840a54ccd86ab6d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-ExtraBold.ttf",
+      "sha1": "e1f2cd0923625ddde2717f63cc4e978dc0edc1a8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-ExtraBoldItalic.ttf",
+      "sha1": "032b94f0ebcb989faaba5fdaa565ec18a3444093"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-ExtraLight.ttf",
+      "sha1": "e73abac9bb4f04654f5b75806020822a190fe3a3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-ExtraLightItalic.ttf",
+      "sha1": "775142ccf0e89907225eff9d92ce1a3fdfa97ce7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Italic.ttf",
+      "sha1": "c97f0d275882b6053776cae7e161de2f3c766bb9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Light.ttf",
+      "sha1": "ab01eb4e0da03f7eb97fe316348d79807647f4ac"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-LightItalic.ttf",
+      "sha1": "f7b06aec5283a2f8d444256206247d7c2325bca7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Medium.ttf",
+      "sha1": "149c252441887faba485120eee2aeb8a5af92eda"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-MediumItalic.ttf",
+      "sha1": "b00ca6762eff9c47c33a530dea5cb810c6df56e1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Regular.ttf",
+      "sha1": "d2292ca6fdad454e43b339f667076c83dc27b375"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-SemiBold.ttf",
+      "sha1": "cc4d17ad287bd2d0b789f39a56f006b1dd4d6fec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-SemiBoldItalic.ttf",
+      "sha1": "77c0ab13d5e1e4cfc3dcd9f8c0617288b14bef2b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-Thin.ttf",
+      "sha1": "bef1d4f4f24dfced29a5e76cd2510a13dac6766e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt-ThinItalic.ttf",
+      "sha1": "1d14b73c015d1fbce32e3777fbc180857daa8019"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Black.ttf",
+      "sha1": "4488118d3f2c52f80b3c4055f4b807445cb26769"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-BlackItalic.ttf",
+      "sha1": "f277baa25dbcf6282e96f33602d9e9c6c90e34fd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Bold.ttf",
+      "sha1": "58d1a2315f2f4e2a4903dc9e3f79ea209e8804bf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-BoldItalic.ttf",
+      "sha1": "e7653240dd07370000e41bb37be5433a73e87f5c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-ExtraBold.ttf",
+      "sha1": "b2763c5b6c6e043adedba7f6ff8ec5773ee05b65"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "58f36b9977332594372a6d929f76f8ef78c8c3e0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-ExtraLight.ttf",
+      "sha1": "ddc9c90b2eb8bab61aff7c404db566529e3cd8ec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-ExtraLightItalic.ttf",
+      "sha1": "361cae33bc60eaa40e4f4454e6c7c0a7d35e62f8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Italic.ttf",
+      "sha1": "284aefb54316a4236d3cd8e6a7bcf44babca888e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Light.ttf",
+      "sha1": "57d39361efe470d513f8946c6527437ac77dc52b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-LightItalic.ttf",
+      "sha1": "86ce673c35a7b8d9f9bf714bebf6a34821afd4fd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Medium.ttf",
+      "sha1": "47b014464c73aa34f03fa1b1b27fd1e1d1c245f8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-MediumItalic.ttf",
+      "sha1": "f4bdd2d0a433c5dcef5ac5333a9bcbb7b7f1e688"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Regular.ttf",
+      "sha1": "afa7555d8e275af9ab0b12114864123e9eaef1a5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-SemiBold.ttf",
+      "sha1": "2c9cf75c3ff8682a06268725ad083819e7dae597"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-SemiBoldItalic.ttf",
+      "sha1": "3adaa2cb9e3a8e657312fe5ca37a4c1fcbf8131d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-Thin.ttf",
+      "sha1": "fc4488d4597214c9b208bab2cfc11ebc9eb85e02"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Condensed-ThinItalic.ttf",
+      "sha1": "b1240fafdf29b7eadd6ea902aabf159cdc92f196"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Black.ttf",
+      "sha1": "4d33b58b81d378ec00b5d4266a8f44c356c04b69"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-BlackItalic.ttf",
+      "sha1": "65330fb86d2a5d394fce46400819bed1c1bf4f77"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Bold.ttf",
+      "sha1": "7274710037a96d2242dae53f7888175193b4a97f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-BoldItalic.ttf",
+      "sha1": "0cb5addb79fb829542177bf98ff041eb7f5b152f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-ExtraBold.ttf",
+      "sha1": "5a5cb86417350367bd379cb125126c7a74e42d50"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "8f8756efa6a7af181c6bd437c1267d572559f407"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-ExtraLight.ttf",
+      "sha1": "8456bd075909b9595ac130678062f514bef2e70b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-ExtraLightItalic.ttf",
+      "sha1": "ffa29dbb3c1deda45fdf463bc419932eb0247723"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Italic.ttf",
+      "sha1": "4862658a28e54c2fb326f15bd6c871f9546c2523"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Light.ttf",
+      "sha1": "72b0dcac87d38901f104da26835d513d2c310501"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-LightItalic.ttf",
+      "sha1": "f4b209fb2f64626688dbbf201da37c9852bb6c54"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Medium.ttf",
+      "sha1": "db9d19272b3e58f8c1df1035296b3cd41ed3b701"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-MediumItalic.ttf",
+      "sha1": "4745260332cbe4d551d686264e013ff3e106107f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Regular.ttf",
+      "sha1": "6b609e684e5cc617e7c89e83543c8a1fa342e3c0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-SemiBold.ttf",
+      "sha1": "f7a911693bd0019d268d3f8ff8c32f9258c27eae"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-SemiBoldItalic.ttf",
+      "sha1": "d8ec73d17f7a4af315df663acb73ec9e6483248b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-Thin.ttf",
+      "sha1": "9922780f6cd99e5e7d2b6236aeed5a2b7affa68f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_Expanded-ThinItalic.ttf",
+      "sha1": "c97ca6face4951d565db2ef5843c268e6e166a83"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Black.ttf",
+      "sha1": "efc6b05719ffc934ac91a9bdb979f992125a299a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "35d6977f94641005bbd7bf83e486da7e9083b2c0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Bold.ttf",
+      "sha1": "936d6ca2b6d77f98ace080f46a3bd0308ae65aca"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "ad4ac53219d24b907148d9b2090f1a05e99561dd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "60efeb04635dbb3f9b12d1e2a8518ead7c3a1346"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "f6c5d9527459bd1a7bef79903fe2cdb019654d2e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "9b4540d83d61c5fd0c2fa07d754d2b2a30f93006"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "7dc3de17702b5e94c020023fe697a6ec73ade319"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Italic.ttf",
+      "sha1": "61815d7655e399a3012fcd6bcb2cc860cdd2fd91"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Light.ttf",
+      "sha1": "349ddac663e1a4a560c7698f40db45b8d50d689e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-LightItalic.ttf",
+      "sha1": "f52e36432eb8353e8e2d11e0c93508df84e34ee1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Medium.ttf",
+      "sha1": "7f54b02038861e8f9e0439702018a363b274ac59"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "d3deb1d8fc078acbebb958d7ab937548c8ab526c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Regular.ttf",
+      "sha1": "b107d7021d5b395c5dbcb425eef8bcd6229535dd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-SemiBold.ttf",
+      "sha1": "269c45da3b8b943cd164195e257a1093ccb88430"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "5448d925c9cce11ee03480103134fde021800910"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-Thin.ttf",
+      "sha1": "b165821c4913ba94a54a551880a167135856f750"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "e5633c7e997f9708262af81a4ecfb2f9f0fbc81f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Black.ttf",
+      "sha1": "ec6d949881bc8c162d6a404363933ce16659dd82"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-BlackItalic.ttf",
+      "sha1": "c9b903a3e02e661c1a2f0cb5b7bf1344d8d14b17"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Bold.ttf",
+      "sha1": "6e1e378b3e83df75de221d6e464c0e789e6c38aa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-BoldItalic.ttf",
+      "sha1": "87a4198be9f63d65836c0ebcf41311f2d7ce67db"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-ExtraBold.ttf",
+      "sha1": "f4f68c7ac90195b25d85d5f4339fcdee11378649"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-ExtraBoldItalic.ttf",
+      "sha1": "bd08777f58ff80df98043c87a205be737d79d502"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-ExtraLight.ttf",
+      "sha1": "4be1aac7cc03db4bcf344828e2f5ea04272d872a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-ExtraLightItalic.ttf",
+      "sha1": "b62d53164d38fdc9749bb032c772ced7231a574f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Italic.ttf",
+      "sha1": "258217a800ad24af8979477bfd883b07fc4e4e02"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Light.ttf",
+      "sha1": "d5ecf8a0b7c72d2d4a5a11f0e4357a3973b58cea"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-LightItalic.ttf",
+      "sha1": "c927c611d620efbcf54777600d4db9c0d98ec39e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Medium.ttf",
+      "sha1": "bff06be181ebc4cd991c9d49c686c8ddb353aa00"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-MediumItalic.ttf",
+      "sha1": "7835d21177b7ced09a4bf0a1ba7894553359685c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Regular.ttf",
+      "sha1": "089c7764d71a04707e46e013189124f137b2f78d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-SemiBold.ttf",
+      "sha1": "6375e3499af3ed38e6ae020fa4532eba810a7c93"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-SemiBoldItalic.ttf",
+      "sha1": "c8fafb2de7ab3993d39807e789d6eac7cc8cb5e5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-Thin.ttf",
+      "sha1": "cd8dc434d73a9b6147a846af12ac69fb3d069e4c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_ExtraExpanded-ThinItalic.ttf",
+      "sha1": "700c0472b5d87aff82389f4893f3513f534d3553"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Black.ttf",
+      "sha1": "b24fbae0a4fadf594566625d2c9e863fe6a01dc8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-BlackItalic.ttf",
+      "sha1": "2afac287191c6abb1ebde75fa823ac09a3073aa7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Bold.ttf",
+      "sha1": "4355601fccc55a2cacaa22de2ce60ed526d585a6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-BoldItalic.ttf",
+      "sha1": "6c838f0af35a83ffe0a171a58227b576bf6dce8c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-ExtraBold.ttf",
+      "sha1": "e96cc6334db73ea3cdbdb24b3d4b58294ee7e992"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "6fd2059d8dc4fe854ac34bf33585780f3d0edb18"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-ExtraLight.ttf",
+      "sha1": "b02b98a2bc323474fec138bdc56e7edf7cf1b63b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "3c16c612f0674b977bcb5eca8074d0cd650c3809"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Italic.ttf",
+      "sha1": "3143d92c21f935fc2432fc95682cf1a998ad7318"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Light.ttf",
+      "sha1": "f915e52d18d2c08dd5e6e6a2c8b192c485d25f8c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-LightItalic.ttf",
+      "sha1": "b2f53fac09af3bb4af7d42627d44cc4da37d23c6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Medium.ttf",
+      "sha1": "a5699be598f102ca353961fb9e93923940a45e16"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-MediumItalic.ttf",
+      "sha1": "68bde45cb465a677a22b29711ae1f0e09e586dd7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Regular.ttf",
+      "sha1": "867e79f06b0b2f5aaef86ccc607e471483d949b3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-SemiBold.ttf",
+      "sha1": "3d0a621e5ef779b1fc3d391469d5f87a65e9b449"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "baebbeff7a2c0d182cf639fe3fb1ff57dafe3cdd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-Thin.ttf",
+      "sha1": "43bce01e4574907931b871dfc0bd0f598a089560"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiCondensed-ThinItalic.ttf",
+      "sha1": "032d8f3afccf4952df892195e2ef66f7e26d9c68"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Black.ttf",
+      "sha1": "9238976c6bde56eba8452291a29d626aa4c04f66"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-BlackItalic.ttf",
+      "sha1": "2494b100178dd08e895ac5636105f2157d615fcc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Bold.ttf",
+      "sha1": "f8aca6f141d411c9c8956bf6f349746d9796d4e4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-BoldItalic.ttf",
+      "sha1": "430085e8779d107b57b740d6d19eea76a4683122"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-ExtraBold.ttf",
+      "sha1": "718aa08adb2005bd20688054529370909db1bf76"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "dccc015da9ff41a931fbe795c4ebd2a75e5a0cc0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-ExtraLight.ttf",
+      "sha1": "f28b8f0ab781bff2e832244bca62ff5e90656e2e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "e9b5800357d35b1fb0df23d727ffd37e77c52125"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Italic.ttf",
+      "sha1": "7b63f0bfc9eed8527be5f148b4b80d632f967185"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Light.ttf",
+      "sha1": "269c75bfd4339b987dffa69f995f9649fab900c6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-LightItalic.ttf",
+      "sha1": "bc154a756f21e374206c0c33a86d806ccd529bd2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Medium.ttf",
+      "sha1": "286250112ade795b9b04f018a05fb334060fccc3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-MediumItalic.ttf",
+      "sha1": "81d223c55ed3c9bea57f1e2f11f3f0d8c9f382ec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Regular.ttf",
+      "sha1": "62012018bcb90b224a1a4cfa7a0102f3e4b3bd8f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-SemiBold.ttf",
+      "sha1": "8c26a9096816f5e434900aeacb1bcd5beb060b42"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "705ff599c3477e67c8a15d4b6c905c549b611aaf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-Thin.ttf",
+      "sha1": "f5bf3fb087d5aa77fd51b02cfb95a3860e53207c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_SemiExpanded-ThinItalic.ttf",
+      "sha1": "bbeb7646ede47127aaafc54a81db5c0f332a032f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Black.ttf",
+      "sha1": "ecfb4ea9e7e4a6a1ab0b888ab9965aae59320570"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-BlackItalic.ttf",
+      "sha1": "62825dc9e30e959d56e2294aef1eb00f3a6be626"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Bold.ttf",
+      "sha1": "0cfdf684af61d9f77c2667b3213484e0116e810d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-BoldItalic.ttf",
+      "sha1": "2af4e3148304633f95a0208a71b80aaaaee00ef7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-ExtraBold.ttf",
+      "sha1": "b5580c7c85092b1492429b07e06700f484f2c309"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "d510af733c6af72281fb09b5da95745e466237f1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-ExtraLight.ttf",
+      "sha1": "1e85d51d3e50dd0c324fdf22103e6bc45c256171"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "fc7ee6fed37f440a100de833dde5f23c45f4bba3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Italic.ttf",
+      "sha1": "702a86cab91b81733fc79340eb0387a7447cf681"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Light.ttf",
+      "sha1": "c000718e9dd99da0349d71cbcee3f5e2541df817"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-LightItalic.ttf",
+      "sha1": "8d0a1c035d467d60d088a7d6dc0eb54c44c7b5ce"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Medium.ttf",
+      "sha1": "1eb6aafcf3980263e56843b9890a673d780d99bd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-MediumItalic.ttf",
+      "sha1": "1faa7c7ae1810ef43c9823e06b6c0c91c4263e1f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Regular.ttf",
+      "sha1": "a83bc35ee193508adf6a8d09c08bd3d35cf0ed91"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-SemiBold.ttf",
+      "sha1": "2adbfceaa65b382b79f358689ee3f7242b8a11a5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "dd96f030cc7d1bf1b468bc152404e5aa124535d5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-Thin.ttf",
+      "sha1": "9df9f5ef6b9748a3e6300e583b3cbdcab022b781"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_36pt_UltraCondensed-ThinItalic.ttf",
+      "sha1": "f2dd9060116026d91b2a2a9c7cbeb1b9670d23fe"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Black.ttf",
+      "sha1": "ad818201e5cb123acf986eee8aebd6a9ff9e92b5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-BlackItalic.ttf",
+      "sha1": "cc45717b6572f90f27dd485378ca6969d5e6678c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Bold.ttf",
+      "sha1": "6f255c0592f1b50bd16ef36c5b89395fae4337de"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-BoldItalic.ttf",
+      "sha1": "95923d99062b7ef76c28becf5ce6efc974bf214f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-ExtraBold.ttf",
+      "sha1": "a5d71e9c2153fa0424557d54e26494ba06ade0d0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-ExtraBoldItalic.ttf",
+      "sha1": "1c19db0fc4614feb8cef3d04c5ee5b4b9017fb44"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-ExtraLight.ttf",
+      "sha1": "b688937a64fd7f95fe3ceeafb876047c0d0bd04f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-ExtraLightItalic.ttf",
+      "sha1": "ce041385e1483559841e3f890778f0087ae6e461"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Italic.ttf",
+      "sha1": "76e464b58d8da52381ebe0f8b7a97ad459422cb5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Light.ttf",
+      "sha1": "a4a9a108c7cdbfe12de5da41c77dce8d6d4fabe9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-LightItalic.ttf",
+      "sha1": "4c136214ab77490090b41d6ee58103d6a7ab4b32"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Medium.ttf",
+      "sha1": "70124afc9f5a3ccfa28958a3e33b555ec6771680"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-MediumItalic.ttf",
+      "sha1": "779a622595d66158bebf7084dde07271df8167b3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Regular.ttf",
+      "sha1": "891742dca45a108d6303ee1261ae4385540c022c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-SemiBold.ttf",
+      "sha1": "3cf472d9fbf30fcd03f1cb5b3747cd4eaa01e465"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-SemiBoldItalic.ttf",
+      "sha1": "5fade15c5de23c79109a80860f8ef69d8ba7750b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-Thin.ttf",
+      "sha1": "a7adfdcdf24fcbd296e69f28010cd53e868d171b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt-ThinItalic.ttf",
+      "sha1": "37464246cbfdbb03f660f67db7c00553b5b4c01b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Black.ttf",
+      "sha1": "b3eeb90808c389cbb9476f77e6e4a1c793bb6d99"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-BlackItalic.ttf",
+      "sha1": "d12137251979ef1feba0067fc58115e52d3f6bcf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Bold.ttf",
+      "sha1": "6c483176559766578ebd7c49c4071b7b19eabf87"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-BoldItalic.ttf",
+      "sha1": "c91d88719532aa00c47a36f33b5b4b6b537e7d4e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-ExtraBold.ttf",
+      "sha1": "26133410c71934fc502e9393ac0f8b1d0f98636f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "172017974250a693bb59afa02087bf3492952fe5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-ExtraLight.ttf",
+      "sha1": "d6b4170af969aa3922095350bb52e44118785cae"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-ExtraLightItalic.ttf",
+      "sha1": "14a79343a13b77ff2f03994fa034cf02bd8efe09"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Italic.ttf",
+      "sha1": "948bba42813f162cb9df6eb5c19de0bfc24a636e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Light.ttf",
+      "sha1": "ac9e9e1bb90cd88d00a8ccc030de297147848a1f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-LightItalic.ttf",
+      "sha1": "9c95a7a512896ed03dedae0755a11bff731d154b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Medium.ttf",
+      "sha1": "6b6e3fb5c058f8e788a1d552707b603c0b531678"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-MediumItalic.ttf",
+      "sha1": "eff4d873b03761c8dbabb9456cf8e56262f23c23"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Regular.ttf",
+      "sha1": "e828c09a74bc00c754f65e11438b247e1ca38c9d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-SemiBold.ttf",
+      "sha1": "521b4e85eff3d90915e3d27b123737fd4738a54c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-SemiBoldItalic.ttf",
+      "sha1": "effcdec68adb7cf9ad2ae620d00c5ee132bbdda8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-Thin.ttf",
+      "sha1": "e01edc7233e6ee8cd9c9e90855cf2bdac2a2be65"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Condensed-ThinItalic.ttf",
+      "sha1": "65a33d194c7987481f6157392f58ad2bdd01784e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Black.ttf",
+      "sha1": "195e7b1651f6dc4b0881d25147ccdc672e86845b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-BlackItalic.ttf",
+      "sha1": "590bbe54405923fefb3488f721489a853fdad05d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Bold.ttf",
+      "sha1": "7a00027bc729bb9404e25fb46e0b41fd86589469"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-BoldItalic.ttf",
+      "sha1": "be4bdf6b206740974c34ea0fa0b275c3b9e2d046"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-ExtraBold.ttf",
+      "sha1": "b5262d42bcad883fcb81f682eaea93b9cb50e875"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "e81f5a619e6628501265cb5935d004c52eeda525"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-ExtraLight.ttf",
+      "sha1": "99da16e10ab3339011faa5d610384642a7705755"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-ExtraLightItalic.ttf",
+      "sha1": "c19723abba302861e1bf82ff024c9559b56ab8a0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Italic.ttf",
+      "sha1": "d1a894daa6697f7ec89d1c43b5d0a7403edd94b6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Light.ttf",
+      "sha1": "2c080eecb0c38937949a79aa3c843512d3c1979e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-LightItalic.ttf",
+      "sha1": "ad0739e10b6d11c302f3824ec5cfdf7bba4bd4a3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Medium.ttf",
+      "sha1": "66ca8d6a917e37317539a6fe49e0d9674477a555"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-MediumItalic.ttf",
+      "sha1": "fbf2db3727128125461f5b5539b1074a8df63b52"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Regular.ttf",
+      "sha1": "6ac6b550301f019710a63e722882b2d41a4e0b16"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-SemiBold.ttf",
+      "sha1": "fcf08da48dd3e552be45ddecf4f6a6a1f48795aa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-SemiBoldItalic.ttf",
+      "sha1": "df1f2a06cfceff2ba5ad5f01cdeae8b81d9073e3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-Thin.ttf",
+      "sha1": "4e5be86c799ce96f7a2d5519b9c35d1027323a93"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_Expanded-ThinItalic.ttf",
+      "sha1": "fc7651b37bf8c46610d430566f85b7283c19c213"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Black.ttf",
+      "sha1": "c6ec1cbe5648c0c8fba49e5a71dfb91674b96a04"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "2c97d05188c6dd6f9e453129e908ea4226e32ab0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Bold.ttf",
+      "sha1": "3db14bc69a2deb53dd4b3ff6fdf10c7cbe4eff7a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "e406f3e4591fd7fc7b6b660aa970c60183dd671e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "8a35c292d8ba23c8ef7176380a2c129d863626b8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "94ccb31d1561828d3b0286624856eba38f120357"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "111b070c5501e7e1491eb62ddea68d2f8ce5c8be"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "b4edbe03bf809a046b5ccd0b2798720f9ae2854e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Italic.ttf",
+      "sha1": "1d289f71e7b3425fbc283e5b774e2c5e64b11bda"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Light.ttf",
+      "sha1": "deb48fa655d625f85480ecad8d8bc06d5eba3b3b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-LightItalic.ttf",
+      "sha1": "325af4a71eedf1bea185f573d60bcc98b7e51f7d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Medium.ttf",
+      "sha1": "290065975e5282bf32e9fff37a044f5f39bfbda8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "38a6d6e6dfb4ad7f89abe8183f88370347f47e9e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Regular.ttf",
+      "sha1": "ba9d9e602815638b963431d7aa79f1c451989fb9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-SemiBold.ttf",
+      "sha1": "d509ff74fb5fc371047965b9729974afd2b5872e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "89d8e0b58529e78a8eca5210915afb8e94fdbe17"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-Thin.ttf",
+      "sha1": "ccd55241499a5fb664861ca0faa80d73d47b3bac"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "79221e2ed01f43f82ed6aa8dbe0b1d1b2c1bee6a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Black.ttf",
+      "sha1": "af4ff10c79dcf262138051aa973e5a37d01b27db"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-BlackItalic.ttf",
+      "sha1": "48e3da87ab183eed25361b5a8d0d2b210552bae3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Bold.ttf",
+      "sha1": "b1a637b1d45ee7ddaa8bf0fc5698424391ab8b56"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-BoldItalic.ttf",
+      "sha1": "7c9350f4780f3b6713321391fe8d7826353eb932"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-ExtraBold.ttf",
+      "sha1": "452f34ba5896b70122159fa7f84fe47ee6ced52b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-ExtraBoldItalic.ttf",
+      "sha1": "65a090f3e8cb222e7748d393cea37e9cd16d9f21"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-ExtraLight.ttf",
+      "sha1": "4a2532dd03164257ac248a01a8a16a4a51dd8c98"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-ExtraLightItalic.ttf",
+      "sha1": "80e46d3cc6aad403cd007cd4f4dce750457ecfa6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Italic.ttf",
+      "sha1": "0c7d43f6ad0c9d8169c0c8cc072f99c3dd575d05"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Light.ttf",
+      "sha1": "c3b2a59ae77bcb071b5938c917b1a23660bdf141"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-LightItalic.ttf",
+      "sha1": "b2e7709bac8ac447d823e9950c221a175c5ac890"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Medium.ttf",
+      "sha1": "25074afaddb2df7e68643a15beddbeb7f6cd52a5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-MediumItalic.ttf",
+      "sha1": "dcf0a4a01f288ea8bf5ef9c02342cc864348be4c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Regular.ttf",
+      "sha1": "885925aff3a833d40a2332c663aebb15f93a51dc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-SemiBold.ttf",
+      "sha1": "72cf0a3941c76f27d184fc0aa60edb5a1b5f30db"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-SemiBoldItalic.ttf",
+      "sha1": "c33fa5ce334f08bc6c12eb7218a208ab5ac60dc6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-Thin.ttf",
+      "sha1": "d9cee34759b6b2af21ca65bd2c8c7272ad6fdece"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_ExtraExpanded-ThinItalic.ttf",
+      "sha1": "aa35562c885b3e2c189e6114095d189d3acc4430"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Black.ttf",
+      "sha1": "fda69ecefd6e65e4892f5b4a0b9dd7156165af77"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-BlackItalic.ttf",
+      "sha1": "7310446ca8723d92c62d3cfd1b6694e5d9ca4bb7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Bold.ttf",
+      "sha1": "9304c49ece6ef1ccd747e1de6e0991df78bdab2a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-BoldItalic.ttf",
+      "sha1": "d0534ed7facb0ba8501aecc36e9785b7d9b0187b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-ExtraBold.ttf",
+      "sha1": "ac288bec5ba6d41818108c38d5063a2df5554040"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "f17124b45cd49b2abe0dacba64d81e3c7c34a6c4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-ExtraLight.ttf",
+      "sha1": "ccf86890fe225a9796212da8377fd001812974c3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "cdf70e5070f1888416d3c8f6d8c560cbe4cbbf94"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Italic.ttf",
+      "sha1": "c646f991c4d4573ab487c871d93198268321420b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Light.ttf",
+      "sha1": "3c61c5317d0e1c1ca86447db98424a59a9b22fd2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-LightItalic.ttf",
+      "sha1": "f08a617896466e69371146d8b72272a984957c58"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Medium.ttf",
+      "sha1": "dacabfc7098bc27c2626d48f52c768e2275e8ff4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-MediumItalic.ttf",
+      "sha1": "206f707e347fd89df62cbf20272077217b335bc7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Regular.ttf",
+      "sha1": "3cdb209e8a4d1b9a15cb93c0626cf5d09a48afbc"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-SemiBold.ttf",
+      "sha1": "d6ec71572f7af9cd8df56067a7067b94a3845a7e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "81efd92ec7368bbab14b702c17aec843eb154f79"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-Thin.ttf",
+      "sha1": "67bfa635e7aa2a38331094f8cc0fd2fca2d41a53"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiCondensed-ThinItalic.ttf",
+      "sha1": "12a7cc17dacba99e838b6563b1d42b18bcad81ce"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Black.ttf",
+      "sha1": "11b16129351114b888823d60177f2fe5ec52ea3d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-BlackItalic.ttf",
+      "sha1": "b994cb664e78d753f6e85ca4dad3c9863f665590"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Bold.ttf",
+      "sha1": "69ab9ab90eac8139233b9fdada06a8be5828fe67"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-BoldItalic.ttf",
+      "sha1": "ae8fc350f5b377d4ac2f00a0cb1afe9478fc7c95"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-ExtraBold.ttf",
+      "sha1": "4d41c08d3641c5a2a0eb199dcf66a49e9dbc954d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "405fdfb9e7dc7d9ea98b287dc08f816017f4deac"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-ExtraLight.ttf",
+      "sha1": "6ef827dd8104395c5631ea622074212d24bd694d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "43ed166aee01ded003bc2e541756cda88fd0e3c7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Italic.ttf",
+      "sha1": "5c824902f6351df4319c1463bf19b0f4f0fe2262"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Light.ttf",
+      "sha1": "f3f634314d7e1db735366f4cd1510b15c1f78ed2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-LightItalic.ttf",
+      "sha1": "630bb00f8f08964ecb14e0159682e673f571ed39"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Medium.ttf",
+      "sha1": "46b4e019ead905eadc9f18615fb9b66add55222d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-MediumItalic.ttf",
+      "sha1": "554586a1cf3001071a6378b1103f496859a9bf19"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Regular.ttf",
+      "sha1": "1bc65096f668ecde88aa4ef9cc8d9d290842970a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-SemiBold.ttf",
+      "sha1": "0c7bc9bc65b25fdeceb2b67abe0a647d88a9d53a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "9bbc56bea5d6083403f691bf06021b58d957520a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-Thin.ttf",
+      "sha1": "77a4e0ba456fb0fec05e88cb87e2fd0ce61b23bf"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_SemiExpanded-ThinItalic.ttf",
+      "sha1": "375dd6923f3a31f6a76413a4b254f0e8ceeb762e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Black.ttf",
+      "sha1": "f2f263178e3f2b6821db054940672ef00d725ced"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-BlackItalic.ttf",
+      "sha1": "697f64aa49c3a0a40fdefed10976b6ce37e5944d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Bold.ttf",
+      "sha1": "02dc1fefcccda841db58669c59d1e2abe116a3c1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-BoldItalic.ttf",
+      "sha1": "e1a87d7c84ed8e6f9d59211117c8040f5ddb8aa1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-ExtraBold.ttf",
+      "sha1": "23635b3d25c1313799eb4518118dfad823102fc7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "27095d6384dc972c4288ed06d0fdadfd65476c7f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-ExtraLight.ttf",
+      "sha1": "f804bd9cde6c3d9e2a8671794e3be8c18dbafe2d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "8758696057a147a6ba81114b2941b268d3b048c8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Italic.ttf",
+      "sha1": "303e1e8782e53d6462ab09d03614735e91266163"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Light.ttf",
+      "sha1": "5ce6028121142b00e3f2138f0194a30806b9819d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-LightItalic.ttf",
+      "sha1": "6dbc2415512990c7fed6e8a08f8745cf7f08b064"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Medium.ttf",
+      "sha1": "ea77de3664b69a1e2772a08879c73bccf51849db"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-MediumItalic.ttf",
+      "sha1": "9d206c608091f9f2ddaee0cfa639f5c9986ae552"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Regular.ttf",
+      "sha1": "078ea7952f274bfaa354f65fff24b9eaf554d809"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-SemiBold.ttf",
+      "sha1": "1c3fe19665717752feae46bae024bee88d7e4697"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "f62e0cefc6e55ff17a5f026d0f7cadaa4b9f52d4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-Thin.ttf",
+      "sha1": "dc67cebdbfb09a43966d548a3a36ef9e64a02894"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_72pt_UltraCondensed-ThinItalic.ttf",
+      "sha1": "c98ed9ab58ca67b5e99aa051e1501a1fcbf5bd53"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Black.ttf",
+      "sha1": "0506238e9110a225a188c86f9dd664f8597b5696"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-BlackItalic.ttf",
+      "sha1": "bcae6c992201f2f5d7ecc76f0cf039451529e719"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Bold.ttf",
+      "sha1": "366938cb32224246d65a1fea3acaeda8567903d6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-BoldItalic.ttf",
+      "sha1": "c3c4ffb67e777c4a4e71ef2ad81b5126ea32d051"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-ExtraBold.ttf",
+      "sha1": "d969227317dc4dbe0fc9176e0f8e1abc02bd3d8f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "79f0c7d73e05ebbd3ae3fe12dd7be408a1d91832"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-ExtraLight.ttf",
+      "sha1": "62e1909e631d8512b5d7dfefffd7f72e833f08b1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-ExtraLightItalic.ttf",
+      "sha1": "b7a95fdc621cfa6af9a988c0a277f1c543a49953"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Italic.ttf",
+      "sha1": "8d7262497f7fafabbcfa64f7dcef13a22d093786"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Light.ttf",
+      "sha1": "2bc65af593faad468fa1fd90d65b8c0dac57f7a6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-LightItalic.ttf",
+      "sha1": "6bcd5601265eff77e1b174113b1378e22cda6f34"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Medium.ttf",
+      "sha1": "af1a2b91f73823ec1ff96145b2d1f3c5b15b58ee"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-MediumItalic.ttf",
+      "sha1": "cf1629c7f899c77c05e4b3162038d1c23131f1b6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Regular.ttf",
+      "sha1": "a8c2d383de3b451d50348bba7d7b756b32475a74"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-SemiBold.ttf",
+      "sha1": "015146ae072e55376bf70c2c406283fb05d1fd84"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-SemiBoldItalic.ttf",
+      "sha1": "2fea028e50022c3e339ca2367b94a3147b03f9a8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-Thin.ttf",
+      "sha1": "cb5ab4bc1247e3eacbc330d800f2f3d0d9cb1bfd"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Condensed-ThinItalic.ttf",
+      "sha1": "38a86844c39f89e12ac92ad694ab2064fdc7d162"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Black.ttf",
+      "sha1": "6b4f29fb9680b72af3b4ed2891b62bb0189851be"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-BlackItalic.ttf",
+      "sha1": "4e5b5c13896f052e03b4b7e411639664035bd419"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Bold.ttf",
+      "sha1": "ec970d2b433ceed9d27326da6d66cc53704964f3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-BoldItalic.ttf",
+      "sha1": "44ea75776f033a27d5739130606dd3a99fac397d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-ExtraBold.ttf",
+      "sha1": "d2dbd45b043b2bd09346e2bfe89c2a7665610422"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "c0ab530496f97b2b437b56ef432b227ece7554ec"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-ExtraLight.ttf",
+      "sha1": "905094b214a95cb344f9807ed9d1e3777f9c481a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-ExtraLightItalic.ttf",
+      "sha1": "6f6ed5836e6b6bfe820636a88d59d6134a08beff"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Italic.ttf",
+      "sha1": "d98ff553b1d1a82897c482e8a7b9208d0060bb73"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Light.ttf",
+      "sha1": "67ef8ac138dc3f5da1202383c40ab3e6bdd25594"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-LightItalic.ttf",
+      "sha1": "ffb0710e134c4389f05d7f413f122444748144b7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Medium.ttf",
+      "sha1": "c57afc784acd858abf63f1cb67db3c2107cee379"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-MediumItalic.ttf",
+      "sha1": "59e73d8eb96b44143ca7ce88cf7bb12411e94ad6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Regular.ttf",
+      "sha1": "88427b8c4ece187b85b91c500fddc64de8c9f064"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-SemiBold.ttf",
+      "sha1": "4017cb3f23ea7c6665cf7e28570a5c837d599496"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-SemiBoldItalic.ttf",
+      "sha1": "cac82a89df18f529560a8e225143328f9e76e62c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-Thin.ttf",
+      "sha1": "525bf759d54e363249e1fc9fad9a5162b5522f54"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_Expanded-ThinItalic.ttf",
+      "sha1": "92dd5246a593fa16b2331f4d28aaf99c24917dcb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Black.ttf",
+      "sha1": "a98134104ea1a6292f3b2dcfc1d9bb2cb512f0a2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "2421b89edf2e8abf33b1a0cec87d0e8589533012"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Bold.ttf",
+      "sha1": "72c748382b4ca60c312e0b8a29f617e93db3beb1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "f8b4feb6b6d3debd7212e3cd67ca6248cf0af94e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "cb75fa63373e7b57acd8fe5229f65a282bb9fbd7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "df00043882e4e57592c879b1a6f78de269edecdb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "e9fbc477ea4068d328957fdd9a2926a11683c787"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "e0e98f8d629c4a4d14242876ff109cffdd4a71b1"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Italic.ttf",
+      "sha1": "28b264a1693d8ed6f1a433b97448b7dc95c3af8e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Light.ttf",
+      "sha1": "74cf81f375ed94a957cd6a6388f428cfb1d0e599"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-LightItalic.ttf",
+      "sha1": "9e85c4f9951566d1dfe2c6d34edfb09291b7741e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Medium.ttf",
+      "sha1": "40675f6a757feca0cafb553fb3efe12a79f7bf02"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "dfc21ad6014ee9cdc74a1650c5ceabfb2fbe48f5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Regular.ttf",
+      "sha1": "6fced7fae211276c30dc9101d18aa54cafe349c9"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-SemiBold.ttf",
+      "sha1": "f1d6610258c56de1df71a23c633bdba4cafe77b3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "846e1b4e46059f20e9cbf80f66a002dabd92a5e3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-Thin.ttf",
+      "sha1": "ebc443fe7c88f171d8239d0ce24271bd4fb7a8de"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "a653a018381c2b7345ef5204c0b6d228f45a98e8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Black.ttf",
+      "sha1": "258172db3d560b16a7637686b69b5441e025b30f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-BlackItalic.ttf",
+      "sha1": "a1bfb9d39f325c118d9de34f021c3a07191b9a1e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Bold.ttf",
+      "sha1": "325ead90f30470c64a7aca228bf568cce208887e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-BoldItalic.ttf",
+      "sha1": "f1f8f8a3fb824668a55e590022a33fc6f532bfc2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-ExtraBold.ttf",
+      "sha1": "90a4a0f3683dfc9bf48451ba0c5c15c92f079fc0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-ExtraBoldItalic.ttf",
+      "sha1": "1a7d11a8065d15135505ceea850a0c0753f0de97"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-ExtraLight.ttf",
+      "sha1": "5851784d32052dde10018719629bb0818ed8a397"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-ExtraLightItalic.ttf",
+      "sha1": "7b9dd0fc96eb0bfa0c97a2297f7648b77b183c0a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Italic.ttf",
+      "sha1": "8ec851a581adca13950b34a12e77a2cab6fa173a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Light.ttf",
+      "sha1": "80c901dee2beab6ac416184151c6bb5ad429b234"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-LightItalic.ttf",
+      "sha1": "3baa486105dbc742f663ff2881507b970bbf3e96"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Medium.ttf",
+      "sha1": "5a135cb899d93a6cd58975067f74afe0f3e6751f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-MediumItalic.ttf",
+      "sha1": "2c57edeff13c6d079ad03b9f033d3af7f7ab588d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Regular.ttf",
+      "sha1": "f8612c067cc00b20057551e7f6f29232251489c3"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-SemiBold.ttf",
+      "sha1": "535e0ad207438e51422faa28aa06f53369b7a538"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-SemiBoldItalic.ttf",
+      "sha1": "a0db6e1ae02322637d483b0cf60ee7cdbebdbcc5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-Thin.ttf",
+      "sha1": "070669ee1dac70e190ffd016a0ba3ac02d74ba8b"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_ExtraExpanded-ThinItalic.ttf",
+      "sha1": "9a55d59b3a0e930cb3da928c2dfdfee26f3130ef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Black.ttf",
+      "sha1": "88616961f24d2e0cb78efa05d3b2c703220a0f0e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-BlackItalic.ttf",
+      "sha1": "d5d6c575e853d24fc061c0b3e79ec887851360cb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Bold.ttf",
+      "sha1": "31459cd0c7eff886b19e10c3b0c38803abf2b022"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-BoldItalic.ttf",
+      "sha1": "6d0154761f6c3bd550436f4a1dbb94f222f9cf15"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-ExtraBold.ttf",
+      "sha1": "ecc79946a645e62149f82d4e713a3fe6bc2753a6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "efe03af9ba1417684c62cb63ec37743b91a5409a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-ExtraLight.ttf",
+      "sha1": "38a6d3466030c8704388ca594382618e8903f1d7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "096e855d017c5d055e2cd1cfa533827b9859d00a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Italic.ttf",
+      "sha1": "252a00e9fdca6d9c3ccaa78c5b56e4fa3b5fcfb7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Light.ttf",
+      "sha1": "14f0fa87a5dcea8d7cef2a3cb3867340fe254846"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-LightItalic.ttf",
+      "sha1": "58d44d7aa41e1c540715b90d1c20082c47142742"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Medium.ttf",
+      "sha1": "05691e9c1d9ebc899634f2f6510eb500067ac8f6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-MediumItalic.ttf",
+      "sha1": "cacd8473c2b058e18fd0f92796ac932df2eca703"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Regular.ttf",
+      "sha1": "c95958106707b2a7d503676719f1cb1a1f3b5e4a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-SemiBold.ttf",
+      "sha1": "231957d002a8175db1feb213c6cabcb1eabe9d63"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "a8777c2b50490468180da2a4062eefaf1d8c60ed"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-Thin.ttf",
+      "sha1": "c631451bc376d806d7bf2391b8937a68e655cc49"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiCondensed-ThinItalic.ttf",
+      "sha1": "c6260f396bac7d55019a2fa420993e98f2d1670f"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Black.ttf",
+      "sha1": "20815dd92fd184e07e97bdd62e45144a7f088dd5"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-BlackItalic.ttf",
+      "sha1": "6f5006421e201021422a3d97f0be2ab68865eb67"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Bold.ttf",
+      "sha1": "c8128eb946eb21680ccbfe932f0d7969b41425a4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-BoldItalic.ttf",
+      "sha1": "62fb73853a6033002aea8abda40dff46c75bdd9a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-ExtraBold.ttf",
+      "sha1": "a3ddb1e1cd7c8a0996e62d1f2613744a018908e8"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "023fdeba18c6cd3d6739ea5ba9352fdd4a039f34"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-ExtraLight.ttf",
+      "sha1": "4b7fab01dc8d1d1d572947f5fe901d0a39f39eb4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "2f998e4476102d9b07f404643b8758920cca67e7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Italic.ttf",
+      "sha1": "aaaee6a21468a79205056c7c769af5999afcf34e"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Light.ttf",
+      "sha1": "d7baa135b16d993cca54c5ee9741ecc70fdbba01"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-LightItalic.ttf",
+      "sha1": "057d64e506fb6ecc2eff8ad3a3bdf7c864c788a0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Medium.ttf",
+      "sha1": "e700e1d1d071f33b5ae3aa02a5479078e29552fa"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-MediumItalic.ttf",
+      "sha1": "40fa253b3881328a21772d1d8948923155d0db02"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Regular.ttf",
+      "sha1": "839a314666c41952323c290d163511a205d9945d"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-SemiBold.ttf",
+      "sha1": "2f0adf4156c5101e5accb6a32ddcbf98b69a87af"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "c93178d81c4ea2449303e493c610faa4914b3f5c"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-Thin.ttf",
+      "sha1": "e615dd1652ce7ac8d90210ebb9234427a1e6ee96"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_SemiExpanded-ThinItalic.ttf",
+      "sha1": "aa8349bf17f2291a3f72a0aa50ef9cac2dd6cb59"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Black.ttf",
+      "sha1": "3e3cae0c8392749232cfe15f1d8c94ff5c7cbffb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-BlackItalic.ttf",
+      "sha1": "fd6a4aac84fccb5d22e87606ea5549624919659a"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Bold.ttf",
+      "sha1": "124ac0aad71b03ed4864a579aaac4901cc064709"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-BoldItalic.ttf",
+      "sha1": "8120438d576051e8b5207cf588171b312c63b0ce"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-ExtraBold.ttf",
+      "sha1": "5e1fa299c87d87b3c55b99e5902dbdc15e9c4278"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "c03b82797f9dcf4a2e0681531c687a0c9c920e79"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-ExtraLight.ttf",
+      "sha1": "3f5d577acc3a82b8102f3e3c298d8d02e4de1ac0"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "815babaf10bc78ed512ec52d7d1d876aca8175a7"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Italic.ttf",
+      "sha1": "1375f35f5d66c9ec8304cd2739771072efd6cdd6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Light.ttf",
+      "sha1": "06a29e8d09c71d88abdd95f2566bafe8043329f6"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-LightItalic.ttf",
+      "sha1": "49c212352fc82b0f7fdba8735728658e0d9231ef"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Medium.ttf",
+      "sha1": "828f74d02bcab10e52de297d840ce0c08bb912e2"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-MediumItalic.ttf",
+      "sha1": "4a240dfbd27a111f837d557438da3b0ac0702038"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Regular.ttf",
+      "sha1": "e80573e4f60c965dae451bf10163e0901a4979eb"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-SemiBold.ttf",
+      "sha1": "c501fcdc2178a02366fa9003a73553284f2770a4"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "100b113c65c2a4e6573b3a079aa3fd3d19533f74"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-Thin.ttf",
+      "sha1": "71a6d428d1b209daf5b26beb3247a8ea41f9fb41"
+    },
+    {
+      "path": "src/assets/fonts/Roboto_Serif/static/RobotoSerif_UltraCondensed-ThinItalic.ttf",
+      "sha1": "f7c0d00a6739c624adb6f04c754bf7fe85d1337b"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import DetailsScreen from "./src/screens/DetailsScreen";
 
 const Stack = createNativeStackNavigator();
 

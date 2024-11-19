@@ -80,22 +80,27 @@ const App = () => {
     );
   };
 
-  const renderCard = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={{ uri: item.image }} style={styles.cardImage} />
-      <Text style={styles.cardTitle}>{item.title}</Text>
-      <View style={styles.cardDetails}>
-        <View style={styles.profile}>
-          <Text style={styles.profileText}>{item.username}</Text>
-        </View>
-
-        <View style={styles.starred}>
-          <Text style={styles.starredText}>{item.likes}</Text>
+  const renderCard = ({ item }) => {
+    if (!item.title || !item.username) {
+      console.error("Invalid card data:", item);
+      return null; // Skip invalid cards
+    }
+    return (
+      <View style={styles.card}>
+        <Image source={item.image} style={styles.cardImage} />
+        <Text style={styles.cardTitle}>{item.title}</Text>
+        <View style={styles.cardDetails}>
+          <View style={styles.profile}>
+            <Text style={styles.profileText}>{item.username}</Text>
+          </View>
+          <View style={styles.starred}>
+            <Text style={styles.starredText}>{item.likes}</Text>
+          </View>
         </View>
       </View>
-    </View>
-  );
-
+    );
+  };
+  
   return (
     <View style={styles.container}>
       {/* Header */}
