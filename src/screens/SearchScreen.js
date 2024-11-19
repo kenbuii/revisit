@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
-    marginBottom: 12,
+    marginBottom: 10,
     backgroundColor: "#F7F3F3",
     fontSize: 12,
     fontFamily: "RobotoMono-Regular",
@@ -163,18 +163,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   tag: {
-    backgroundColor: "#F5F5F5",
     paddingHorizontal: 15,
     borderRadius: 13,
     marginHorizontal: 5,
     height: 31,
     justifyContent: "center",
-    marginBottom: 15,
+    marginBottom: 10,
   },
   tagText: {
     fontSize: 11,
     color: "#000",
-    fontWeight: "600",
     fontFamily: "RobotoMono-Medium",
   },
   cardList: {
