@@ -125,9 +125,15 @@ const SearchScreen = () => {
         />
       )}
       <Navbar
-        onPlanetPress={() => {/* TODO: Add navigation logic */}}
-        onAddPress={() => {/* TODO: Add navigation logic */}}
-        onStarPress={() => {/* TODO: Add navigation logic */}}
+        onPlanetPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onAddPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onStarPress={() => {
+          /* TODO: Add navigation logic */
+        }}
       />
     </View>
   );
@@ -222,7 +228,6 @@ const styles = StyleSheet.create({
   //   width: 30,
   //   height: 50,
   //   resizeMode: "contain",
-  
 });
 
 export default SearchScreen;
