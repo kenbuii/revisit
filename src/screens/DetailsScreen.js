@@ -10,8 +10,14 @@ const DetailsScreen = ({ route }) => {
   const itineraryData = {
     username: 'emilyinsf',
     profileImage: require('../assets/media/emilyProfile.png'), 
-    images: [
+    images: [ //TODO: post A8 refactor to use a single index.js file for all images instead of importing each one individually
       require('../assets/media/sfGolden.jpg'),
+      require('../assets/media/sfCable.jpg'),
+      require('../assets/media/sfChina.jpg'),
+      require('../assets/media/sfHaight.jpg'),
+      require('../assets/media/sfLadies.jpg'),
+      require('../assets/media/sfNiners.jpg'),
+      require('../assets/media/sfPier.jpg'),
       // Add more images as needed
     ],
     days: [
@@ -203,22 +209,25 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     gap: 10,
+    //backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: 'rgba(247, 243, 243, 0.5)',
   },
   activityButton: {
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: '#959191',
-  },
+    },
   activityContent: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 12,
   },
   activityIcon: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
     marginRight: 10,
+    resizeMode: 'contain',
   },
   activityText: {
     fontSize: 14,
@@ -236,12 +245,6 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoMono-Bold',
     color: '#000000',
     textAlign: 'center',
-  },
-  bottomNavPlaceholder: {
-    height: 91,
-    borderTopWidth: 1,
-    borderColor: '#E0E0E0',
-    backgroundColor: '#F7F3F3',
   },
 });
 
