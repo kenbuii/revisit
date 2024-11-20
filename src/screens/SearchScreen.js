@@ -89,7 +89,13 @@ const SearchScreen = () => {
         <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
-          <Text style={styles.profileText}>{item.username}</Text>
+          <View style={styles.cardProfile}>
+            <Image
+              source={{ uri: item.profileImageUrl }}
+              style={styles.profileImage}
+            />
+            <Text style={styles.profileText}>{item.username}</Text>
+          </View>
           <Text style={styles.starredText}>{item.stars}</Text>
         </View>
       </TouchableOpacity>
@@ -209,6 +215,17 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     flexGrow: 1,
     alignItems: "flex-end",
+  },
+  cardProfile: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  profileImage: {
+    height: 10,
+    width: 10,
+    borderRadius: 10,
+    resizeMode: "cover",
+    marginRight: 3,
   },
   profileText: {
     fontSize: 6,
