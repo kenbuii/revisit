@@ -2,21 +2,16 @@ import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import * as icons from '../assets/icons';
 
-const Navbar = ({ navigation }) => {
+const Navbar = ({ onPlanetPress, onAddPress, onStarPress }) => {
   return (
     <View style={styles.bottomNav}>
-      {/* Navigate to Search Screen */}
-      <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+      <TouchableOpacity onPress={onPlanetPress}>
         <Image source={icons.planetOrange} style={styles.planetNavIcon} />
       </TouchableOpacity>
-
-      {/* Placeholder for Add Button */}
-      <TouchableOpacity onPress={() => console.log('Add button pressed')}>
+      <TouchableOpacity onPress={onAddPress}>
         <Image source={icons.add} style={styles.plusNavIcon} />
       </TouchableOpacity>
-
-      {/* Navigate to Details Screen */}
-      <TouchableOpacity onPress={() => navigation.navigate('Details', { fromNavbar: true })}>
+      <TouchableOpacity onPress={onStarPress}>
         <Image source={icons.navbarStar} style={styles.starNavIcon} />
       </TouchableOpacity>
     </View>
@@ -32,11 +27,13 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderColor: '#E0E0E0',
     backgroundColor: '#F7F3F3',
+    //backgroundColor: 'blue',
   },
   planetNavIcon: {
     width: 39,
     height: 39,
     resizeMode: 'contain',
+    //backgroundColor: 'red',
   },
   plusNavIcon: {
     width: 34,
@@ -51,4 +48,3 @@ const styles = StyleSheet.create({
 });
 
 export default Navbar;
-
