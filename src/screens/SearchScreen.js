@@ -29,18 +29,6 @@ const SearchScreen = () => {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch cards from Supabase
-  // const fetchCards = async () => {
-  //   setIsLoading(true);
-  //   const { data, error } = await supabase.from("cards").select("*");
-  //   console.log(data);
-  //   setCards(data);
-  //   setIsLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   fetchCards();
-  // }, []);
   const fetchCards = async () => {
     setIsLoading(true);
     const { data, error } = await supabase.from("cards").select("*");
@@ -59,9 +47,6 @@ const SearchScreen = () => {
   }, []);
 
   // Filter search results
-  // const filteredCards = cards.filter((card) =>
-  //   card.title.toLowerCase().includes(searchQuery.toLowerCase())
-  // );
   const handleSearch = () => {
     const results = cards.filter((card) =>
       card.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -156,7 +141,15 @@ const SearchScreen = () => {
       />
       <View style={styles.feed}>
         {isLoading ? (
-          <Text style={{ textAlign: "center", marginTop: 20 }}>Loading...</Text>
+          <Text
+            style={{
+              textAlign: "center",
+              marginTop: 1000,
+              fontFamily: "RobotoMono-Regular",
+            }}
+          >
+            loading...
+          </Text>
         ) : (
           <FlatList
             data={searchResults}
