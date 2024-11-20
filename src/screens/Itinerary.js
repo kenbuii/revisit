@@ -1,29 +1,48 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
 import Navbar from "../components/navbar";
+import * as icons from "../assets/icons";
 
 const Itinerary = ({ route, navigation }) => {
   // Extract parameters passed via navigation
   const { day, activities } = route.params || {}; // Ensure route.params is optional to avoid errors
 
+
+
+  
+  const renderActivityIcon = (type) => {
+    switch (type) {
+      case "location":
+        return <Image source={icons.location} style={styles.activityIcon} />;
+      case "food":
+        return <Image source={icons.food} style={styles.activityIcon} />;
+      case "shopping":
+        return <Image source={icons.shopping} style={styles.activityIcon} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.text}>Itinerary Screen</Text>
-        <Text style={styles.subtitle}>Plan your journey effectively!</Text>
-
-        {/* Display day-specific data */}
-        {day && activities && (
-          <View style={styles.dayDetails}>
-            <Text style={styles.dayText}>Day {day}</Text>
-            {activities.map((activity, index) => (
-              <View key={index} style={styles.activityItem}>
-                <Text style={styles.activityType}>{activity.type.toUpperCase()}</Text>
-                <Text style={styles.activityName}>{activity.name}</Text>
-              </View>
-            ))}
+        {/* Day Header */}
+        {day && (
+          <View style={styles.dayHeader}>
+            <Text style={styles.dayText}>day {day}</Text>
           </View>
         )}
+
+        {/* Activities */}
+        {activities &&
+          activities.map((activity, index) => (
+            <View key={index} style={styles.activityCard}>
+              <View style={styles.activityContent}>
+                {renderActivityIcon(activity.type)}
+                <Text style={styles.activityText}>{activity.name}</Text>
+              </View>
+            </View>
+          ))}
       </ScrollView>
 
       {/* Navbar */}
@@ -43,49 +62,45 @@ const styles = StyleSheet.create({
   },
   content: {
     flexGrow: 1,
-    justifyContent: "center",
-    alignItems: "center",
     paddingHorizontal: 20,
+    paddingTop: 20,
   },
-  text: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#000000",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#6D6D6D",
+  dayHeader: {
     marginBottom: 20,
-    textAlign: "center",
-  },
-  dayDetails: {
-    marginTop: 20,
-    alignItems: "center",
   },
   dayText: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 24,
+    fontFamily: "RobotoMono-Bold",
     color: "#000000",
-    marginBottom: 10,
+    textTransform: "lowercase",
+    textAlign: "left",
   },
-  activityItem: {
-    backgroundColor: "#F7F3F3",
-    padding: 10,
-    marginVertical: 5,
+  activityCard: {
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
     borderRadius: 10,
-    width: "90%",
+    borderWidth: 1.5,
+    borderColor: "#959191",
+    marginBottom: 10,
     alignItems: "center",
   },
-  activityType: {
-    fontSize: 14,
-    color: "#959191",
-    fontWeight: "bold",
+  activityContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 15,
   },
-  activityName: {
+  activityIcon: {
+    width: 25,
+    height: 25,
+    marginRight: 10,
+    resizeMode: "contain",
+  },
+  activityText: {
     fontSize: 16,
+    fontFamily: "RobotoMono-Regular",
     color: "#000000",
   },
+  
 });
 
 export default Itinerary;
