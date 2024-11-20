@@ -86,13 +86,6 @@ const SearchScreen = () => {
           })
         }
       >
-        <Image source={{ url: item.imageUrl }} style={styles.cardImage} />
-        <View style={styles.cardText}>
-          <Text style={styles.cardTitle}>{item.title}</Text>
-          <View style={styles.cardDetails}>
-            <Text style={styles.profileText}>{item.username}</Text>
-            <Text style={styles.starredText}>{item.stars}</Text>
-          </View>
         <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
