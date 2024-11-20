@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
+import Itinerary from "./src/screens/Itinerary"; // Ensure the path is correct
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
@@ -45,6 +46,18 @@ const App = () => {
             headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
             headerTintColor: "black", // Set Back Button color
             headerTitleStyle: { fontFamily: "RobotoMono-Medium", fontSize: 16 }, // Optional header text styling
+          }}
+        />
+
+        {/* Itinerary Screen */}
+        <Stack.Screen
+          name="Itinerary"
+          component={Itinerary}
+          options={{
+            title: "Itinerary",
+            headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
+            headerTintColor: "black", // Set Back Button color
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
           }}
         />
       </Stack.Navigator>

@@ -1,40 +1,43 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 import * as icons from "../assets/icons";
 import Navbar from "../components/navbar";
 
 const DetailsScreen = ({ route }) => {
+  const navigation = useNavigation(); // Initialize navigation
+
   // Extract the data passed via navigation
   const { title, image, username, likes } = route.params;
 
   const itineraryData = {
-    username: 'emilyinsf',
-    profileImage: require('../assets/media/emilyProfile.png'), 
+    username: "emilyinsf",
+    profileImage: require("../assets/media/emilyProfile.png"),
     images: [
-      require('../assets/media/sfGolden.jpg'),
+      require("../assets/media/sfGolden.jpg"),
       // Add more images as needed
     ],
     days: [
       {
         day: 1,
         activities: [
-          { type: 'location', name: "Fisherman's Wharf" },
-          { type: 'food', name: 'Pier Market Seafood' },
-          { type: 'shopping', name: 'V Boutique' },
+          { type: "location", name: "Fisherman's Wharf" },
+          { type: "food", name: "Pier Market Seafood" },
+          { type: "shopping", name: "V Boutique" },
         ],
       },
       {
         day: 2,
         activities: [
-          { type: 'location', name: 'Golden Gate Bridge' },
-          { type: 'location', name: 'Sausalito' },
-          { type: 'food', name: 'Barrel House Tavern' },
+          { type: "location", name: "Golden Gate Bridge" },
+          { type: "location", name: "Sausalito" },
+          { type: "food", name: "Barrel House Tavern" },
         ],
       },
       {
         day: 3,
         activities: [
-          { type: 'location', name: 'MoMA' },
+          { type: "location", name: "MoMA" },
         ],
       },
     ],
@@ -42,14 +45,15 @@ const DetailsScreen = ({ route }) => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const renderDotIndicators = () => ( // for image carousel
+  const renderDotIndicators = () => (
+    // For image carousel
     <View style={styles.dotContainer}>
       {itineraryData.images.map((_, index) => (
         <View
           key={index}
           style={[
             styles.dot,
-            { backgroundColor: index === currentImageIndex ? '#FFFFFF' : 'rgba(255, 255, 255, 0.5)' }
+            { backgroundColor: index === currentImageIndex ? "#FFFFFF" : "rgba(255, 255, 255, 0.5)" },
           ]}
         />
       ))}
@@ -58,11 +62,11 @@ const DetailsScreen = ({ route }) => {
 
   const renderActivityIcon = (type) => {
     switch (type) {
-      case 'location':
+      case "location":
         return <Image source={icons.location} style={styles.activityIcon} />;
-      case 'food':
+      case "food":
         return <Image source={icons.food} style={styles.activityIcon} />;
-      case 'shopping':
+      case "shopping":
         return <Image source={icons.shopping} style={styles.activityIcon} />;
       default:
         return null;
@@ -95,28 +99,42 @@ const DetailsScreen = ({ route }) => {
         {/* Days and Activities */}
         {itineraryData.days.map((day, index) => (
           <View key={index} style={styles.dayContainer}>
-            <View style={styles.dayWrapper}>
+            <TouchableOpacity
+              style={styles.dayWrapper}
+              onPress={() =>
+                navigation.navigate("Itinerary", {
+                  day: day.day,
+                  activities: day.activities,
+                })
+              } // Navigate to Itinerary.js with day-specific data
+            >
               <View style={styles.dayNumberContainer}>
                 <Text style={styles.dayText}>day {day.day}</Text>
               </View>
               <View style={styles.activitiesContainer}>
                 {day.activities.map((activity, actIndex) => (
-                  <TouchableOpacity key={actIndex} style={styles.activityButton}>
+                  <View key={actIndex} style={styles.activityButton}>
                     <View style={styles.activityContent}>
                       {renderActivityIcon(activity.type)}
                       <Text style={styles.activityText}>{activity.name}</Text>
                     </View>
-                  </TouchableOpacity>
+                  </View>
                 ))}
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
         ))}
       </ScrollView>
-      <Navbar 
-        onPlanetPress={() => {/* TODO: Add navigation logic */}}
-        onAddPress={() => {/* TODO: Add navigation logic */}}
-        onStarPress={() => {/* TODO: Add navigation logic */}}
+      <Navbar
+        onPlanetPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onAddPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onStarPress={() => {
+          /* TODO: Add navigation logic */
+        }}
       />
     </View>
   );
@@ -125,11 +143,11 @@ const DetailsScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingTop: 60,
     paddingHorizontal: 20,
     paddingBottom: 20,
@@ -140,8 +158,8 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   profileImage: {
     width: 24,
@@ -151,23 +169,23 @@ const styles = StyleSheet.create({
   },
   username: {
     fontSize: 14,
-    fontFamily: 'RobotoMono-Regular',
+    fontFamily: "RobotoMono-Regular",
   },
   imageContainer: {
-    width: Dimensions.get('window').width - 40,
+    width: Dimensions.get("window").width - 40,
     height: 240,
-    position: 'relative',
+    position: "relative",
     marginHorizontal: 20,
     marginVertical: 10,
     borderRadius: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   mainImage: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
   starButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 20,
     right: 20,
   },
@@ -176,10 +194,10 @@ const styles = StyleSheet.create({
     height: 24,
   },
   dotContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 20,
-    flexDirection: 'row',
-    alignSelf: 'center',
+    flexDirection: "row",
+    alignSelf: "center",
   },
   dot: {
     width: 6,
@@ -192,12 +210,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   dayWrapper: {
-    flexDirection: 'row',
-    backgroundColor: 'rgba(247, 243, 243, 0.5)',
+    flexDirection: "row",
+    backgroundColor: "rgba(247, 243, 243, 0.5)",
     borderRadius: 20,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderWidth: 1,
-    borderColor: '#959191',
+    borderColor: "#959191",
   },
   activitiesContainer: {
     flex: 1,
@@ -205,14 +223,14 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   activityButton: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#959191',
+    borderColor: "#959191",
   },
   activityContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     padding: 12,
   },
   activityIcon: {
@@ -222,29 +240,27 @@ const styles = StyleSheet.create({
   },
   activityText: {
     fontSize: 14,
-    fontFamily: 'RobotoMono-Regular',
-    color: '#000000',
+    fontFamily: "RobotoMono-Regular",
+    color: "#000000",
   },
   dayNumberContainer: {
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
     padding: 15,
-    backgroundColor: '#F7F3F3',
+    backgroundColor: "#F7F3F3",
     minWidth: 80,
   },
   dayText: {
     fontSize: 22,
-    fontFamily: 'RobotoMono-Bold',
-    color: '#000000',
-    textAlign: 'center',
+    fontFamily: "RobotoMono-Bold",
+    color: "#000000",
+    textAlign: "center",
   },
   bottomNavPlaceholder: {
     height: 91,
     borderTopWidth: 1,
-    borderColor: '#E0E0E0',
-    backgroundColor: '#F7F3F3',
+    borderColor: "#E0E0E0",
+    backgroundColor: "#F7F3F3",
   },
 });
 
 export default DetailsScreen;
-
-

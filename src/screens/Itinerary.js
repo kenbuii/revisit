@@ -1,24 +1,27 @@
 import React from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    TextInput,
-    FlatList,
-    Image,
-    Dimensions,
-    TouchableOpacity,
-  } from "react-native";
-
-import * as icons from "../assets/icons";
-import themes from "../assets/themes";
-
-
-
+import { View, Text, StyleSheet } from "react-native";
 
 const Itinerary = () => {
-  //TODO: add itinerary screen
-  return <View></View>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello World</Text>
+    </View>
+  );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFFFFF", // Optional: set a background color
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#000000", // Optional: set a text color
+  },
+});
+
 export default Itinerary;
+

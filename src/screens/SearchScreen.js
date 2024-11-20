@@ -12,9 +12,7 @@ import {
 
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
-import { TouchableWithoutFeedback } from "react-native";
 import { supabase } from "../services/supabaseClient";
-//import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 import Navbar from "../components/navbar";
 import { useNavigation } from "@react-navigation/native";
 
@@ -30,8 +28,12 @@ const SearchScreen = () => {
   const fetchCards = async () => {
     setIsLoading(true);
     const { data, error } = await supabase.from("cards").select("*");
-    console.log(data);
-    setCards(data);
+    if (error) {
+      console.error("Error fetching cards:", error);
+      setIsLoading(false);
+      return;
+    }
+    setCards(data || []);
     setIsLoading(false);
   };
 
@@ -86,7 +88,7 @@ const SearchScreen = () => {
           })
         }
       >
-        <Image source={{ url: item.imageUrl }} style={styles.cardImage} />
+        <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
           <Text style={styles.profileText}>{item.username}</Text>
@@ -125,15 +127,7 @@ const SearchScreen = () => {
         />
       )}
       <Navbar
-        onPlanetPress={() => {
-          /* TODO: Add navigation logic */
-        }}
-        onAddPress={() => {
-          /* TODO: Add navigation logic */
-        }}
-        onStarPress={() => {
-          /* TODO: Add navigation logic */
-        }}
+        navigation={navigation} // Pass navigation directly
       />
     </View>
   );
@@ -214,20 +208,6 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
   },
-  // REDUNDANT: hardcoded bottom nav/icons -- can remove during post-A8 refactor
-  // bottomNav: {
-  //   flexDirection: "row",
-  //   justifyContent: "space-around",
-  //   alignItems: "center",
-  //   paddingVertical: 20,
-  //   borderTopWidth: 1,
-  //   borderColor: "#E0E0E0",
-  //   backgroundColor: "#F7F3F3",
-  // },
-  // navIconImage: {
-  //   width: 30,
-  //   height: 50,
-  //   resizeMode: "contain",
 });
 
 export default SearchScreen;
