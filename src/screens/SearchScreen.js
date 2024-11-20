@@ -71,7 +71,7 @@ const SearchScreen = () => {
         <View
           style={[
             styles.tag,
-            isSelected && { backgroundColor: "#E03616" }, // Change background if selected
+            isSelected && { backgroundColor: "#E03616", borderColor: "white" }, // Change background if selected
           ]}
         >
           <Text
@@ -202,6 +202,8 @@ const styles = StyleSheet.create({
   tag: {
     paddingHorizontal: 15,
     borderRadius: 13,
+    borderWidth: 1,
+    borderColor: "rgba(0, 0, 0, 0.4)",
     marginHorizontal: 5,
     height: 31,
     justifyContent: "center",
@@ -214,6 +216,7 @@ const styles = StyleSheet.create({
   },
   feed: {
     height: 600,
+    paddingBottom: 2,
   },
   cardList: {
     flexGrow: 1,
@@ -247,8 +250,8 @@ const styles = StyleSheet.create({
   cardDetails: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 8,
-    paddingBottom: 6,
+    paddingHorizontal: 6,
+    paddingBottom: 4,
     flexGrow: 1,
     alignItems: "flex-end",
   },
