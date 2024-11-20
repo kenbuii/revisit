@@ -15,6 +15,12 @@ const DetailsScreen = ({ route }) => {
     profileImage: require("../assets/media/emilyProfile.png"),
     images: [
       require("../assets/media/sfGolden.jpg"),
+      require('../assets/media/sfCable.jpg'),
+      require('../assets/media/sfChina.jpg'),
+      require('../assets/media/sfHaight.jpg'),
+      require('../assets/media/sfLadies.jpg'),
+      require('../assets/media/sfNiners.jpg'),
+      require('../assets/media/sfPier.jpg'),
       // Add more images as needed
     ],
     days: [
@@ -221,11 +227,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     gap: 10,
+    backgroundColor: 'rgba(247, 243, 243, 0.5)',
   },
   activityButton: {
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: "#959191",
   },
   activityContent: {
@@ -234,9 +241,10 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   activityIcon: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
     marginRight: 10,
+    resizeMode: 'contain',
   },
   activityText: {
     fontSize: 14,
