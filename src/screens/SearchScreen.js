@@ -22,22 +22,52 @@ const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
 const SearchScreen = () => {
   const navigation = useNavigation();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   const [selectedTags, setSelectedTags] = useState([]);
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Fetch cards from Supabase
+  // const fetchCards = async () => {
+  //   setIsLoading(true);
+  //   const { data, error } = await supabase.from("cards").select("*");
+  //   console.log(data);
+  //   setCards(data);
+  //   setIsLoading(false);
+  // };
+
+  // useEffect(() => {
+  //   fetchCards();
+  // }, []);
   const fetchCards = async () => {
     setIsLoading(true);
     const { data, error } = await supabase.from("cards").select("*");
-    console.log(data);
-    setCards(data);
+
+    if (error) {
+      console.error("Error fetching cards:", error.message);
+    } else {
+      setCards(data);
+      setSearchResults(data); // Initialize searchResults with all cards
+    }
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchCards();
   }, []);
+
+  // Filter search results
+  // const filteredCards = cards.filter((card) =>
+  //   card.title.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+  const handleSearch = () => {
+    const results = cards.filter((card) =>
+      card.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(results);
+  };
 
   // Toggle tag selection
   const toggleTag = (tag) => {
@@ -109,7 +139,12 @@ const SearchScreen = () => {
         style={styles.searchBar}
         placeholder="where would you like to visit?"
         placeholderTextColor="rgba(0, 0, 0, 0.4)"
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+        onSubmitEditing={handleSearch} // Triggers search when Enter is pressed
+        returnKeyType="search" // Shows a search button on the keyboard
       />
+
       {/* Render tags */}
       <FlatList
         data={tags}
@@ -119,17 +154,20 @@ const SearchScreen = () => {
         contentContainerStyle={styles.tagList}
         showsHorizontalScrollIndicator={false}
       />
-      {isLoading ? (
-        <Text style={{ textAlign: "center", marginTop: 20 }}>Loading...</Text>
-      ) : (
-        <FlatList
-          data={cards}
-          renderItem={renderCard}
-          keyExtractor={(item) => item.id.toString()}
-          numColumns={2}
-          contentContainerStyle={styles.cardList}
-        />
-      )}
+      <View style={styles.feed}>
+        {isLoading ? (
+          <Text style={{ textAlign: "center", marginTop: 20 }}>Loading...</Text>
+        ) : (
+          <FlatList
+            data={searchResults}
+            renderItem={renderCard}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={2}
+            contentContainerStyle={styles.cardList}
+            key={`searchResults-${searchResults.length}`} // Add a unique key
+          />
+        )}
+      </View>
       <Navbar
         onPlanetPress={() => {
           /* TODO: Add navigation logic */
@@ -148,11 +186,12 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "white",
     paddingTop: 60,
   },
   searchBar: {
     height: 35,
+    width: "92%",
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
@@ -165,6 +204,7 @@ const styles = StyleSheet.create({
   tagList: {
     paddingHorizontal: 10,
     marginBottom: 10,
+    height: 30,
   },
   tag: {
     paddingHorizontal: 15,
@@ -179,12 +219,16 @@ const styles = StyleSheet.create({
     color: "#000",
     fontFamily: "RobotoMono-Medium",
   },
+  feed: {
+    height: 600,
+  },
   cardList: {
+    flexGrow: 1,
     paddingHorizontal: 10,
     paddingBottom: 10,
   },
   card: {
-    flex: 1,
+    width: 180,
     margin: 5,
     borderRadius: 10,
     backgroundColor: "#F7F3F3",
@@ -194,8 +238,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    height: 180,
-    // height: Dimensions.get("window").width / 2 - 20,
+    height: 170,
     width: "100%",
     resizeMode: "cover",
   },
