@@ -3,7 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
-import Itinerary from "./src/screens/Itinerary"; // Ensure the path is correct
+import Itinerary from "./src/screens/Itinerary";
+import ActivityDetail from "./src/screens/ActivityDetail"; // Corrected path for ActivityDetail
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
@@ -60,10 +61,21 @@ const App = () => {
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
           }}
         />
+
+        {/* ActivityDetail Screen */}
+        <Stack.Screen
+          name="ActivityDetail"
+          component={ActivityDetail}
+          options={{
+            title: "Activity Detail",
+            headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
+            headerTintColor: "black", // Set Back Button color
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-

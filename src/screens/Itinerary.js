@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Navbar from "../components/navbar";
 import * as icons from "../assets/icons";
 
@@ -30,12 +37,18 @@ const Itinerary = ({ route, navigation }) => {
         )}
         {activities &&
           activities.map((activity, index) => (
-            <View key={index} style={styles.activityCard}>
+            <TouchableOpacity
+              key={index}
+              style={styles.activityCard}
+              onPress={() =>
+                navigation.navigate("ActivityDetail", { name: activity.name })
+              }
+            >
               <View style={styles.activityContent}>
                 {renderActivityIcon(activity.type)}
                 <Text style={styles.activityText}>{activity.name}</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
 
         {/* Main Post Section */}
