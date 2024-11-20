@@ -11,16 +11,10 @@ const DetailsScreen = ({ route }) => {
   const { title, image, username, likes } = route.params;
 
   const itineraryData = {
-    username: 'emilyinsf',
-    profileImage: require('../assets/media/emilyProfile.png'), 
-    images: [ //TODO: post A8 refactor to use a single index.js file for all images instead of importing each one individually
-      require('../assets/media/sfGolden.jpg'),
-      require('../assets/media/sfCable.jpg'),
-      require('../assets/media/sfChina.jpg'),
-      require('../assets/media/sfHaight.jpg'),
-      require('../assets/media/sfLadies.jpg'),
-      require('../assets/media/sfNiners.jpg'),
-      require('../assets/media/sfPier.jpg'),
+    username: "emilyinsf",
+    profileImage: require("../assets/media/emilyProfile.png"),
+    images: [
+      require("../assets/media/sfGolden.jpg"),
       // Add more images as needed
     ],
     days: [
@@ -227,25 +221,22 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     gap: 10,
-    //backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    backgroundColor: 'rgba(247, 243, 243, 0.5)',
   },
   activityButton: {
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
-    borderWidth: 1.5,
-    borderColor: '#959191',
-    },
+    borderWidth: 1,
+    borderColor: "#959191",
+  },
   activityContent: {
     flexDirection: "row",
     alignItems: "center",
     padding: 12,
   },
   activityIcon: {
-    width: 25,
-    height: 25,
+    width: 20,
+    height: 20,
     marginRight: 10,
-    resizeMode: 'contain',
   },
   activityText: {
     fontSize: 14,
