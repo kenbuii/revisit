@@ -12,7 +12,9 @@ import {
 
 import * as icons from "../assets/icons";
 import themes from "../assets/themes";
+import { TouchableWithoutFeedback } from "react-native";
 import { supabase } from "../services/supabaseClient";
+//import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 import Navbar from "../components/navbar";
 import { useNavigation } from "@react-navigation/native";
 
@@ -28,12 +30,8 @@ const SearchScreen = () => {
   const fetchCards = async () => {
     setIsLoading(true);
     const { data, error } = await supabase.from("cards").select("*");
-    if (error) {
-      console.error("Error fetching cards:", error);
-      setIsLoading(false);
-      return;
-    }
-    setCards(data || []);
+    console.log(data);
+    setCards(data);
     setIsLoading(false);
   };
 
@@ -88,6 +86,13 @@ const SearchScreen = () => {
           })
         }
       >
+        <Image source={{ url: item.imageUrl }} style={styles.cardImage} />
+        <View style={styles.cardText}>
+          <Text style={styles.cardTitle}>{item.title}</Text>
+          <View style={styles.cardDetails}>
+            <Text style={styles.profileText}>{item.username}</Text>
+            <Text style={styles.starredText}>{item.stars}</Text>
+          </View>
         <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
@@ -127,7 +132,15 @@ const SearchScreen = () => {
         />
       )}
       <Navbar
-        navigation={navigation} // Pass navigation directly
+        onPlanetPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onAddPress={() => {
+          /* TODO: Add navigation logic */
+        }}
+        onStarPress={() => {
+          /* TODO: Add navigation logic */
+        }}
       />
     </View>
   );
@@ -144,7 +157,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
-    marginBottom: 12,
+    marginBottom: 10,
     backgroundColor: "#F7F3F3",
     fontSize: 12,
     fontFamily: "RobotoMono-Regular",
@@ -155,22 +168,21 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   tag: {
-    backgroundColor: "#F5F5F5",
     paddingHorizontal: 15,
     borderRadius: 13,
     marginHorizontal: 5,
     height: 31,
     justifyContent: "center",
-    marginBottom: 15,
+    marginBottom: 10,
   },
   tagText: {
     fontSize: 11,
     color: "#000",
-    fontWeight: "600",
     fontFamily: "RobotoMono-Medium",
   },
   cardList: {
     paddingHorizontal: 10,
+    paddingBottom: 10,
   },
   card: {
     flex: 1,
@@ -183,31 +195,52 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    height: Dimensions.get("window").width / 2 - 20,
+    height: 180,
+    // height: Dimensions.get("window").width / 2 - 20,
     width: "100%",
     resizeMode: "cover",
   },
+  cardText: {
+    height: 50,
+  },
   cardTitle: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: "RobotoSerif-Bold",
-    margin: 8,
+    marginHorizontal: 8,
+    marginVertical: 4,
   },
   cardDetails: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 8,
-    paddingBottom: 8,
+    paddingBottom: 6,
+    flexGrow: 1,
+    alignItems: "flex-end",
   },
   profileText: {
-    fontSize: 8,
+    fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "black",
   },
   starredText: {
-    fontSize: 8,
+    fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
   },
+  // REDUNDANT: hardcoded bottom nav/icons -- can remove during post-A8 refactor
+  // bottomNav: {
+  //   flexDirection: "row",
+  //   justifyContent: "space-around",
+  //   alignItems: "center",
+  //   paddingVertical: 20,
+  //   borderTopWidth: 1,
+  //   borderColor: "#E0E0E0",
+  //   backgroundColor: "#F7F3F3",
+  // },
+  // navIconImage: {
+  //   width: 30,
+  //   height: 50,
+  //   resizeMode: "contain",
 });
 
 export default SearchScreen;
