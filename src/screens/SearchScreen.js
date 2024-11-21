@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 
 import * as icons from "../assets/icons";
@@ -27,7 +28,9 @@ const SearchScreen = () => {
 
   const [selectedTags, setSelectedTags] = useState([]);
   const [cards, setCards] = useState([]);
+  const [visibleCardsCount, setVisibleCardsCount] = useState(14);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   const fetchCards = async () => {
     setIsLoading(true);
@@ -52,6 +55,7 @@ const SearchScreen = () => {
       card.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(results);
+    setVisibleCardsCount(14); // Reset visible cards to 14 on new search
   };
 
   // Toggle tag selection
@@ -117,6 +121,17 @@ const SearchScreen = () => {
     );
   };
 
+  // Handle load more cards when user scrolls
+  const handleLoadMore = async () => {
+    if (loadingMore || visibleCardsCount >= searchResults.length) return; // Stop if already loading or all cards are loaded
+    setLoadingMore(true); // Start loading more
+
+    // Simulate loading delay with setTimeout
+    setTimeout(() => {
+      setVisibleCardsCount(visibleCardsCount + 14); // Load next 14 cards
+      setLoadingMore(false); // End loading more
+    }, 1000); // Delay for 1 second (you can adjust the delay)
+  };
   return (
     <View style={styles.container}>
       <Text style={themes.mainLogo}>revisit</Text>
@@ -152,11 +167,23 @@ const SearchScreen = () => {
           </Text>
         ) : (
           <FlatList
-            data={searchResults}
+            data={searchResults.slice(0, visibleCardsCount)} // Show only visible cards
             renderItem={renderCard}
             keyExtractor={(item) => item.id.toString()}
             numColumns={2}
             contentContainerStyle={styles.cardList}
+            onEndReached={handleLoadMore} // Trigger load more when scrolled to bottom
+            onEndReachedThreshold={0.5} // Load more when scrolled halfway
+            ListFooterComponent={
+              loadingMore ? (
+                <View style={styles.loadingFooter}>
+                  <ActivityIndicator
+                    size="smaller"
+                    color="rgba(0, 0, 0, 0.3)"
+                  />
+                </View>
+              ) : null
+            }
             key={`searchResults-${searchResults.length}`} // Add a unique key
           />
         )}
@@ -203,7 +230,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 13,
     borderWidth: 1,
-    borderColor: "rgba(0, 0, 0, 0.4)",
+    borderColor: "rgba(0, 0, 0, 0.3)",
     marginHorizontal: 5,
     height: 31,
     justifyContent: "center",
@@ -234,7 +261,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    height: 170,
+    height: 180,
     width: "100%",
     resizeMode: "cover",
   },
@@ -275,6 +302,11 @@ const styles = StyleSheet.create({
     fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
+  },
+  loadingFooter: {
+    alignItems: "center",
+    paddingTop: 20,
+    paddingBottom: 15,
   },
   // REDUNDANT: hardcoded bottom nav/icons -- can remove during post-A8 refactor
   // bottomNav: {
