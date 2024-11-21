@@ -22,6 +22,8 @@ import { useNavigation } from "@react-navigation/native";
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
 const SearchScreen = () => {
+  console.log("hello");
+
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);

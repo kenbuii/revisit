@@ -12,7 +12,6 @@ import * as icons from "../assets/icons";
 
 const Itinerary = ({ route, navigation }) => {
   const { day, activities } = route.params || {};
-  
 
   const renderActivityIcon = (type) => {
     switch (type) {
