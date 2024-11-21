@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoMono-Medium",
   },
   feed: {
-    height: 600,
+    height: 619,
     paddingBottom: 2,
   },
   cardList: {

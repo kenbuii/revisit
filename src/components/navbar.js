@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import * as icons from '../assets/icons';
+import React from "react";
+import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
+import * as icons from "../assets/icons";
 
 const Navbar = ({ onPlanetPress, onAddPress, onStarPress }) => {
   return (
@@ -20,30 +20,27 @@ const Navbar = ({ onPlanetPress, onAddPress, onStarPress }) => {
 
 const styles = StyleSheet.create({
   bottomNav: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    paddingVertical: 20,
-    borderTopWidth: 1,
-    borderColor: '#E0E0E0',
-    backgroundColor: '#F7F3F3',
-    //backgroundColor: 'blue',
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    paddingTop: 7,
+    paddingBottom: 25,
+    backgroundColor: "#F7F3F3",
   },
   planetNavIcon: {
-    width: 39,
-    height: 39,
-    resizeMode: 'contain',
-    //backgroundColor: 'red',
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
   },
   plusNavIcon: {
-    width: 34,
-    height: 34,
-    resizeMode: 'contain',
+    width: 29,
+    height: 29,
+    resizeMode: "contain",
   },
   starNavIcon: {
-    width: 37,
-    height: 37,
-    resizeMode: 'contain',
+    width: 28,
+    height: 28,
+    resizeMode: "contain",
   },
 });
 
