@@ -32,6 +32,56 @@ const SearchScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
 
+  const [toggledStars, setToggledStars] = useState({});
+  const [updatedStars, setUpdatedStars] = useState({});
+
+  // Toggle Star Function
+  const toggleStar = async (id, currentStars) => {
+    const isCurrentlyToggled = toggledStars[id]; // Get the current toggled state of the star
+
+    // Determine the new star count by using the updatedStars value
+    const updatedStarCount = updatedStars[id] || currentStars; // If updatedStars is undefined, fallback to currentStars
+    const newStarsCount = isCurrentlyToggled
+      ? updatedStarCount - 1 // If already toggled, subtract from the updated count
+      : updatedStarCount + 1; // If not toggled, add to the updated count
+
+    setToggledStars((prevState) => ({
+      ...prevState,
+      [id]: !isCurrentlyToggled, // Toggle the star state
+    }));
+
+    try {
+      const { error } = await supabase
+        .from("cards")
+        .update({ stars: newStarsCount })
+        .eq("id", id);
+
+      if (error) {
+        console.error("Failed to update stars in Supabase:", error.message);
+
+        // Revert the state if update fails
+        setToggledStars((prevState) => ({
+          ...prevState,
+          [id]: isCurrentlyToggled, // Revert the star toggle
+        }));
+      } else {
+        // If the update is successful, update the local state with the new count
+        setUpdatedStars((prevState) => ({
+          ...prevState,
+          [id]: newStarsCount,
+        }));
+      }
+    } catch (err) {
+      console.error("Error updating stars:", err);
+
+      // Revert the state if there's an error
+      setToggledStars((prevState) => ({
+        ...prevState,
+        [id]: isCurrentlyToggled, // Revert the star toggle
+      }));
+    }
+  };
+
   const fetchCards = async () => {
     setIsLoading(true);
     const { data, error } = await supabase.from("cards").select("*");
@@ -93,11 +143,15 @@ const SearchScreen = () => {
 
   // Render card component
   const renderCard = ({ item }) => {
+    const currentStars =
+      updatedStars[item.id] !== undefined ? updatedStars[item.id] : item.stars;
+
     return (
       <TouchableOpacity
         style={styles.card}
         onPress={() =>
           navigation.navigate("Details", {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             username: item.username,
@@ -115,7 +169,23 @@ const SearchScreen = () => {
             />
             <Text style={styles.profileText}>{item.username}</Text>
           </View>
-          <Text style={styles.starredText}>{item.stars}</Text>
+          <View style={styles.star}>
+            <TouchableOpacity onPress={() => toggleStar(item.id, item.stars)}>
+              <Image
+                source={
+                  toggledStars[item.id]
+                    ? require("../assets/icons/toggledStar.png")
+                    : require("../assets/icons/star.png")
+                }
+                style={styles.starIcon}
+              />
+            </TouchableOpacity>
+            <Text style={styles.starredText}>
+              {updatedStars[item.id] !== undefined
+                ? updatedStars[item.id]
+                : item.stars}
+            </Text>
+          </View>
         </View>
       </TouchableOpacity>
     );
@@ -135,15 +205,29 @@ const SearchScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={themes.mainLogo}>revisit</Text>
-      <TextInput
-        style={styles.searchBar}
-        placeholder="where would you like to visit?"
-        placeholderTextColor="rgba(0, 0, 0, 0.4)"
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-        onSubmitEditing={handleSearch} // Triggers search when Enter is pressed
-        returnKeyType="search" // Shows a search button on the keyboard
-      />
+      <View style={styles.searchBar}>
+        <TouchableOpacity onPress={handleSearch}>
+          <Image
+            source={require("../assets/icons/search.png")}
+            style={styles.searchIcon}
+          />
+        </TouchableOpacity>
+        <TextInput
+          style={styles.searchText}
+          placeholder="where would you like to visit?"
+          placeholderTextColor="rgba(0, 0, 0, 0.4)"
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          onSubmitEditing={handleSearch} // Triggers search when Enter is pressed
+          returnKeyType="search" // Shows a search button on the keyboard
+        />
+        <TouchableOpacity onPress={() => setSearchQuery("")}>
+          <Image
+            source={require("../assets/icons/clear.png")}
+            style={styles.clearIcon}
+          />
+        </TouchableOpacity>
+      </View>
 
       {/* Render tags */}
       <View style={styles.tags}>
@@ -214,6 +298,9 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   searchBar: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
     height: 35,
     width: "91.5%",
     borderRadius: 12,
@@ -221,9 +308,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 10,
     backgroundColor: "#F7F3F3",
+  },
+  searchIcon: {
+    width: 15,
+    resizeMode: "contain",
+    marginRight: 8,
+  },
+  clearIcon: {
+    width: 18,
+    resizeMode: "contain",
+    marginLeft: 8,
+  },
+  searchText: {
     fontSize: 11,
     fontFamily: "RobotoMono-Regular",
     color: "black",
+    flex: 1,
   },
   tags: {
     width: "91%",
@@ -248,6 +348,7 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoMono-Medium",
   },
   feed: {
+    width: "100%",
     height: 619,
     paddingBottom: 2,
   },
@@ -257,7 +358,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   card: {
-    width: 195,
+    width: 180,
     margin: 5,
     borderRadius: 10,
     backgroundColor: "#F7F3F3",
@@ -304,10 +405,21 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoSerif-Regular",
     color: "black",
   },
+  star: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  starIcon: {
+    width: 8.5,
+    height: 8.5,
+    resizeMode: "contain",
+    marginRight: 3,
+  },
   starredText: {
     fontSize: 6,
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
+    marginRight: 2,
   },
   loadingFooter: {
     alignItems: "center",
