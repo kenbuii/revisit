@@ -12,6 +12,7 @@ import * as icons from "../assets/icons";
 
 const Itinerary = ({ route, navigation }) => {
   const { day, activities } = route.params || {};
+  
 
   const renderActivityIcon = (type) => {
     switch (type) {
@@ -60,13 +61,12 @@ const Itinerary = ({ route, navigation }) => {
           </Text>
           <View style={styles.userInfo}>
             <Image
-              source={{ uri: "https://via.placeholder.com/50" }} // Replace with user avatar URL if available
+              source={{ uri: "https://via.placeholder.com/50" }} // Use profileImage if available
               style={styles.userAvatar}
             />
             <Text style={styles.userName}>emilyinsf</Text>
           </View>
         </View>
-
         {/* Comments Section */}
         <View style={styles.commentsSection}>
           <Text style={styles.commentsTitle}>comments</Text>
