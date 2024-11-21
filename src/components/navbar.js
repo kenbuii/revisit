@@ -20,6 +20,7 @@ const Navbar = ({ onPlanetPress, onAddPress, onStarPress }) => {
 
 const styles = StyleSheet.create({
   bottomNav: {
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
