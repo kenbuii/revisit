@@ -146,14 +146,17 @@ const SearchScreen = () => {
       />
 
       {/* Render tags */}
-      <FlatList
-        data={tags}
-        horizontal
-        renderItem={renderTag}
-        keyExtractor={(item, index) => index.toString()}
-        contentContainerStyle={styles.tagList}
-        showsHorizontalScrollIndicator={false}
-      />
+      <View style={styles.tags}>
+        <FlatList
+          data={tags}
+          horizontal
+          renderItem={renderTag}
+          keyExtractor={(item, index) => index.toString()}
+          contentContainerStyle={styles.tagList}
+          showsHorizontalScrollIndicator={false}
+        />
+      </View>
+
       <View style={styles.feed}>
         {isLoading ? (
           <Text
@@ -206,38 +209,41 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "white",
     paddingTop: 60,
   },
   searchBar: {
     height: 35,
-    width: "92%",
+    width: "91.5%",
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     marginBottom: 10,
     backgroundColor: "#F7F3F3",
-    fontSize: 12,
+    fontSize: 11,
     fontFamily: "RobotoMono-Regular",
     color: "black",
   },
+  tags: {
+    width: "91%",
+  },
   tagList: {
-    paddingHorizontal: 10,
     marginBottom: 10,
     height: 30,
   },
   tag: {
-    paddingHorizontal: 15,
+    paddingHorizontal: 12,
     borderRadius: 13,
     borderWidth: 1,
     borderColor: "rgba(0, 0, 0, 0.3)",
-    marginHorizontal: 5,
+    marginRight: 9,
     height: 31,
     justifyContent: "center",
     marginBottom: 10,
   },
   tagText: {
-    fontSize: 11,
+    fontSize: 10,
     color: "#000",
     fontFamily: "RobotoMono-Medium",
   },
