@@ -22,8 +22,6 @@ import { useNavigation } from "@react-navigation/native";
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
 const SearchScreen = () => {
-  console.log("hello");
-
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -149,18 +147,20 @@ const SearchScreen = () => {
       updatedStars[item.id] !== undefined ? updatedStars[item.id] : item.stars;
 
     return (
-      <TouchableOpacity
-        style={styles.card}
-        onPress={() =>
-          navigation.navigate("Details", {
-            id: item.id,
-            title: item.title,
-            imageUrl: item.imageUrl,
-            username: item.username,
-            stars: item.stars,
-          })
-        }
-      >
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => {
+        console.log("Navigating to DetailsScreen with ID:", item.id); // Debugging log
+        navigation.navigate("Details", {
+          id: item.id, // Pass the card ID
+          title: item.title,
+          imageUrl: item.imageUrl,
+          username: item.username,
+          stars: item.stars,
+          profileImageUrl: item.profileImageUrl,
+        });
+      }}
+    >
         <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
@@ -428,20 +428,6 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 15,
   },
-  // REDUNDANT: hardcoded bottom nav/icons -- can remove during post-A8 refactor
-  // bottomNav: {
-  //   flexDirection: "row",
-  //   justifyContent: "space-around",
-  //   alignItems: "center",
-  //   paddingVertical: 20,
-  //   borderTopWidth: 1,
-  //   borderColor: "#E0E0E0",
-  //   backgroundColor: "#F7F3F3",
-  // },
-  // navIconImage: {
-  //   width: 30,
-  //   height: 50,
-  //   resizeMode: "contain",
 });
 
 export default SearchScreen;
