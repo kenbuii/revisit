@@ -6,8 +6,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Dimensions,
   ActivityIndicator,
+  Dimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../services/supabaseClient";
@@ -20,8 +20,6 @@ const DetailsScreen = ({ route }) => {
 
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [starCount, setStarCount] = useState(stars);
-  const [starToggled, setStarToggled] = useState(false);
 
   // Fetch activities from Supabase
   const fetchActivities = async () => {
@@ -38,27 +36,6 @@ const DetailsScreen = ({ route }) => {
       setActivities(data);
     }
     setIsLoading(false);
-  };
-
-  // Toggle star functionality
-  const toggleStar = async () => {
-    const newStarCount = starToggled ? starCount - 1 : starCount + 1;
-
-    try {
-      const { error } = await supabase
-        .from("cards")
-        .update({ stars: newStarCount })
-        .eq("id", id);
-
-      if (error) {
-        console.error("Error updating star count:", error.message);
-      } else {
-        setStarCount(newStarCount);
-        setStarToggled(!starToggled);
-      }
-    } catch (err) {
-      console.error("Error updating stars:", err);
-    }
   };
 
   useEffect(() => {
@@ -87,12 +64,12 @@ const DetailsScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        {/* Title */}
+        <Text style={styles.title}>{title}</Text>
+
         {/* Header */}
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={icons.leftarrow} style={styles.backIcon} />
-          </TouchableOpacity>
           <View style={styles.profileContainer}>
             <Image source={{ uri: profileImageUrl }} style={styles.profileImage} />
             <Text style={styles.username}>{username}</Text>
@@ -102,16 +79,7 @@ const DetailsScreen = ({ route }) => {
         {/* Main Image */}
         <View style={styles.imageContainer}>
           <Image source={{ uri: imageUrl }} style={styles.mainImage} />
-          <TouchableOpacity style={styles.starButton} onPress={toggleStar}>
-            <Image
-              source={starToggled ? icons.toggledStar : icons.untoggledStar}
-              style={styles.starIcon}
-            />
-          </TouchableOpacity>
         </View>
-
-        {/* Title */}
-        <Text style={styles.title}>{title}</Text>
 
         {/* Activities by Day */}
         {isLoading ? (
@@ -121,7 +89,15 @@ const DetailsScreen = ({ route }) => {
         ) : (
           Object.entries(groupedActivities).map(([day, dayActivities]) => (
             <View key={day} style={styles.dayContainer}>
-              <View style={styles.dayWrapper}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("ActivityDetail", {
+                    cardId: id, // Pass card ID to ActivityDetail
+                    activityDay: parseInt(day), // Pass selected day to ActivityDetail
+                  })
+                }
+                style={styles.dayWrapper}
+              >
                 {/* Day Number */}
                 <View style={styles.dayNumberContainer}>
                   <Text style={styles.dayText}>day {day}</Text>
@@ -137,24 +113,14 @@ const DetailsScreen = ({ route }) => {
                     </View>
                   ))}
                 </View>
-              </View>
+              </TouchableOpacity>
             </View>
           ))
         )}
       </ScrollView>
 
       {/* Navbar */}
-      <Navbar
-        onPlanetPress={() => {
-          navigation.navigate("Search");
-        }}
-        onAddPress={() => {
-          // Add navigation or functionality here
-        }}
-        onStarPress={() => {
-          // Add navigation or functionality here
-        }}
-      />
+      <Navbar />
     </View>
   );
 };
@@ -164,17 +130,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
   },
+  scrollContainer: {
+    paddingHorizontal: 20, // Add padding around the scrollable content
+    paddingBottom: 20, // Add padding at the bottom to avoid navbar overlap
+  },
+  title: {
+    fontSize: 24,
+    fontFamily: "RobotoMono-Bold",
+    textAlign: "center",
+    paddingVertical: 20,
+    color: "#000000",
+    letterSpacing: -2.75,
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    paddingTop: 60,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
-  backIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 15,
+    justifyContent: "space-between",
+    marginBottom: 20, // Add spacing below the header
   },
   profileContainer: {
     flexDirection: "row",
@@ -183,86 +155,24 @@ const styles = StyleSheet.create({
   profileImage: {
     width: 24,
     height: 24,
-    borderRadius: 12,
-    marginRight: 8,
+    borderRadius: 18,
+    marginRight: 10,
   },
   username: {
     fontSize: 14,
     fontFamily: "RobotoMono-Regular",
+    color: "#000000",
   },
   imageContainer: {
-    width: Dimensions.get("window").width - 40,
+    width: "100%",
     height: 240,
-    position: "relative",
-    marginHorizontal: 20,
-    marginVertical: 10,
     borderRadius: 20,
     overflow: "hidden",
+    marginBottom: 20, // Space below the image
   },
   mainImage: {
     width: "100%",
     height: "100%",
-  },
-  starButton: {
-    position: "absolute",
-    top: 20,
-    right: 20,
-  },
-  starIcon: {
-    width: 24,
-    height: 24,
-  },
-  dayContainer: {
-    padding: 20,
-    paddingVertical: 10,
-  },
-  dayWrapper: {
-    flexDirection: "row",
-    backgroundColor: "rgba(247, 243, 243, 0.5)",
-    borderRadius: 20,
-    overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "#959191",
-  },
-  dayNumberContainer: {
-    justifyContent: "flex-start",
-    padding: 15,
-    backgroundColor: "#F7F3F3",
-    minWidth: 80,
-  },
-  dayText: {
-    fontSize: 22,
-    fontFamily: "RobotoMono-Bold",
-    color: "#000000",
-    textAlign: "center",
-  },
-  activitiesContainer: {
-    flex: 1,
-    padding: 10,
-    gap: 10,
-    backgroundColor: "rgba(247, 243, 243, 0.5)",
-  },
-  activityButton: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 10,
-    borderWidth: 1.5,
-    borderColor: "#959191",
-  },
-  activityContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 12,
-  },
-  activityIcon: {
-    width: 25,
-    height: 25,
-    marginRight: 10,
-    resizeMode: "contain",
-  },
-  activityText: {
-    fontSize: 14,
-    fontFamily: "RobotoMono-Regular",
-    color: "#000000",
   },
   loader: {
     marginTop: 20,
@@ -273,8 +183,56 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoMono-Regular",
     textAlign: "center",
   },
+  dayContainer: {
+    marginBottom: 20, // Space below each day container
+  },
+  dayWrapper: {
+    flexDirection: "row",
+    backgroundColor: "rgba(247, 243, 243, 0.5)",
+    borderRadius: 20,
+    overflow: "hidden",
+    borderWidth: 1,
+    borderColor: "#959191",
+  },
+  dayNumberContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 15,
+    backgroundColor: "#F7F3F3",
+    minWidth: 80,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+  },
+  dayText: {
+    fontSize: 22,
+    fontFamily: "RobotoMono-Bold",
+    color: "#000000",
+    textAlign: "center",
+  },
+  activitiesContainer: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: "rgba(247, 243, 243, 0.5)",
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  activityButton: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    borderWidth: 1.5,
+    borderColor: "#959191",
+    marginBottom: 8,
+  },
+  activityContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 12,
+  },
+  activityText: {
+    fontSize: 14,
+    fontFamily: "RobotoMono-Regular",
+    color: "#000000",
+  },
 });
 
 export default DetailsScreen;
-
-
