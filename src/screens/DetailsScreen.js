@@ -16,7 +16,8 @@ import * as icons from "../assets/icons";
 
 const DetailsScreen = ({ route }) => {
   const navigation = useNavigation();
-  const { id, title, imageUrl, username, profileImageUrl, stars } = route.params;
+  const { id, title, imageUrl, username, profileImageUrl, stars } =
+    route.params;
 
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -66,12 +67,21 @@ const DetailsScreen = ({ route }) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {/* Title */}
-        <Text style={styles.title}>{title}</Text>
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text style={styles.title}>{title}</Text>
+        </View>
 
         {/* Header */}
         <View style={styles.header}>
           <View style={styles.profileContainer}>
-            <Image source={{ uri: profileImageUrl }} style={styles.profileImage} />
+            <Image
+              source={{ uri: profileImageUrl }}
+              style={styles.profileImage}
+            />
             <Text style={styles.username}>{username}</Text>
           </View>
         </View>
@@ -83,9 +93,15 @@ const DetailsScreen = ({ route }) => {
 
         {/* Activities by Day */}
         {isLoading ? (
-          <ActivityIndicator size="large" color="#E03616" style={styles.loader} />
+          <ActivityIndicator
+            size="large"
+            color="#E03616"
+            style={styles.loader}
+          />
         ) : Object.keys(groupedActivities).length === 0 ? (
-          <Text style={styles.noActivities}>No activities found for this card.</Text>
+          <Text style={styles.noActivities}>
+            No activities found for this card.
+          </Text>
         ) : (
           Object.entries(groupedActivities).map(([day, dayActivities]) => (
             <View key={day} style={styles.dayContainer}>
@@ -108,7 +124,9 @@ const DetailsScreen = ({ route }) => {
                     <View key={activity.id} style={styles.activityButton}>
                       <View style={styles.activityContent}>
                         {renderActivityIcon(activity.type)}
-                        <Text style={styles.activityText}>{activity.activity_name}</Text>
+                        <Text style={styles.activityText}>
+                          {activity.activity_name}
+                        </Text>
                       </View>
                     </View>
                   ))}
@@ -135,12 +153,12 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Add padding at the bottom to avoid navbar overlap
   },
   title: {
-    fontSize: 24,
-    fontFamily: "RobotoMono-Bold",
+    fontSize: 18,
+    width: 350,
+    fontFamily: "RobotoSerif-Bold",
     textAlign: "center",
     paddingVertical: 20,
     color: "#000000",
-    letterSpacing: -2.75,
   },
   header: {
     flexDirection: "row",
@@ -168,7 +186,7 @@ const styles = StyleSheet.create({
     height: 240,
     borderRadius: 20,
     overflow: "hidden",
-    marginBottom: 20, // Space below the image
+    marginBottom: 25, // Space below the image
   },
   mainImage: {
     width: "100%",

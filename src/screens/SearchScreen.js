@@ -148,20 +148,20 @@ const SearchScreen = () => {
       updatedStars[item.id] !== undefined ? updatedStars[item.id] : item.stars;
 
     return (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => {
-        console.log("Navigating to DetailsScreen with ID:", item.id); // Debugging log
-        navigation.navigate("Details", {
-          id: item.id, // Pass the card ID
-          title: item.title,
-          imageUrl: item.imageUrl,
-          username: item.username,
-          stars: item.stars,
-          profileImageUrl: item.profileImageUrl,
-        });
-      }}
-    >
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() => {
+          console.log("Navigating to DetailsScreen with ID:", item.id); // Debugging log
+          navigation.navigate("Details", {
+            id: item.id, // Pass the card ID
+            title: item.title,
+            imageUrl: item.imageUrl,
+            username: item.username,
+            stars: item.stars,
+            profileImageUrl: item.profileImageUrl,
+          });
+        }}
+      >
         <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
         <Text style={styles.cardTitle}>{item.title}</Text>
         <View style={styles.cardDetails}>
@@ -358,7 +358,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingHorizontal: 10,
     paddingBottom: verticalScale(5),
-    alignItems: "center",
   },
   card: {
     width: scale(160),
