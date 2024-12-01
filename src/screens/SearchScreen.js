@@ -18,6 +18,7 @@ import { supabase } from "../services/supabaseClient";
 //import Locations from "../assets/LocationCards/locations_index"; //TODO in refactoring: add locations from src/assets/LocationCards/locations_index.js, rather than hardcoded examples
 import Navbar from "../components/navbar";
 import { useNavigation } from "@react-navigation/native";
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
 const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
 
@@ -297,14 +298,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "white",
-    paddingTop: 60,
+    paddingTop: verticalScale(48),
   },
   searchBar: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    height: 35,
-    width: "91.5%",
+    height: verticalScale(26),
+    width: scale(320),
     borderRadius: 12,
     marginHorizontal: 20,
     paddingHorizontal: 10,
@@ -312,55 +312,56 @@ const styles = StyleSheet.create({
     backgroundColor: "#F7F3F3",
   },
   searchIcon: {
-    width: 15,
+    width: scale(15),
     resizeMode: "contain",
     marginRight: 8,
   },
   clearIcon: {
-    width: 18,
+    width: scale(18),
     resizeMode: "contain",
     marginLeft: 8,
   },
   searchText: {
-    fontSize: 11,
+    fontSize: moderateScale(11),
     fontFamily: "RobotoMono-Regular",
     color: "black",
     flex: 1,
   },
   tags: {
-    width: "91%",
+    width: scale(320),
   },
   tagList: {
-    marginBottom: 10,
-    height: 30,
+    marginBottom: verticalScale(3),
+    height: verticalScale(30),
   },
   tag: {
     paddingHorizontal: 12,
     borderRadius: 13,
     borderWidth: 1,
     borderColor: "rgba(0, 0, 0, 0.3)",
-    marginRight: 9,
-    height: 31,
+    marginRight: scale(9),
+    height: verticalScale(23),
     justifyContent: "center",
-    marginBottom: 10,
+    marginBottom: verticalScale(8),
   },
   tagText: {
-    fontSize: 10,
+    fontSize: moderateScale(9),
     color: "#000",
     fontFamily: "RobotoMono-Medium",
   },
   feed: {
     width: "100%",
-    height: 619,
-    paddingBottom: 2,
+    height: verticalScale(480),
+    paddingBottom: verticalScale(1),
   },
   cardList: {
     flexGrow: 1,
     paddingHorizontal: 10,
-    paddingBottom: 10,
+    paddingBottom: verticalScale(5),
+    alignItems: "center",
   },
   card: {
-    width: 180,
+    width: scale(160),
     margin: 5,
     borderRadius: 10,
     backgroundColor: "#F7F3F3",
@@ -370,7 +371,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   cardImage: {
-    height: 180,
+    height: scale(155),
     width: "100%",
     resizeMode: "cover",
   },
@@ -378,7 +379,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   cardTitle: {
-    fontSize: 9,
+    fontSize: moderateScale(9),
     fontFamily: "RobotoSerif-Bold",
     marginHorizontal: 8,
     marginVertical: 4,
@@ -386,8 +387,8 @@ const styles = StyleSheet.create({
   cardDetails: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 6,
-    paddingBottom: 4,
+    paddingHorizontal: scale(6),
+    paddingBottom: verticalScale(4),
     flexGrow: 1,
     alignItems: "flex-end",
   },
@@ -396,14 +397,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   profileImage: {
-    height: 10,
-    width: 10,
-    borderRadius: 10,
+    height: verticalScale(10),
+    width: scale(10),
+    borderRadius: scale(10),
     resizeMode: "cover",
-    marginRight: 3,
+    marginRight: scale(3),
   },
   profileText: {
-    fontSize: 6,
+    fontSize: moderateScale(6),
     fontFamily: "RobotoSerif-Regular",
     color: "black",
   },
@@ -412,21 +413,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   starIcon: {
-    width: 8.5,
-    height: 8.5,
+    width: scale(8.5),
+    height: verticalScale(8.5),
     resizeMode: "contain",
-    marginRight: 3,
+    marginRight: scale(3),
   },
   starredText: {
-    fontSize: 6,
+    fontSize: moderateScale(6),
     fontFamily: "RobotoSerif-Regular",
     color: "rgba(0, 0, 0, 0.4)",
-    marginRight: 2,
+    marginRight: scale(1),
   },
   loadingFooter: {
     alignItems: "center",
-    paddingTop: 20,
-    paddingBottom: 15,
+    paddingTop: verticalScale(20),
+    paddingBottom: verticalScale(15),
   },
 });
 

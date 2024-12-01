@@ -1,6 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
 import * as icons from "../assets/icons";
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
 const Navbar = ({ onPlanetPress, onAddPress, onStarPress }) => {
   return (
@@ -24,23 +25,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    paddingTop: 7,
-    paddingBottom: 25,
+    paddingBottom: "6%",
+    paddingTop: "2%",
     backgroundColor: "#F7F3F3",
   },
   planetNavIcon: {
-    width: 30,
-    height: 30,
+    width: scale(26),
+    height: verticalScale(26),
     resizeMode: "contain",
   },
   plusNavIcon: {
-    width: 29,
-    height: 29,
+    width: scale(25),
+    height: verticalScale(25),
     resizeMode: "contain",
   },
   starNavIcon: {
-    width: 28,
-    height: 28,
+    width: scale(24),
+    height: verticalScale(24),
     resizeMode: "contain",
   },
 });
