@@ -26,7 +26,7 @@ const Profile = () => {
     const { data, error } = await supabase
       .from("cards")
       .select("*")
-      .eq("myStar", true); // Only fetch cards with `myStar` set to true
+      .eq("myStar", true); // Only fetch cards with myStar set to true
 
     if (error) {
       console.error("Error fetching starred cards:", error.message);
@@ -126,7 +126,7 @@ const Profile = () => {
         </View>
 
         {/* Starred Cards */}
-        {activeTab === "Starred" && (
+        {activeTab === "starred" && (
           <View style={styles.feed}>
             {isLoading ? (
               <ActivityIndicator size="large" color="#E03616" />
@@ -142,12 +142,42 @@ const Profile = () => {
           </View>
         )}
 
-        {/* Placeholder for My Itineraries */}
-        {activeTab === "My Itineraries" && (
-          <View style={styles.placeholder}>
-            <Text style={styles.placeholderText}>
-              My Itineraries Coming Soon!
-            </Text>
+        {/* My Itineraries Section */}
+        {activeTab === "my itineraries" && (
+          <View style={styles.feed}>
+            <FlatList
+              data={[{ id: "create", title: "Create New Itinerary" }]}
+              renderItem={({ item }) =>
+                item.id === "create" ? (
+                  <TouchableOpacity
+                    style={styles.createCard}
+                    onPress={() => navigation.navigate("CreateItinerary")}
+                  >
+                    <Text style={styles.createCardText}>Create New Itinerary</Text>
+                  </TouchableOpacity>
+                ) : (
+                  <TouchableOpacity
+                    style={styles.card}
+                    onPress={() =>
+                      navigation.navigate("Details", {
+                        id: item.id,
+                        title: item.title,
+                        imageUrl: item.imageUrl,
+                        username: item.username,
+                        stars: item.stars,
+                        profileImageUrl: item.profileImageUrl,
+                      })
+                    }
+                  >
+                    <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
+                    <Text style={styles.cardTitle}>{item.title}</Text>
+                  </TouchableOpacity>
+                )
+              }
+              keyExtractor={(item) => item.id.toString()}
+              numColumns={2}
+              contentContainerStyle={styles.cardList}
+            />
           </View>
         )}
       </View>
@@ -257,6 +287,24 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     overflow: "hidden",
   },
+  createCard: {
+    width: scale(160),
+    height: scale(180),
+    margin: 5,
+    borderRadius: 10,
+    backgroundColor: "#E03616", // The orange-red color for the card
+    alignItems: "center",
+    justifyContent: "center",
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 3 },
+  },
+  createCardText: {
+    color: "white",
+    fontSize: moderateScale(12),
+    fontFamily: "RobotoSerif-Bold",
+    textAlign: "center",
+  },
   cardImage: {
     height: scale(155),
     width: "100%",
@@ -267,44 +315,6 @@ const styles = StyleSheet.create({
     fontFamily: "RobotoSerif-Bold",
     marginHorizontal: 8,
     marginVertical: 4,
-  },
-  cardDetails: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: scale(6),
-    paddingBottom: verticalScale(4),
-    flexGrow: 1,
-    alignItems: "flex-end",
-  },
-  cardProfile: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  profileText: {
-    fontSize: moderateScale(6),
-    fontFamily: "RobotoSerif-Regular",
-    color: "black",
-  },
-  star: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  starIcon: {
-    width: scale(8.5),
-    height: verticalScale(8.5),
-    resizeMode: "contain",
-    marginRight: scale(3),
-  },
-  starredText: {
-    fontSize: moderateScale(6),
-    fontFamily: "RobotoSerif-Regular",
-    color: "rgba(0, 0, 0, 0.4)",
-    marginRight: scale(1),
-  },
-  placeholder: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   placeholderText: {
     fontSize: 18,
