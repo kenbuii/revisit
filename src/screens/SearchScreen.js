@@ -41,7 +41,7 @@ const SearchScreen = () => {
   };
 
   // Toggle Star Function
-  const toggleStar = async (id, currentStars) => {
+  const toggleStar = async (id, currentStars, currentMyStar) => {
     const isCurrentlyToggled = toggledStars[id]; // Get the current toggled state of the star
 
     // Determine the new star count by using the updatedStars value
@@ -49,6 +49,9 @@ const SearchScreen = () => {
     const newStarsCount = isCurrentlyToggled
       ? updatedStarCount - 1 // If already toggled, subtract from the updated count
       : updatedStarCount + 1; // If not toggled, add to the updated count
+
+    // Toggle the myStar boolean value
+    const newMyStar = !currentMyStar;
 
     setToggledStars((prevState) => ({
       ...prevState,
@@ -58,11 +61,14 @@ const SearchScreen = () => {
     try {
       const { error } = await supabase
         .from("cards")
-        .update({ stars: newStarsCount })
+        .update({ stars: newStarsCount, myStar: newMyStar }) // Update both stars and myStar
         .eq("id", id);
 
       if (error) {
-        console.error("Failed to update stars in Supabase:", error.message);
+        console.error(
+          "Failed to update stars and myStar in Supabase:",
+          error.message
+        );
 
         // Revert the state if update fails
         setToggledStars((prevState) => ({
@@ -70,7 +76,7 @@ const SearchScreen = () => {
           [id]: isCurrentlyToggled, // Revert the star toggle
         }));
       } else {
-        // If the update is successful, update the local state with the new count
+        // If the update is successful, update the local state with the new count and myStar value
         setUpdatedStars((prevState) => ({
           ...prevState,
           [id]: newStarsCount,
@@ -177,7 +183,9 @@ const SearchScreen = () => {
             <Text style={styles.profileText}>{item.username}</Text>
           </View>
           <View style={styles.star}>
-            <TouchableOpacity onPress={() => toggleStar(item.id, item.stars)}>
+            <TouchableOpacity
+              onPress={() => toggleStar(item.id, item.stars, item.myStar)}
+            >
               <Image
                 source={
                   toggledStars[item.id]
