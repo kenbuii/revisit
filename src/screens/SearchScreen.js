@@ -36,6 +36,10 @@ const SearchScreen = () => {
   const [toggledStars, setToggledStars] = useState({});
   const [updatedStars, setUpdatedStars] = useState({});
 
+  const onStarPress = () => {
+    navigation.navigate("Profile");
+  };
+
   // Toggle Star Function
   const toggleStar = async (id, currentStars) => {
     const isCurrentlyToggled = toggledStars[id]; // Get the current toggled state of the star
@@ -279,15 +283,15 @@ const SearchScreen = () => {
         )}
       </View>
       <Navbar
-        onPlanetPress={() => {
-          /* TODO: Add navigation logic */
-        }}
-        onAddPress={() => {
-          /* TODO: Add navigation logic */
-        }}
-        onStarPress={() => {
-          /* TODO: Add navigation logic */
-        }}
+        // onPlanetPress={() => {
+        //   /* Add logic here if needed */
+        // }}
+        // onAddPress={() => {
+        //   /* Add logic here if needed */
+        // }}
+        onStarPress={onStarPress} // Pass the onStarPress handler
+        isPlanetActiveOnSearchScreen={true}
+        isStarActiveOnProfileScreen={false}
       />
     </View>
   );

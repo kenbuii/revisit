@@ -13,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../services/supabaseClient";
 import Navbar from "../components/navbar";
 import * as icons from "../assets/icons";
+import { HeaderBackButton } from "@react-navigation/elements";
 
 const DetailsScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -21,6 +22,15 @@ const DetailsScreen = ({ route }) => {
 
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: null,
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => navigation.goBack()} />
+      ), // Custom back button that goes back to the previous screen
+    });
+  }, [navigation]);
 
   // Fetch activities from Supabase
   const fetchActivities = async () => {

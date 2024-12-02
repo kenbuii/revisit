@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SearchScreen from "./src/screens/SearchScreen";
+import Profile from "./src/screens/Profile";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import Itinerary from "./src/screens/DayDetail";
 import ActivityDetail from "./src/screens/ActivityDetail"; // Corrected path for ActivityDetail
@@ -30,11 +31,23 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          gestureEnabled: false, // Disable swipe gestures for all screens
+          animationEnabled: false, // Disable transitions
+          gestureDirection: "horizontal", // Disable horizontal swipe gestures on iOS and Android
+        }}
+      >
         {/* Search Screen with no header */}
         <Stack.Screen
           name="Search"
           component={SearchScreen}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{ headerShown: false }}
         />
 
