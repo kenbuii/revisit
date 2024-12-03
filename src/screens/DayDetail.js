@@ -84,13 +84,6 @@ const Itinerary = ({ route, navigation }) => {
           </View>
         </View>
       </ScrollView>
-
-      {/* Navbar */}
-      <Navbar
-        navigation={navigation}
-        onAddPress={() => console.log("Add button pressed!")}
-        onStarPress={() => console.log("Star button pressed!")}
-      />
     </View>
   );
 };

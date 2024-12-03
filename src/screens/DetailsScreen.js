@@ -153,8 +153,16 @@ const DetailsScreen = ({ route }) => {
         )}
       </ScrollView>
 
-      {/* Navbar */}
-      <Navbar />
+      <Navbar
+        // onPlanetPress={() => {
+        //   /* Add logic here if needed */
+        // }}
+        // onAddPress={() => {
+        //   /* Add logic here if needed */
+        // }}
+        isPlanetActiveOnSearchScreen={true}
+        isStarActiveOnProfileScreen={false}
+      />
     </View>
   );
 };
