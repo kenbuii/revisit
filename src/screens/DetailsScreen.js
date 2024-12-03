@@ -7,7 +7,6 @@ import {
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
-  Dimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../services/supabaseClient";
@@ -22,17 +21,17 @@ const DetailsScreen = ({ route }) => {
 
   const [activities, setActivities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isStarred, setIsStarred] = useState(false); // State to manage star toggle
 
   useEffect(() => {
     navigation.setOptions({
       headerTitle: null,
       headerLeft: () => (
         <HeaderBackButton onPress={() => navigation.goBack()} />
-      ), // Custom back button that goes back to the previous screen
+      ),
     });
   }, [navigation]);
 
-  // Fetch activities from Supabase
   const fetchActivities = async () => {
     setIsLoading(true);
     const { data, error } = await supabase
@@ -53,7 +52,11 @@ const DetailsScreen = ({ route }) => {
     fetchActivities();
   }, []);
 
-  // Group activities by day
+  const handleStarToggle = () => {
+    setIsStarred(!isStarred);
+    // TODO: Implement logic to persist the star state to a database or local storage if necessary
+  };
+
   const groupedActivities = activities.reduce((acc, activity) => {
     acc[activity.activity_day] = acc[activity.activity_day] || [];
     acc[activity.activity_day].push(activity);
@@ -77,11 +80,7 @@ const DetailsScreen = ({ route }) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         {/* Title */}
-        <View
-          style={{
-            alignItems: "center",
-          }}
-        >
+        <View style={{ alignItems: "center" }}>
           <Text style={styles.title}>{title}</Text>
         </View>
 
@@ -99,6 +98,15 @@ const DetailsScreen = ({ route }) => {
         {/* Main Image */}
         <View style={styles.imageContainer}>
           <Image source={{ uri: imageUrl }} style={styles.mainImage} />
+          <TouchableOpacity
+            style={styles.starButton}
+            onPress={handleStarToggle}
+          >
+            <Image
+              source={isStarred ? icons.toggledStar : icons.untoggledStar}
+              style={styles.starIcon}
+            />
+          </TouchableOpacity>
         </View>
 
         {/* Activities by Day */}
@@ -118,17 +126,15 @@ const DetailsScreen = ({ route }) => {
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate("ActivityDetail", {
-                    cardId: id, // Pass card ID to ActivityDetail
-                    activityDay: parseInt(day), // Pass selected day to ActivityDetail
+                    cardId: id,
+                    activityDay: parseInt(day),
                   })
                 }
                 style={styles.dayWrapper}
               >
-                {/* Day Number */}
                 <View style={styles.dayNumberContainer}>
                   <Text style={styles.dayText}>day {day}</Text>
                 </View>
-                {/* Activities */}
                 <View style={styles.activitiesContainer}>
                   {dayActivities.map((activity) => (
                     <View key={activity.id} style={styles.activityButton}>
@@ -159,8 +165,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   scrollContainer: {
-    paddingHorizontal: 20, // Add padding around the scrollable content
-    paddingBottom: 20, // Add padding at the bottom to avoid navbar overlap
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
   title: {
     fontSize: 18,
@@ -174,7 +180,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 20, // Add spacing below the header
+    marginBottom: 20,
   },
   profileContainer: {
     flexDirection: "row",
@@ -196,11 +202,21 @@ const styles = StyleSheet.create({
     height: 240,
     borderRadius: 20,
     overflow: "hidden",
-    marginBottom: 25, // Space below the image
+    marginBottom: 25,
+    position: "relative",
   },
   mainImage: {
     width: "100%",
     height: "100%",
+  },
+  starButton: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+  },
+  starIcon: {
+    width: 24,
+    height: 24,
   },
   loader: {
     marginTop: 20,
@@ -212,7 +228,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   dayContainer: {
-    marginBottom: 20, // Space below each day container
+    marginBottom: 20,
   },
   dayWrapper: {
     flexDirection: "row",

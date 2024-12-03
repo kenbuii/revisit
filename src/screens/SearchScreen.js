@@ -95,8 +95,10 @@ const SearchScreen = () => {
 
   const fetchCards = async () => {
     setIsLoading(true);
-    const { data, error } = await supabase.from("cards").select("*");
-
+    const { data, error } = await supabase
+      .from("cards")
+      .select("id, title, imageUrl, username, profileImageUrl, stars"); // Include username
+  
     if (error) {
       console.error("Error fetching cards:", error.message);
     } else {
