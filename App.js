@@ -6,6 +6,8 @@ import Profile from "./src/screens/Profile";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import Itinerary from "./src/screens/DayDetail";
 import ActivityDetail from "./src/screens/ActivityDetail"; // Corrected path for ActivityDetail
+import CreateItineraryScreen from "./src/screens/CreateItineraryScreen.js"; // Import the new CreateItineraryScreen
+import InviteCollaborators from "./src/screens/InviteCollaborators.js"; // Import the InviteCollaborators screen
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
@@ -86,9 +88,34 @@ const App = () => {
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
           }}
         />
+
+        {/* CreateItineraryScreen */}
+        <Stack.Screen
+          name="CreateItinerary"
+          component={CreateItineraryScreen}
+          options={{
+            title: "Create Itinerary",
+            headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
+            headerTintColor: "black", // Set Back Button color
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
+          }}
+        />
+
+        {/* InviteCollaborators Screen */}
+        <Stack.Screen
+          name="InviteCollaborators"
+          component={InviteCollaborators}
+          options={{
+            title: "Invite Collaborators",
+            headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
+            headerTintColor: "black", // Set Back Button color
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
+
