@@ -60,7 +60,7 @@ const Profile = () => {
         <View style={styles.cardProfile}>
           <Image
             source={{ uri: item.profileImageUrl }}
-            style={styles.profileImage}
+            style={styles.cardProfileImage}
           />
           <Text style={styles.profileText}>{item.username}</Text>
         </View>
@@ -109,19 +109,34 @@ const Profile = () => {
         {/* Tab Bar */}
         <View style={styles.tabBar}>
           <TouchableOpacity
-            style={[styles.tab, activeTab === "starred" && styles.activeTab]}
+            style={styles.tab}
             onPress={() => setActiveTab("starred")}
           >
-            <Text style={styles.tabText}>starred</Text>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === "starred" && styles.activeTabText, // Apply active style conditionally
+              ]}
+            >
+              starred
+            </Text>
+            {activeTab === "starred" && <View style={styles.underline} />}
           </TouchableOpacity>
           <TouchableOpacity
-            style={[
-              styles.tab,
-              activeTab === "my itineraries" && styles.activeTab,
-            ]}
+            style={styles.tab}
             onPress={() => setActiveTab("my itineraries")}
           >
-            <Text style={styles.tabText}>my itineraries</Text>
+            <Text
+              style={[
+                styles.tabText,
+                activeTab === "my itineraries" && styles.activeTabText, // Apply active style conditionally
+              ]}
+            >
+              my itineraries
+            </Text>
+            {activeTab === "my itineraries" && (
+              <View style={styles.underline} />
+            )}
           </TouchableOpacity>
         </View>
 
@@ -153,7 +168,9 @@ const Profile = () => {
                     style={styles.createCard}
                     onPress={() => navigation.navigate("CreateItinerary")}
                   >
-                    <Text style={styles.createCardText}>Create New Itinerary</Text>
+                    <Text style={styles.createCardText}>
+                      create new itinerary
+                    </Text>
                   </TouchableOpacity>
                 ) : (
                   <TouchableOpacity
@@ -169,7 +186,10 @@ const Profile = () => {
                       })
                     }
                   >
-                    <Image source={{ uri: item.imageUrl }} style={styles.cardImage} />
+                    <Image
+                      source={{ uri: item.imageUrl }}
+                      style={styles.cardImage}
+                    />
                     <Text style={styles.cardTitle}>{item.title}</Text>
                   </TouchableOpacity>
                 )
@@ -220,6 +240,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: verticalScale(50),
   },
+  cardProfile: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   profileImage: {
     width: 95,
     height: 95,
@@ -227,6 +251,19 @@ const styles = StyleSheet.create({
     borderRadius: 75,
     borderWidth: 1,
     borderColor: "white",
+    marginRight: moderateScale(10),
+  },
+  cardProfileImage: {
+    height: verticalScale(10),
+    width: scale(10),
+    borderRadius: scale(10),
+    resizeMode: "cover",
+    marginRight: scale(3),
+  },
+  profileText: {
+    fontSize: moderateScale(6),
+    fontFamily: "RobotoSerif-Regular",
+    color: "black",
   },
   stat: {
     alignItems: "center",
@@ -251,23 +288,25 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     borderBottomWidth: 1,
     borderColor: "#ccc",
+    marginLeft: moderateScale(20),
   },
   tab: {
-    flex: 1,
     paddingVertical: 15,
-    alignItems: "flex-start",
-  },
-  activeTab: {
-    borderBottomWidth: 2,
-    borderBottomColor: "blue",
+    marginRight: moderateScale(20),
   },
   tabText: {
     fontSize: moderateScale(13),
     fontFamily: "RobotoMono-Medium",
     fontWeight: "bold",
+  },
+  underline: {
+    height: 2,
+    backgroundColor: "#E03616", // Red underline
+    width: "100%",
+    marginTop: 5,
   },
   feed: {
     width: "100%",
@@ -287,6 +326,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     overflow: "hidden",
   },
+  cardDetails: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: scale(6),
+    paddingBottom: verticalScale(4),
+    flexGrow: 1,
+    alignItems: "flex-end",
+  },
   createCard: {
     width: scale(160),
     height: scale(180),
@@ -302,7 +349,7 @@ const styles = StyleSheet.create({
   createCardText: {
     color: "white",
     fontSize: moderateScale(12),
-    fontFamily: "RobotoSerif-Bold",
+    fontFamily: "RobotoMono-Bold",
     textAlign: "center",
   },
   cardImage: {
@@ -319,6 +366,22 @@ const styles = StyleSheet.create({
   placeholderText: {
     fontSize: 18,
     color: "gray",
+  },
+  star: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  starIcon: {
+    width: scale(8.5),
+    height: verticalScale(8.5),
+    resizeMode: "contain",
+    marginRight: scale(3),
+  },
+  starredText: {
+    fontSize: moderateScale(6),
+    fontFamily: "RobotoSerif-Regular",
+    color: "rgba(0, 0, 0, 0.4)",
+    marginRight: scale(1),
   },
 });
 
