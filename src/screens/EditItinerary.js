@@ -1,6 +1,10 @@
 /* This is the edit itinerary screen. 
 Users can view and edit only itineraries they have created.
 Changes are not saved until the itinerary is confirmed.
+FEATURES: 
+- Exit modal to confirm if user wants to leave without saving
+- Navbar items are active/inactive based on which screen is active
+
 TODO: add anthropic prompt filling to suggestions 
 */
 import React, { useState, useEffect } from 'react';
@@ -18,6 +22,7 @@ import { useNavigation } from '@react-navigation/native';
 import { supabase } from '../services/supabaseClient';
 import Navbar from '../components/navbar';
 import * as icons from '../assets/icons';
+import { HeaderBackButton } from "@react-navigation/elements";
 
 const EditItineraryScreen = () => {
   const navigation = useNavigation();
@@ -27,6 +32,18 @@ const EditItineraryScreen = () => {
   const [modalText, setModalText] = useState('');
   const [activities, setActivities] = useState({});
   const [removedActivities, setRemovedActivities] = useState([]);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState(null);
+  const [activeNavItem, setActiveNavItem] = useState(null);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: null,
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => handleNavigation('goBack')} />
+      ),
+    });
+  }, [navigation]);
 
   const fetchUserCreatedCards = async () => {
     setIsLoading(true);
@@ -34,7 +51,7 @@ const EditItineraryScreen = () => {
       const { data, error } = await supabase
         .from('cards')
         .select('*')
-        .eq('UserCreated', true)
+        .eq('userCreated', true)
         .single();
 
       if (error) throw error;
@@ -94,15 +111,31 @@ const EditItineraryScreen = () => {
     setRemovedActivities([...removedActivities, activityId]);
   };
 
+  const handleNavigation = (destination) => {
+    setActiveNavItem(destination);
+    setPendingNavigation(destination);
+    setShowExitModal(true);
+  };
+
+  const handleConfirmNavigation = () => {
+    if (pendingNavigation === 'goBack') {
+      navigation.goBack();
+    } else if (pendingNavigation) {
+      navigation.navigate(pendingNavigation);
+    }
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
+  };
+
+  const handleStay = () => {
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-      >
-        <Image source={icons.leftArrow} style={styles.backIcon} />
-      </TouchableOpacity>
-
       <Text style={styles.header}>final itinerary</Text>
 
       {isLoading ? (
@@ -133,13 +166,14 @@ const EditItineraryScreen = () => {
                   <View style={styles.activitiesList}>
                     {dayActivities.map((activity) => (
                       <View key={activity.id} style={styles.activityItem}>
-                        <Text style={styles.activityText}>
-                          {activity.activity_name}
-                        </Text>
                         <TouchableOpacity
+                          style={styles.removeButton}
                           onPress={() => removeActivity(activity.id)}
                         >
                           <Image source={icons.exit} style={styles.exitIcon} />
+                          <Text style={styles.activityText}>
+                            {activity.activity_name}
+                          </Text>
                         </TouchableOpacity>
                       </View>
                     ))}
@@ -177,7 +211,43 @@ const EditItineraryScreen = () => {
         </View>
       </Modal>
 
-      <Navbar />
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={showExitModal}
+        onRequestClose={() => setShowExitModal(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalText}>
+              Are you sure you want to leave this page? You will lose any unconfirmed changes.
+            </Text>
+            <View style={styles.modalButtons}>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.stayButton]}
+                onPress={handleStay}
+              >
+                <Text style={[styles.modalButtonText, styles.stayButtonText]}>Stay</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.confirmButton]}
+                onPress={handleConfirmNavigation}
+              >
+                <Text style={[styles.modalButtonText, styles.confirmButtonText]}>Leave</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      <Navbar
+        onPlanetPress={() => handleNavigation('Search')}
+        onAddPress={() => handleNavigation('CreateItinerary')}
+        onStarPress={() => handleNavigation('Profile')}
+        isPlanetActiveOnSearchScreen={activeNavItem === 'Search'}
+        isAddActiveOnOtherScreens={activeNavItem === 'CreateItinerary'}
+        isStarActiveOnProfileScreen={activeNavItem === 'Profile'}
+      />
     </View>
   );
 };
@@ -187,29 +257,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  backButton: {
-    position: 'absolute',
-    top: 40,
-    left: 20,
-    zIndex: 1,
-  },
-  backIcon: {
-    width: 24,
-    height: 24,
-  },
   header: {
     fontSize: 24,
     fontFamily: 'RobotoMono-Bold',
     textAlign: 'center',
-    marginTop: 40,
-    marginBottom: 20,
+    marginTop: 5,
+    marginBottom: 10,
   },
   content: {
     flex: 1,
   },
   mainImage: {
     width: '100%',
-    height: 200,
+    height: 100,
     resizeMode: 'cover',
   },
   actionButtons: {
@@ -236,23 +296,26 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   activityItem: {
+    marginBottom: 8,
+  },
+  removeButton: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#E03616',
     borderRadius: 20,
     padding: 10,
-    marginBottom: 8,
-  },
-  activityText: {
-    color: 'white',
-    fontFamily: 'RobotoMono-Regular',
-    fontSize: 14,
+    width: '100%',
   },
   exitIcon: {
     width: 20,
     height: 20,
     tintColor: 'white',
+    marginRight: 5,
+  },
+  activityText: {
+    color: 'white',
+    fontFamily: 'RobotoMono-Regular',
+    fontSize: 14,
   },
   addButton: {
     flexDirection: 'row',
@@ -306,6 +369,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginTop: 20,
+  },
+  stayButton: {
+    backgroundColor: '#E03616',
+    flex: 1,
+    marginRight: 10,
+  },
+  confirmButton: {
+    backgroundColor: '#E5E5E5',
+    flex: 1,
+    marginLeft: 10,
+  },
+  stayButtonText: {
+    color: 'white',
+  },
+  confirmButtonText: {
+    color: 'black',
   },
 });
 

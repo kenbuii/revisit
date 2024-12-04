@@ -12,6 +12,8 @@ import EditItineraryScreen from "./src/screens/EditItinerary";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
+import AddActivities from "./src/screens/AddActivities";
+import ConfirmedItinerary from "./src/screens/ConfirmedItinerary";
 
 const Stack = createNativeStackNavigator();
 
@@ -120,6 +122,30 @@ const App = () => {
           component={EditItineraryScreen}
           options={{
             title: "Edit Itinerary",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
+          }}
+        />
+
+        {/* AddActivities Screen */}
+        <Stack.Screen
+          name="AddActivities"
+          component={AddActivities}
+          options={{
+            title: "Add Activities",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
+          }}
+        />
+
+        {/* ConfirmedItinerary Screen */}
+        <Stack.Screen
+          name="ConfirmedItinerary"
+          component={ConfirmedItinerary}
+          options={{
+            title: "Confirmed",
             headerStyle: { backgroundColor: "#FFFFFF" },
             headerTintColor: "black",
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
