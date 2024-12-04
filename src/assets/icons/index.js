@@ -18,6 +18,7 @@ import toggledSelector from "./toggledSelector.png";
 import loading from "./loading.png";
 import share from "./share.png";
 import navbarStar from "./navbarStar.png";
+import checkmark from "./confirmCheck.png";
 
 export {
   star,
@@ -40,4 +41,5 @@ export {
   loading,
   share,
   navbarStar,
+  checkmark,
 };

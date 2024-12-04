@@ -8,6 +8,7 @@ import Itinerary from "./src/screens/DayDetail";
 import ActivityDetail from "./src/screens/ActivityDetail"; // Corrected path for ActivityDetail
 import CreateItineraryScreen from "./src/screens/CreateItineraryScreen.js"; // Import the new CreateItineraryScreen
 import InviteCollaborators from "./src/screens/InviteCollaborators.js"; // Import the InviteCollaborators screen
+import EditItineraryScreen from "./src/screens/EditItinerary";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { supabase } from "./src/services/supabaseClient";
@@ -110,6 +111,18 @@ const App = () => {
             headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
             headerTintColor: "black", // Set Back Button color
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
+          }}
+        />
+
+        {/* EditItineraryScreen */}
+        <Stack.Screen
+          name="EditItinerary"
+          component={EditItineraryScreen}
+          options={{
+            title: "Edit Itinerary",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
           }}
         />
       </Stack.Navigator>
