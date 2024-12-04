@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     backgroundColor: "white",
-    height: verticalScale(411),
+    height: verticalScale(390),
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
   },

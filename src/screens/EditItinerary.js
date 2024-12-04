@@ -35,6 +35,9 @@ const EditItineraryScreen = () => {
   const [showExitModal, setShowExitModal] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState(null);
   const [activeNavItem, setActiveNavItem] = useState(null);
+  const [removedItemsStack, setRemovedItemsStack] = useState([]);
+  const [showUndoModal, setShowUndoModal] = useState(false);
+  const [selectedItemsToRestore, setSelectedItemsToRestore] = useState([]);
 
   useEffect(() => {
     navigation.setOptions({
@@ -50,7 +53,7 @@ const EditItineraryScreen = () => {
     try {
       const { data, error } = await supabase
         .from('cards')
-        .select('*')
+        .select('*, location')
         .eq('userCreated', true)
         .single();
 
@@ -101,14 +104,21 @@ const EditItineraryScreen = () => {
   const removeActivity = (activityId) => {
     setActivities(prevActivities => {
       const newActivities = { ...prevActivities };
+      let removedItem = null;
       Object.keys(newActivities).forEach(day => {
-        newActivities[day] = newActivities[day].filter(
-          activity => activity.id !== activityId
-        );
+        const found = newActivities[day].find(activity => activity.id === activityId);
+        if (found) {
+          removedItem = { ...found, day };
+          newActivities[day] = newActivities[day].filter(
+            activity => activity.id !== activityId
+          );
+        }
       });
+      if (removedItem) {
+        setRemovedItemsStack(prev => [...prev, removedItem]);
+      }
       return newActivities;
     });
-    setRemovedActivities([...removedActivities, activityId]);
   };
 
   const handleNavigation = (destination) => {
@@ -134,30 +144,73 @@ const EditItineraryScreen = () => {
     setActiveNavItem(null);
   };
 
+  const handleRestore = () => {
+    setActivities(prevActivities => {
+      const newActivities = { ...prevActivities };
+      selectedItemsToRestore.forEach(item => {
+        if (!newActivities[item.day]) {
+          newActivities[item.day] = [];
+        }
+        newActivities[item.day].push(item);
+      });
+      return newActivities;
+    });
+    
+    setRemovedItemsStack(prev => 
+      prev.filter(item => !selectedItemsToRestore.includes(item))
+    );
+    setSelectedItemsToRestore([]);
+    setShowUndoModal(false);
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>final itinerary</Text>
+      <View style={styles.headerContainer}>
+        <View style={styles.headerRow}>
+          <Text style={styles.header}>final itinerary: </Text>
+          {userCard && userCard.location && (
+            <Text style={styles.location}>{userCard.location}</Text> //mutable location to change if updated in supabase
+          )}
+        </View>
+      </View>
 
       {isLoading ? (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#E03616" />
         </View>
       ) : (
-        <ScrollView style={styles.content}>
+        <ScrollView 
+          contentContainerStyle={styles.contentContainer}
+          style={styles.scrollView}
+        >
           {userCard && (
             <>
-              <Image source={{ uri: userCard.imageUrl }} style={styles.mainImage} />
-              
-              <View style={styles.actionButtons}>
-                <TouchableOpacity onPress={() => handleActionButton('confirm')}>
-                  <Image source={icons.checkmark} style={styles.actionIcon} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleActionButton('download')}>
-                  <Image source={icons.download} style={styles.actionIcon} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleActionButton('share')}>
-                  <Image source={icons.share} style={styles.actionIcon} />
-                </TouchableOpacity>
+              <View style={styles.imageContainer}>
+                <Image source={{ uri: userCard.imageUrl }} style={styles.mainImage} />
+              </View>
+              <View style={styles.buttonsRow}>
+                <View style={styles.undoButtonContainer}>
+                  {removedItemsStack.length > 0 && (
+                    <TouchableOpacity 
+                      style={styles.undoButton}
+                      onPress={() => setShowUndoModal(true)}
+                    >
+                      <Image source={icons.repeat} style={styles.undoIcon} />
+                      <Text style={styles.undoText}>undo</Text>
+                    </TouchableOpacity>
+                  )}
+                </View>
+                <View style={styles.actionButtons}>
+                  <TouchableOpacity onPress={() => handleActionButton('confirm')}>
+                    <Image source={icons.checkmark} style={styles.actionIcon} />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => handleActionButton('download')}>
+                    <Image source={icons.download} style={styles.actionIcon} />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => handleActionButton('share')}>
+                    <Image source={icons.share} style={styles.actionIcon} />
+                  </TouchableOpacity>
+                </View>
               </View>
 
               {Object.entries(activities).map(([day, dayActivities]) => (
@@ -240,6 +293,53 @@ const EditItineraryScreen = () => {
         </View>
       </Modal>
 
+      {/* Undo modal */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={showUndoModal}
+        onRequestClose={() => setShowUndoModal(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.undoModalContent}>
+            <View style={styles.undoModalHeader}>
+              <TouchableOpacity onPress={() => setShowUndoModal(false)}>
+                <Image source={icons.exit} style={styles.modalExitIcon} />
+              </TouchableOpacity>
+              <Text style={styles.undoModalHeaderText}>Select one or many.</Text>
+              <TouchableOpacity 
+                style={styles.restoreButton}
+                onPress={handleRestore}
+                disabled={selectedItemsToRestore.length === 0}
+              >
+                <Text style={styles.restoreButtonText}>Restore</Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView>
+              {removedItemsStack.map((item) => (
+                <TouchableOpacity
+                  key={item.id}
+                  style={[
+                    styles.removedItem,
+                    selectedItemsToRestore.includes(item) && styles.selectedItem
+                  ]}
+                  onPress={() => {
+                    setSelectedItemsToRestore(prev => 
+                      prev.includes(item) 
+                        ? prev.filter(i => i !== item)
+                        : [...prev, item]
+                    );
+                  }}
+                >
+                  <Image source={icons.add} style={styles.addIcon} />
+                  <Text style={styles.removedItemText}>{item.activity_name}</Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+
       <Navbar
         onPlanetPress={() => handleNavigation('Search')}
         onAddPress={() => handleNavigation('CreateItinerary')}
@@ -257,33 +357,56 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  header: {
-    fontSize: 24,
-    fontFamily: 'RobotoMono-Bold',
-    textAlign: 'center',
+  headerContainer: {
+    alignItems: 'center',
     marginTop: 5,
     marginBottom: 10,
   },
-  content: {
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  header: {
+    fontSize: 24,
+    fontFamily: 'RobotoMono-Bold',
+  },
+  location: {
+    fontSize: 24,
+    fontFamily: 'RobotoMono-Bold',
+    color: '#E03616',
+  },
+  scrollView: {
     flex: 1,
   },
+  contentContainer: {
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
   mainImage: {
-    width: '100%',
+    width: 333,
     height: 100,
     resizeMode: 'cover',
+    borderRadius: 20,
   },
-  actionButtons: {
+  actionButtonsContainer: {
+    width: 333,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    padding: 10,
-    gap: 15,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
   },
   actionIcon: {
     width: 24,
     height: 24,
   },
   daySection: {
+    width: 333,
+    borderWidth: 1,
+    borderColor: '#959191',
+    borderRadius: 20,
+    backgroundColor: '#FFFFFF',
     padding: 15,
+    marginBottom: 15,
   },
   dayText: {
     fontSize: 18,
@@ -291,9 +414,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   activitiesList: {
-    backgroundColor: '#F7F3F3',
-    borderRadius: 10,
-    padding: 10,
+    width: '100%',
+    backgroundColor: '#FFFFFF',
   },
   activityItem: {
     marginBottom: 8,
@@ -391,6 +513,95 @@ const styles = StyleSheet.create({
   },
   confirmButtonText: {
     color: 'black',
+  },
+  undoButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#959191',
+  },
+  undoIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 5,
+  },
+  undoText: {
+    fontFamily: 'RobotoMono-Regular',
+    fontSize: 14,
+  },
+  undoModalContent: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    width: '90%',
+    maxHeight: '80%',
+  },
+  undoModalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  modalExitIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#959191',
+  },
+  restoreButton: {
+    backgroundColor: '#E03616',
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 5,
+  },
+  restoreButtonText: {
+    color: 'white',
+    fontFamily: 'RobotoMono-Bold',
+    fontSize: 14,
+  },
+  removedItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#959191',
+    marginBottom: 8,
+  },
+  selectedItem: {
+    borderColor: '#E03616',
+    backgroundColor: '#FFF3F3',
+  },
+  removedItemText: {
+    fontFamily: 'RobotoMono-Regular',
+    fontSize: 14,
+    marginLeft: 5,
+  },
+  imageContainer: {
+    width: 333,
+    marginBottom: 10,
+  },
+  buttonsRow: {
+    width: 333,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  undoButtonContainer: {
+    // No specific styling needed
+  },
+  actionButtons: {
+    flexDirection: 'row',
+    gap: 15,
+  },
+  undoModalHeaderText: {
+    fontFamily: 'RobotoMono-Bold',
+    fontSize: 11,
+    color: '#959191',
   },
 });
 

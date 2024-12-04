@@ -19,6 +19,7 @@ import loading from "./loading.png";
 import share from "./share.png";
 import navbarStar from "./navbarStar.png";
 import checkmark from "./confirmCheck.png";
+import repeat from "./Repeat.png";
 
 export {
   star,
@@ -42,4 +43,5 @@ export {
   share,
   navbarStar,
   checkmark,
+  repeat,
 };
