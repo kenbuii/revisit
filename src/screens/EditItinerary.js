@@ -23,6 +23,7 @@ import { supabase } from '../services/supabaseClient';
 import Navbar from '../components/navbar';
 import * as icons from '../assets/icons';
 import { HeaderBackButton } from "@react-navigation/elements";
+import NavigationConfirmationModal from '../components/NavigationConfirmationModal';
 
 const EditItineraryScreen = () => {
   const navigation = useNavigation();
@@ -252,46 +253,24 @@ const EditItineraryScreen = () => {
         onRequestClose={() => setModalVisible(false)}
       >
         <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalText}>{modalText}</Text>
+          <View style={styles.warningModalContent}>
+            <Text style={styles.warningModalText}>{modalText}</Text>
             <TouchableOpacity
-              style={styles.modalButton}
+              style={styles.warningModalButton}
               onPress={() => setModalVisible(false)}
             >
-              <Text style={styles.modalButtonText}>OK</Text>
+              <Text style={styles.warningModalButtonText}>OK</Text>
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
 
-      <Modal
-        animationType="fade"
-        transparent={true}
+      <NavigationConfirmationModal
         visible={showExitModal}
         onRequestClose={() => setShowExitModal(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalText}>
-              Are you sure you want to leave this page? You will lose any unconfirmed changes.
-            </Text>
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={[styles.modalButton, styles.stayButton]}
-                onPress={handleStay}
-              >
-                <Text style={[styles.modalButtonText, styles.stayButtonText]}>Stay</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.modalButton, styles.confirmButton]}
-                onPress={handleConfirmNavigation}
-              >
-                <Text style={[styles.modalButtonText, styles.confirmButtonText]}>Leave</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
+        onStay={handleStay}
+        onLeave={handleConfirmNavigation}
+      />
 
       {/* Undo modal */}
       <Modal
@@ -367,11 +346,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    fontSize: 24,
+    fontSize: 16,
     fontFamily: 'RobotoMono-Bold',
   },
   location: {
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: 'RobotoMono-Bold',
     color: '#E03616',
   },
@@ -426,7 +405,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E03616',
     borderRadius: 20,
     padding: 10,
-    width: '100%',
+    alignSelf: 'flex-start',
   },
   exitIcon: {
     width: 20,
@@ -456,63 +435,6 @@ const styles = StyleSheet.create({
   addButtonText: {
     fontFamily: 'RobotoMono-Regular',
     fontSize: 14,
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 20,
-    alignItems: 'center',
-    width: '80%',
-  },
-  modalText: {
-    fontSize: 16,
-    textAlign: 'center',
-    marginBottom: 20,
-    fontFamily: 'RobotoMono-Regular',
-  },
-  modalButton: {
-    backgroundColor: '#E03616',
-    paddingHorizontal: 30,
-    paddingVertical: 10,
-    borderRadius: 5,
-  },
-  modalButtonText: {
-    color: 'white',
-    fontSize: 16,
-    fontFamily: 'RobotoMono-Bold',
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    marginTop: 20,
-  },
-  stayButton: {
-    backgroundColor: '#E03616',
-    flex: 1,
-    marginRight: 10,
-  },
-  confirmButton: {
-    backgroundColor: '#E5E5E5',
-    flex: 1,
-    marginLeft: 10,
-  },
-  stayButtonText: {
-    color: 'white',
-  },
-  confirmButtonText: {
-    color: 'black',
   },
   undoButton: {
     flexDirection: 'row',
@@ -602,6 +524,36 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoMono-Bold',
     fontSize: 11,
     color: '#959191',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  warningModalContent: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    width: '80%',
+    alignItems: 'center',
+  },
+  warningModalText: {
+    fontFamily: 'RobotoMono-Regular',
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  warningModalButton: {
+    backgroundColor: '#E03616',
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+  },
+  warningModalButtonText: {
+    color: 'white',
+    fontFamily: 'RobotoMono-Bold',
+    fontSize: 14,
   },
 });
 
