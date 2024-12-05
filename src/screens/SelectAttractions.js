@@ -28,6 +28,12 @@ const SelectAttractions = () => {
     { activity_name: "Love on Haight", activity_type: "location" },
     { activity_name: "Nopalito", activity_type: "restaurant" },
     { activity_name: "Oracle Park", activity_type: "location" },
+    { activity_name: "La Rinascente", activity_type: "location" },
+    { activity_name: "St.Peter's Basilicia", activity_type: "location" },
+    { activity_name: "The Coliseum", activity_type: "location" },
+    { activity_name: "The Forum", activity_type: "location" },
+    { activity_name: "Pizzeria de Baffeto", activity_type: "location" },
+    { activity_name: "Villa Borghese", activity_type: "location" },
   ]);
   const [selectedActivities, setSelectedActivities] = useState([]);
 
@@ -72,7 +78,7 @@ const SelectAttractions = () => {
     //     if (error) throw error;
 
     //     // Navigate to ChooseDate screen
-    navigation.navigate("ChooseDate");
+        navigation.navigate("ChooseDate");
     //   }
     // } catch (error) {
     //   console.error("Error saving activities:", error.message);
@@ -95,7 +101,7 @@ const SelectAttractions = () => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View>
-          <Text style={styles.heading}>select your attractions</Text>
+          <Text style={styles.heading}>select your attractions</Text> 
         </View>
         <View style={styles.buttonContainer}>
           {activities.map((activity, index) => (
@@ -129,7 +135,7 @@ const SelectAttractions = () => {
 
       {selectedActivities.length > 0 && (
         <TouchableOpacity style={styles.confirmButton} onPress={handleConfirm}>
-          <Text style={styles.confirmText}>confirm</Text>
+          <Text style={styles.confirmText}>Confirm</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -192,16 +198,15 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 30,
   },
   confirmText: {
     color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
     fontFamily: "RobotoMono-Regular",
+    fontSize: 18,
   },
   heading: {
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: "RobotoMono-Bold",
     color: "black",
     textAlign: "center",
