@@ -20,7 +20,7 @@ import Navbar from "../components/navbar";
 import { useNavigation } from "@react-navigation/native";
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 
-const tags = ["sunsets", "sightsee", "thrifting", "energetic", "picnic"];
+const tags = ["sunsets", "hike", "food", "picnic", "city", "adventure"];
 
 const SearchScreen = () => {
   const navigation = useNavigation();
@@ -98,7 +98,7 @@ const SearchScreen = () => {
     const { data, error } = await supabase
       .from("cards")
       .select("id, title, imageUrl, username, profileImageUrl, stars"); // Include username
-  
+
     if (error) {
       console.error("Error fetching cards:", error.message);
     } else {
@@ -123,11 +123,27 @@ const SearchScreen = () => {
 
   // Toggle tag selection
   const toggleTag = (tag) => {
-    setSelectedTags((prevSelected) =>
-      prevSelected.includes(tag)
+    setSelectedTags((prevSelected) => {
+      const newSelected = prevSelected.includes(tag)
         ? prevSelected.filter((t) => t !== tag)
-        : [...prevSelected, tag]
+        : [...prevSelected, tag];
+      filterByTags(newSelected); // Apply filtering when tags are toggled
+      return newSelected;
+    });
+  };
+
+  // Filter cards by selected tags
+  const filterByTags = (tags) => {
+    if (tags.length === 0) {
+      setSearchResults(cards); // If no tags are selected, show all cards
+      return;
+    }
+
+    const filteredResults = cards.filter((card) =>
+      tags.some((tag) => card.title.toLowerCase().includes(tag.toLowerCase()))
     );
+    setSearchResults(filteredResults);
+    setVisibleCardsCount(14); // Reset visible cards to initial count
   };
 
   // Render tag component

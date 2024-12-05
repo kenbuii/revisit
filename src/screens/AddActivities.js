@@ -20,7 +20,13 @@ import NavigationConfirmationModal from '../components/NavigationConfirmationMod
 
 const AddActivities = () => {
   const navigation = useNavigation();
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState([
+    { activity_name: "san francisco", activity_type: "location" },
+    { activity_name: "new york", activity_type: "location" },
+    { activity_name: "estonia", activity_type: "location" },
+    { activity_name: "france", activity_type: "location" },
+    { activity_name: "rome", activity_type: "location" },
+  ]);
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,30 +41,7 @@ const AddActivities = () => {
         <HeaderBackButton onPress={() => handleNavigation('goBack')} />
       ),
     });
-    fetchActivities();
   }, [navigation]);
-
-  const fetchActivities = async () => {
-    try {
-      const { data: userCard } = await supabase
-        .from('cards')
-        .select('location')
-        .eq('userCreated', true)
-        .single();
-
-      if (userCard) {
-        const { data, error } = await supabase
-          .from('similar_activities')
-          .select('*')
-          .eq('location', userCard.location);
-
-        if (error) throw error;
-        setActivities(data);
-      }
-    } catch (error) {
-      console.error('Error fetching activities:', error.message);
-    }
-  };
 
   const toggleActivity = (activity) => {
     setSelectedActivities(prev => {
@@ -223,6 +206,9 @@ const AddActivities = () => {
     </View>
   );
 };
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -406,6 +392,7 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoMono-Bold',
     color: '#959191',
   },
+  
 });
 
 export default AddActivities;

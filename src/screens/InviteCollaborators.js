@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,38 +9,26 @@ import {
   Image,
   Alert,
 } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { supabase } from "../services/supabaseClient";
+import { useNavigation } from "@react-navigation/native";
+import Navbar from "../components/navbar";
+import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const InviteCollaborators = () => {
   const navigation = useNavigation();
-  const route = useRoute();
-  const { selectedItems } = route.params; // Get selected items from the previous screen
 
-  const [collaborators, setCollaborators] = useState([]);
+  // Hardcoded collaborators
+  const collaborators = [
+    { username: "world_ofshirts", profileImageUrl: "https://via.placeholder.com/40" },
+    { username: "janeromero", profileImageUrl: "https://via.placeholder.com/40" },
+    { username: "_danjones", profileImageUrl: "https://via.placeholder.com/40" },
+  ];
+
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCollaborators, setFilteredCollaborators] = useState([]);
+  const [filteredCollaborators, setFilteredCollaborators] = useState(collaborators);
   const [selectedCollaborators, setSelectedCollaborators] = useState([]);
-
-  useEffect(() => {
-    // Fetch collaborators based on card data
-    const fetchCollaborators = async () => {
-      const { data, error } = await supabase
-        .from("cards")
-        .select("username, profileImageUrl") // Adjust fields as per your table structure
-        .in("id", selectedItems); // Filter by selected item IDs
-
-      if (error) {
-        console.error("Error fetching collaborators:", error.message);
-        return;
-      }
-
-      setCollaborators(data);
-      setFilteredCollaborators(data); // Initialize filtered list
-    };
-
-    fetchCollaborators();
-  }, [selectedItems]);
+  const [activeNavItem, setActiveNavItem] = useState(null);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState(null);
 
   const toggleCollaboratorSelection = (username) => {
     if (selectedCollaborators.includes(username)) {
@@ -66,12 +54,38 @@ const InviteCollaborators = () => {
 
   const goToNextScreen = () => {
     if (selectedCollaborators.length === 0) {
-      Alert.alert("No Collaborators Selected", "Please select at least one collaborator.");
+      Alert.alert(
+        "No Collaborators Selected",
+        "Please select at least one collaborator."
+      );
       return;
     }
 
-    // Navigate to the next screen, passing selected collaborators
-    navigation.navigate("NextScreen", { selectedCollaborators });
+    // Navigate to the SelectAttractions screen, passing selected collaborators
+    navigation.navigate("SelectAttractions", { selectedCollaborators });
+  };
+
+  const handleNavigation = (destination) => {
+    setActiveNavItem(destination);
+    setPendingNavigation(destination);
+    setShowExitModal(true);
+  };
+
+  const handleConfirmNavigation = () => {
+    if (pendingNavigation === "goBack") {
+      navigation.goBack();
+    } else if (pendingNavigation) {
+      navigation.navigate(pendingNavigation);
+    }
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
+  };
+
+  const handleStay = () => {
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
   };
 
   const renderCollaborator = ({ item }) => (
@@ -91,7 +105,7 @@ const InviteCollaborators = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Invite Collaborators</Text>
+      <Text style={styles.header}>invite collaborators</Text>
       <View style={styles.searchBar}>
         <TextInput
           style={styles.searchInput}
@@ -109,6 +123,22 @@ const InviteCollaborators = () => {
       <TouchableOpacity style={styles.nextButton} onPress={goToNextScreen}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
+
+      <NavigationConfirmationModal
+        visible={showExitModal}
+        onRequestClose={() => setShowExitModal(false)}
+        onStay={handleStay}
+        onLeave={handleConfirmNavigation}
+      />
+
+      <Navbar
+        onPlanetPress={() => handleNavigation("Search")}
+        onAddPress={() => handleNavigation("CreateItinerary")}
+        onStarPress={() => handleNavigation("Profile")}
+        isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
+        isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
+        isStarActiveOnProfileScreen={activeNavItem === "Profile"}
+      />
     </View>
   );
 };
@@ -168,13 +198,30 @@ const styles = StyleSheet.create({
   checkbox: {
     fontSize: 20,
   },
+  // nextButton: {
+  //   backgroundColor: "#E03616",
+  //   padding: 15,
+  //   borderRadius: 10,
+  //   alignItems: "center",
+  //   marginTop: 20,
+  // },
   nextButton: {
     backgroundColor: "#E03616",
-    padding: 15,
-    borderRadius: 10,
+    alignSelf: "center",
+    borderRadius: 25,
+    width: "50%",
+    height: 50,
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    marginBottom: 20,
   },
+
+
+
+
+
+
+
   nextButtonText: {
     color: "white",
     fontSize: 16,
