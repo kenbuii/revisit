@@ -7,7 +7,7 @@ FEATURES:
 
 TODO: add anthropic prompt filling to suggestions 
 */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -16,21 +16,21 @@ import {
   TouchableOpacity,
   ScrollView,
   Modal,
-  ActivityIndicator
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { supabase } from '../services/supabaseClient';
-import Navbar from '../components/navbar';
-import * as icons from '../assets/icons';
+  ActivityIndicator,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { supabase } from "../services/supabaseClient";
+import Navbar from "../components/navbar";
+import * as icons from "../assets/icons";
 import { HeaderBackButton } from "@react-navigation/elements";
-import NavigationConfirmationModal from '../components/NavigationConfirmationModal';
+import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const EditItineraryScreen = () => {
   const navigation = useNavigation();
   const [userCard, setUserCard] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalText, setModalText] = useState('');
+  const [modalText, setModalText] = useState("");
   const [activities, setActivities] = useState({});
   const [removedActivities, setRemovedActivities] = useState([]);
   const [showExitModal, setShowExitModal] = useState(false);
@@ -44,7 +44,7 @@ const EditItineraryScreen = () => {
     navigation.setOptions({
       headerTitle: null,
       headerLeft: () => (
-        <HeaderBackButton onPress={() => handleNavigation('goBack')} />
+        <HeaderBackButton onPress={() => handleNavigation("goBack")} />
       ),
     });
   }, [navigation]);
@@ -53,9 +53,9 @@ const EditItineraryScreen = () => {
     setIsLoading(true);
     try {
       const { data, error } = await supabase
-        .from('cards')
-        .select('*, location')
-        .eq('userCreated', true)
+        .from("cards")
+        .select("*, location")
+        .eq("userCreated", true)
         .single();
 
       if (error) throw error;
@@ -63,10 +63,10 @@ const EditItineraryScreen = () => {
 
       // Fetch activities for this card
       const { data: activitiesData, error: activitiesError } = await supabase
-        .from('user_selected_activities')
-        .select('*')
-        .eq('card_id', data.id)
-        .order('activity_day', { ascending: true });
+        .from("user_selected_activities")
+        .select("*")
+        .eq("card_id", data.id)
+        .order("activity_day", { ascending: true });
 
       if (activitiesError) throw activitiesError;
 
@@ -79,7 +79,7 @@ const EditItineraryScreen = () => {
 
       setActivities(groupedActivities);
     } catch (error) {
-      console.error('Error fetching card:', error.message);
+      console.error("Error fetching card:", error.message);
     } finally {
       setIsLoading(false);
     }
@@ -90,12 +90,12 @@ const EditItineraryScreen = () => {
   }, []);
 
   const handleActionButton = (type) => {
-    if (type === 'confirm') {
-      navigation.navigate('ConfirmedItinerary');
+    if (type === "confirm") {
+      navigation.navigate("ConfirmedItinerary");
     } else {
       setModalText(
         `Oops! You need to confirm your itinerary first before ${
-          type === 'download' ? 'downloading' : 'sharing'
+          type === "download" ? "downloading" : "sharing"
         }`
       );
       setModalVisible(true);
@@ -103,20 +103,22 @@ const EditItineraryScreen = () => {
   };
 
   const removeActivity = (activityId) => {
-    setActivities(prevActivities => {
+    setActivities((prevActivities) => {
       const newActivities = { ...prevActivities };
       let removedItem = null;
-      Object.keys(newActivities).forEach(day => {
-        const found = newActivities[day].find(activity => activity.id === activityId);
+      Object.keys(newActivities).forEach((day) => {
+        const found = newActivities[day].find(
+          (activity) => activity.id === activityId
+        );
         if (found) {
           removedItem = { ...found, day };
           newActivities[day] = newActivities[day].filter(
-            activity => activity.id !== activityId
+            (activity) => activity.id !== activityId
           );
         }
       });
       if (removedItem) {
-        setRemovedItemsStack(prev => [...prev, removedItem]);
+        setRemovedItemsStack((prev) => [...prev, removedItem]);
       }
       return newActivities;
     });
@@ -129,7 +131,7 @@ const EditItineraryScreen = () => {
   };
 
   const handleConfirmNavigation = () => {
-    if (pendingNavigation === 'goBack') {
+    if (pendingNavigation === "goBack") {
       navigation.goBack();
     } else if (pendingNavigation) {
       navigation.navigate(pendingNavigation);
@@ -146,9 +148,9 @@ const EditItineraryScreen = () => {
   };
 
   const handleRestore = () => {
-    setActivities(prevActivities => {
+    setActivities((prevActivities) => {
       const newActivities = { ...prevActivities };
-      selectedItemsToRestore.forEach(item => {
+      selectedItemsToRestore.forEach((item) => {
         if (!newActivities[item.day]) {
           newActivities[item.day] = [];
         }
@@ -156,9 +158,9 @@ const EditItineraryScreen = () => {
       });
       return newActivities;
     });
-    
-    setRemovedItemsStack(prev => 
-      prev.filter(item => !selectedItemsToRestore.includes(item))
+
+    setRemovedItemsStack((prev) =>
+      prev.filter((item) => !selectedItemsToRestore.includes(item))
     );
     setSelectedItemsToRestore([]);
     setShowUndoModal(false);
@@ -180,19 +182,22 @@ const EditItineraryScreen = () => {
           <ActivityIndicator size="large" color="#E03616" />
         </View>
       ) : (
-        <ScrollView 
+        <ScrollView
           contentContainerStyle={styles.contentContainer}
           style={styles.scrollView}
         >
           {userCard && (
             <>
               <View style={styles.imageContainer}>
-                <Image source={{ uri: userCard.imageUrl }} style={styles.mainImage} />
+                <Image
+                  source={{ uri: userCard.imageUrl }}
+                  style={styles.mainImage}
+                />
               </View>
               <View style={styles.buttonsRow}>
                 <View style={styles.undoButtonContainer}>
                   {removedItemsStack.length > 0 && (
-                    <TouchableOpacity 
+                    <TouchableOpacity
                       style={styles.undoButton}
                       onPress={() => setShowUndoModal(true)}
                     >
@@ -202,13 +207,17 @@ const EditItineraryScreen = () => {
                   )}
                 </View>
                 <View style={styles.actionButtons}>
-                  <TouchableOpacity onPress={() => handleActionButton('confirm')}>
+                  <TouchableOpacity
+                    onPress={() => handleActionButton("confirm")}
+                  >
                     <Image source={icons.checkmark} style={styles.actionIcon} />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={() => handleActionButton('download')}>
+                  <TouchableOpacity
+                    onPress={() => handleActionButton("download")}
+                  >
                     <Image source={icons.download} style={styles.actionIcon} />
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={() => handleActionButton('share')}>
+                  <TouchableOpacity onPress={() => handleActionButton("share")}>
                     <Image source={icons.share} style={styles.actionIcon} />
                   </TouchableOpacity>
                 </View>
@@ -233,7 +242,7 @@ const EditItineraryScreen = () => {
                     ))}
                     <TouchableOpacity
                       style={styles.addButton}
-                      onPress={() => navigation.navigate('AddActivities')}
+                      onPress={() => navigation.navigate("AddActivities")}
                     >
                       <Image source={icons.add} style={styles.addIcon} />
                       <Text style={styles.addButtonText}>Add my own</Text>
@@ -285,8 +294,10 @@ const EditItineraryScreen = () => {
               <TouchableOpacity onPress={() => setShowUndoModal(false)}>
                 <Image source={icons.exit} style={styles.modalExitIcon} />
               </TouchableOpacity>
-              <Text style={styles.undoModalHeaderText}>Select one or many.</Text>
-              <TouchableOpacity 
+              <Text style={styles.undoModalHeaderText}>
+                Select one or many.
+              </Text>
+              <TouchableOpacity
                 style={styles.restoreButton}
                 onPress={handleRestore}
                 disabled={selectedItemsToRestore.length === 0}
@@ -300,18 +311,21 @@ const EditItineraryScreen = () => {
                   key={item.id}
                   style={[
                     styles.removedItem,
-                    selectedItemsToRestore.includes(item) && styles.selectedItem
+                    selectedItemsToRestore.includes(item) &&
+                      styles.selectedItem,
                   ]}
                   onPress={() => {
-                    setSelectedItemsToRestore(prev => 
-                      prev.includes(item) 
-                        ? prev.filter(i => i !== item)
+                    setSelectedItemsToRestore((prev) =>
+                      prev.includes(item)
+                        ? prev.filter((i) => i !== item)
                         : [...prev, item]
                     );
                   }}
                 >
                   <Image source={icons.add} style={styles.addIcon} />
-                  <Text style={styles.removedItemText}>{item.activity_name}</Text>
+                  <Text style={styles.removedItemText}>
+                    {item.activity_name}
+                  </Text>
                 </TouchableOpacity>
               ))}
             </ScrollView>
@@ -320,12 +334,12 @@ const EditItineraryScreen = () => {
       </Modal>
 
       <Navbar
-        onPlanetPress={() => handleNavigation('Search')}
-        onAddPress={() => handleNavigation('CreateItinerary')}
-        onStarPress={() => handleNavigation('Profile')}
-        isPlanetActiveOnSearchScreen={activeNavItem === 'Search'}
-        isAddActiveOnOtherScreens={activeNavItem === 'CreateItinerary'}
-        isStarActiveOnProfileScreen={activeNavItem === 'Profile'}
+        onPlanetPress={() => handleNavigation("Search")}
+        onAddPress={() => handleNavigation("CreateItinerary")}
+        onStarPress={() => handleNavigation("Profile")}
+        isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
+        isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
+        isStarActiveOnProfileScreen={activeNavItem === "Profile"}
       />
     </View>
   );
@@ -334,44 +348,44 @@ const EditItineraryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   headerContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 5,
     marginBottom: 10,
   },
   headerRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   header: {
     fontSize: 16,
-    fontFamily: 'RobotoMono-Bold',
+    fontFamily: "RobotoMono-Bold",
   },
   location: {
     fontSize: 20,
-    fontFamily: 'RobotoMono-Bold',
-    color: '#E03616',
+    fontFamily: "RobotoMono-Bold",
+    color: "#E03616",
   },
   scrollView: {
     flex: 1,
   },
   contentContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     paddingHorizontal: 20,
   },
   mainImage: {
-    width: 333,
+    width: 360,
     height: 100,
-    resizeMode: 'cover',
+    resizeMode: "cover",
     borderRadius: 20,
   },
   actionButtonsContainer: {
     width: 333,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 20,
   },
   actionIcon: {
@@ -379,53 +393,53 @@ const styles = StyleSheet.create({
     height: 24,
   },
   daySection: {
-    width: 333,
+    width: "95%",
     borderWidth: 1,
-    borderColor: '#959191',
+    borderColor: "#959191",
     borderRadius: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     padding: 15,
     marginBottom: 15,
   },
   dayText: {
     fontSize: 18,
-    fontFamily: 'RobotoMono-Bold',
+    fontFamily: "RobotoMono-Bold",
     marginBottom: 10,
   },
   activitiesList: {
-    width: '100%',
-    backgroundColor: '#FFFFFF',
+    width: "100%",
+    backgroundColor: "#FFFFFF",
   },
   activityItem: {
     marginBottom: 8,
   },
   removeButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#E03616',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#E03616",
     borderRadius: 20,
     padding: 10,
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
   },
   exitIcon: {
     width: 20,
     height: 20,
-    tintColor: 'white',
+    tintColor: "white",
     marginRight: 5,
   },
   activityText: {
-    color: 'white',
-    fontFamily: 'RobotoMono-Regular',
+    color: "white",
+    fontFamily: "RobotoMono-Regular",
     fontSize: 14,
   },
   addButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "white",
     borderRadius: 20,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
   },
   addIcon: {
     width: 20,
@@ -433,17 +447,17 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   addButtonText: {
-    fontFamily: 'RobotoMono-Regular',
+    fontFamily: "RobotoMono-Regular",
     fontSize: 14,
   },
   undoButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "white",
     borderRadius: 20,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#959191',
+    borderColor: "#959191",
   },
   undoIcon: {
     width: 20,
@@ -451,111 +465,111 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   undoText: {
-    fontFamily: 'RobotoMono-Regular',
+    fontFamily: "RobotoMono-Regular",
     fontSize: 14,
   },
   undoModalContent: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 10,
     padding: 20,
-    width: '90%',
-    maxHeight: '80%',
+    width: "90%",
+    maxHeight: "80%",
   },
   undoModalHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 20,
   },
   modalExitIcon: {
     width: 24,
     height: 24,
-    tintColor: '#959191',
+    tintColor: "#959191",
   },
   restoreButton: {
-    backgroundColor: '#E03616',
+    backgroundColor: "#E03616",
     paddingHorizontal: 20,
     paddingVertical: 8,
     borderRadius: 5,
   },
   restoreButtonText: {
-    color: 'white',
-    fontFamily: 'RobotoMono-Bold',
+    color: "white",
+    fontFamily: "RobotoMono-Bold",
     fontSize: 14,
   },
   removedItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "white",
     borderRadius: 20,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#959191',
+    borderColor: "#959191",
     marginBottom: 8,
   },
   selectedItem: {
-    borderColor: '#E03616',
-    backgroundColor: '#FFF3F3',
+    borderColor: "#E03616",
+    backgroundColor: "#FFF3F3",
   },
   removedItemText: {
-    fontFamily: 'RobotoMono-Regular',
+    fontFamily: "RobotoMono-Regular",
     fontSize: 14,
     marginLeft: 5,
   },
   imageContainer: {
-    width: 333,
+    width: 350,
+    resizeMode: "cover",
     marginBottom: 10,
   },
   buttonsRow: {
     width: 333,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 20,
   },
   undoButtonContainer: {
     // No specific styling needed
   },
   actionButtons: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 15,
   },
   undoModalHeaderText: {
-    fontFamily: 'RobotoMono-Bold',
+    fontFamily: "RobotoMono-Bold",
     fontSize: 11,
-    color: '#959191',
+    color: "#959191",
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   warningModalContent: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 10,
     padding: 20,
-    width: '80%',
-    alignItems: 'center',
+    width: "80%",
+    alignItems: "center",
   },
   warningModalText: {
-    fontFamily: 'RobotoMono-Regular',
+    fontFamily: "RobotoMono-Regular",
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 20,
   },
   warningModalButton: {
-    backgroundColor: '#E03616',
+    backgroundColor: "#E03616",
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 30,
   },
   warningModalButtonText: {
-    color: 'white',
-    fontFamily: 'RobotoMono-Bold',
+    color: "white",
+    fontFamily: "RobotoMono-Bold",
     fontSize: 14,
   },
 });
 
 export default EditItineraryScreen;
-
