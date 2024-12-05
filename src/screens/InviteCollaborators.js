@@ -18,13 +18,23 @@ const InviteCollaborators = () => {
 
   // Hardcoded collaborators
   const collaborators = [
-    { username: "world_ofshirts", profileImageUrl: "https://via.placeholder.com/40" },
-    { username: "janeromero", profileImageUrl: "https://via.placeholder.com/40" },
-    { username: "_danjones", profileImageUrl: "https://via.placeholder.com/40" },
+    {
+      username: "world_ofshirts",
+      profileImageUrl: "https://via.placeholder.com/40",
+    },
+    {
+      username: "janeromero",
+      profileImageUrl: "https://via.placeholder.com/40",
+    },
+    {
+      username: "_danjones",
+      profileImageUrl: "https://via.placeholder.com/40",
+    },
   ];
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCollaborators, setFilteredCollaborators] = useState(collaborators);
+  const [filteredCollaborators, setFilteredCollaborators] =
+    useState(collaborators);
   const [selectedCollaborators, setSelectedCollaborators] = useState([]);
   const [activeNavItem, setActiveNavItem] = useState(null);
   const [showExitModal, setShowExitModal] = useState(false);
@@ -94,7 +104,10 @@ const InviteCollaborators = () => {
       onPress={() => toggleCollaboratorSelection(item.username)}
     >
       <View style={styles.profileInfo}>
-        <Image source={{ uri: item.profileImageUrl }} style={styles.profileImage} />
+        <Image
+          source={{ uri: item.profileImageUrl }}
+          style={styles.profileImage}
+        />
         <Text style={styles.username}>{item.username}</Text>
       </View>
       <Text style={styles.checkbox}>
@@ -121,7 +134,7 @@ const InviteCollaborators = () => {
         contentContainerStyle={styles.list}
       />
       <TouchableOpacity style={styles.nextButton} onPress={goToNextScreen}>
-        <Text style={styles.nextButtonText}>Next</Text>
+        <Text style={styles.nextButtonText}>next</Text>
       </TouchableOpacity>
 
       <NavigationConfirmationModal
@@ -131,14 +144,14 @@ const InviteCollaborators = () => {
         onLeave={handleConfirmNavigation}
       />
 
-      <Navbar
+      {/* <Navbar
         onPlanetPress={() => handleNavigation("Search")}
         onAddPress={() => handleNavigation("CreateItinerary")}
         onStarPress={() => handleNavigation("Profile")}
         isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
         isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
         isStarActiveOnProfileScreen={activeNavItem === "Profile"}
-      />
+      /> */}
     </View>
   );
 };
@@ -150,8 +163,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   header: {
-    fontSize: 24,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontFamily: "RobotoMono-Bold",
     textAlign: "center",
     marginBottom: 20,
   },
@@ -198,13 +211,6 @@ const styles = StyleSheet.create({
   checkbox: {
     fontSize: 20,
   },
-  // nextButton: {
-  //   backgroundColor: "#E03616",
-  //   padding: 15,
-  //   borderRadius: 10,
-  //   alignItems: "center",
-  //   marginTop: 20,
-  // },
   nextButton: {
     backgroundColor: "#E03616",
     alignSelf: "center",
@@ -215,17 +221,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
   },
-
-
-
-
-
-
-
   nextButtonText: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
+    fontFamily: "RobotoMono-Regular",
   },
 });
 

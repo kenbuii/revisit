@@ -16,7 +16,7 @@ import { HeaderBackButton } from "@react-navigation/elements";
 import { supabase } from "../services/supabaseClient";
 import * as icons from "../assets/icons";
 import Navbar from "../components/navbar";
-import NavigationConfirmationModal from '../components/NavigationConfirmationModal';
+import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const AddActivities = () => {
   const navigation = useNavigation();
@@ -38,15 +38,15 @@ const AddActivities = () => {
     navigation.setOptions({
       headerTitle: "select your attractions",
       headerLeft: () => (
-        <HeaderBackButton onPress={() => handleNavigation('goBack')} />
+        <HeaderBackButton onPress={() => handleNavigation("goBack")} />
       ),
     });
   }, [navigation]);
 
   const toggleActivity = (activity) => {
-    setSelectedActivities(prev => {
+    setSelectedActivities((prev) => {
       if (prev.includes(activity)) {
-        return prev.filter(a => a !== activity);
+        return prev.filter((a) => a !== activity);
       }
       return [...prev, activity];
     });
@@ -55,28 +55,28 @@ const AddActivities = () => {
   const handleConfirm = async () => {
     try {
       const { data: cardData } = await supabase
-        .from('cards')
-        .select('id')
-        .eq('userCreated', true)
+        .from("cards")
+        .select("id")
+        .eq("userCreated", true)
         .single();
 
       if (cardData) {
-        const activitiesToAdd = selectedActivities.map(activity => ({
+        const activitiesToAdd = selectedActivities.map((activity) => ({
           card_id: cardData.id,
           activity_name: activity.activity_name,
           activity_type: activity.activity_type,
-          activity_day: 1 // You might want to make this dynamic
+          activity_day: 1, // You might want to make this dynamic
         }));
 
         const { error } = await supabase
-          .from('user_selected_activities')
+          .from("user_selected_activities")
           .insert(activitiesToAdd);
 
         if (error) throw error;
-        navigation.navigate('EditItinerary');
+        navigation.navigate("EditItinerary");
       }
     } catch (error) {
-      console.error('Error saving activities:', error.message);
+      console.error("Error saving activities:", error.message);
     }
   };
 
@@ -87,7 +87,7 @@ const AddActivities = () => {
   };
 
   const handleConfirmNavigation = () => {
-    if (pendingNavigation === 'goBack') {
+    if (pendingNavigation === "goBack") {
       navigation.goBack();
     } else if (pendingNavigation) {
       navigation.navigate(pendingNavigation);
@@ -105,11 +105,11 @@ const AddActivities = () => {
 
   const renderActivityIcon = (type) => {
     switch (type) {
-      case 'location':
+      case "location":
         return icons.location;
-      case 'restaurant':
+      case "restaurant":
         return icons.food;
-      case 'shopping':
+      case "shopping":
         return icons.shopping;
       default:
         return icons.location;
@@ -125,7 +125,7 @@ const AddActivities = () => {
               key={index}
               style={[
                 styles.activityButton,
-                selectedActivities.includes(activity) && styles.selectedButton
+                selectedActivities.includes(activity) && styles.selectedButton,
               ]}
               onPress={() => toggleActivity(activity)}
             >
@@ -133,13 +133,15 @@ const AddActivities = () => {
                 source={renderActivityIcon(activity.activity_type)}
                 style={[
                   styles.icon,
-                  selectedActivities.includes(activity) && styles.selectedIcon
+                  selectedActivities.includes(activity) && styles.selectedIcon,
                 ]}
               />
-              <Text style={[
-                styles.activityText,
-                selectedActivities.includes(activity) && styles.selectedText
-              ]}>
+              <Text
+                style={[
+                  styles.activityText,
+                  selectedActivities.includes(activity) && styles.selectedText,
+                ]}
+              >
                 {activity.activity_name}
               </Text>
             </TouchableOpacity>
@@ -196,19 +198,16 @@ const AddActivities = () => {
       />
 
       <Navbar
-        onPlanetPress={() => handleNavigation('Search')}
-        onAddPress={() => handleNavigation('CreateItinerary')}
-        onStarPress={() => handleNavigation('Profile')}
-        isPlanetActiveOnSearchScreen={activeNavItem === 'Search'}
-        isAddActiveOnOtherScreens={activeNavItem === 'CreateItinerary'}
-        isStarActiveOnProfileScreen={activeNavItem === 'Profile'}
+        onPlanetPress={() => handleNavigation("Search")}
+        onAddPress={() => handleNavigation("CreateItinerary")}
+        onStarPress={() => handleNavigation("Profile")}
+        isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
+        isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
+        isStarActiveOnProfileScreen={activeNavItem === "Profile"}
       />
     </View>
   );
 };
-
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -228,7 +227,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1.5,
     borderColor: "#959191",
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
   },
   selectedButton: {
     backgroundColor: "#E03616",
@@ -260,7 +259,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1.5,
     borderColor: "#959191",
-    alignSelf: 'flex-start',
+    alignSelf: "flex-start",
   },
   addIcon: {
     width: 20,
@@ -273,12 +272,12 @@ const styles = StyleSheet.create({
   },
   confirmButton: {
     backgroundColor: "#E03616",
-    alignSelf: 'center',
+    alignSelf: "center",
     borderRadius: 25,
-    width: '50%',
+    width: "50%",
     height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 20,
   },
   confirmText: {
@@ -288,16 +287,16 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContent: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 10,
     padding: 20,
-    alignItems: 'center',
-    width: '80%',
+    alignItems: "center",
+    width: "80%",
   },
   modalHeader: {
     flexDirection: "row",
@@ -338,7 +337,7 @@ const styles = StyleSheet.create({
   modalButtons: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: '100%',
+    width: "100%",
     marginTop: 20,
   },
   modalButton: {
@@ -369,30 +368,29 @@ const styles = StyleSheet.create({
   },
   addModalContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   addModalContent: {
-    width: '100%',
-    height: '80%',
-    backgroundColor: 'white',
+    width: "100%",
+    height: "80%",
+    backgroundColor: "white",
     borderRadius: 20,
     padding: 20,
-    marginTop: 'auto',
+    marginTop: "auto",
   },
   buttonContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: 10,
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
   },
   modalText: {
     fontSize: 11,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 20,
-    fontFamily: 'RobotoMono-Bold',
-    color: '#959191',
+    fontFamily: "RobotoMono-Bold",
+    color: "#959191",
   },
-  
 });
 
 export default AddActivities;

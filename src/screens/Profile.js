@@ -150,7 +150,9 @@ const Profile = () => {
             >
               edit itineraries
             </Text>
-            {activeTab === "edit itinerary" && <View style={styles.underline} />}
+            {activeTab === "edit itinerary" && (
+              <View style={styles.underline} />
+            )}
           </TouchableOpacity>
         </View>
 
@@ -222,9 +224,7 @@ const Profile = () => {
               style={styles.createCard}
               onPress={() => navigation.navigate("EditItinerary")}
             >
-              <Text style={styles.createCardText}>
-                go to edit itinerary
-              </Text>
+              <Text style={styles.createCardText}>go to edit itinerary</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: 10,
-    marginBottom: verticalScale(50),
+    marginBottom: verticalScale(72),
   },
   cardProfile: {
     flexDirection: "row",
