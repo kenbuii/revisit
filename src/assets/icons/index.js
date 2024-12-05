@@ -20,6 +20,10 @@ import share from "./share.png";
 import navbarStar from "./navbarStar.png";
 import checkmark from "./confirmCheck.png";
 import repeat from "./Repeat.png";
+import textEdit from "./textEdit.png";
+import maximize from "./maximize.png";
+import minimize from "./minimize.png";
+import orangeEdit from "./orangeEdit.png";
 
 export {
   star,
@@ -44,4 +48,8 @@ export {
   navbarStar,
   checkmark,
   repeat,
+  textEdit,
+  maximize,
+  minimize,
+  orangeEdit,
 };

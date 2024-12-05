@@ -148,7 +148,7 @@ const Profile = () => {
                 activeTab === "edit itinerary" && styles.activeTabText,
               ]}
             >
-              TEST: edit itinerary
+              edit itineraries
             </Text>
             {activeTab === "edit itinerary" && <View style={styles.underline} />}
           </TouchableOpacity>
