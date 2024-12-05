@@ -50,7 +50,22 @@ const ChooseDate = () => {
           placeholder="00:00"
           placeholderTextColor="#999"
           value={dateState.time}
-          onChangeText={(text) => setDateState({ ...dateState, time: text })}
+          keyboardType="numeric"
+          maxLength={5} // Ensure no more than HH:MM is entered
+          onChangeText={(text) => {
+            const formattedText = text.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+            let hours = formattedText.slice(0, 2);
+            let minutes = formattedText.slice(2, 4);
+
+            if (hours.length === 1 && parseInt(hours) > 2) {
+              hours = `0${hours}`; // Add leading 0 if hour is 3-9
+            }
+            if (hours.length > 2) hours = hours.slice(0, 2); // Keep only the first two digits
+            if (minutes.length > 2) minutes = minutes.slice(0, 2); // Keep only the first two digits
+
+            const formattedTime = `${hours}${minutes ? ":" + minutes : ""}`; // Combine hours and minutes
+            setDateState({ ...dateState, time: formattedTime });
+          }}
         />
       </View>
       <View style={styles.dateInputContainer}>
@@ -83,9 +98,9 @@ const ChooseDate = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        {/* Header text */}
+      <View style={styles.headerContainer}>
         <Text style={styles.headerTitle}>choose your travel dates</Text>
+<<<<<<< Updated upstream
 
         {/* Date inputs */}
         {renderDateInput("from", fromDate, setFromDate)}
@@ -98,6 +113,19 @@ const ChooseDate = () => {
       </View>
 
       {/* Navbar at the bottom */}
+=======
+      </View>
+
+      <View style={styles.dateInputSection}>
+        {renderDateInput("from", fromDate, setFromDate)}
+        {renderDateInput("to", toDate, setToDate)}
+      </View>
+
+      <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+        <Text style={styles.nextButtonText}>confirm</Text>
+      </TouchableOpacity>
+
+>>>>>>> Stashed changes
       <Navbar
         onStarPress={() => navigation.navigate("Profile")}
         isPlanetActiveOnSearchScreen={false}
@@ -113,10 +141,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-  content: {
-    flex: 1, // Ensures content takes up available space
+  headerContainer: {
+    alignItems: "center",
+    marginTop: 20, // Add some margin from the top
+  },
+  headerTitle: {
+    fontFamily: "RobotoMono-Bold",
+    fontSize: 24,
+    color: "black",
+    textAlign: "center",
+    textTransform: "lowercase",
+  },
+  dateInputSection: {
+    flex: 1, // Take the remaining vertical space
+    justifyContent: "center", // Center the date inputs vertically
     paddingHorizontal: 20,
-    justifyContent: "center", // Center the date inputs and button
   },
   dateContainer: {
     alignItems: "center",
@@ -176,7 +215,13 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
+<<<<<<< Updated upstream
     marginBottom: 20,
+=======
+    alignSelf: "center",
+    width: "60%",
+    marginBottom: 20, // Space from the navbar
+>>>>>>> Stashed changes
   },
   nextButtonText: {
     color: "white",
@@ -193,6 +238,7 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "white",
   },
+<<<<<<< Updated upstream
   headerTitle: {
     fontSize: 20,
     fontFamily: "RobotoMono-Bold",
@@ -201,6 +247,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     textTransform: "lowercase",
   },
+=======
+>>>>>>> Stashed changes
 });
 
 export default ChooseDate;
