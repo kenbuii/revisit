@@ -137,7 +137,7 @@ const App = () => {
           name="EditItinerary"
           component={EditItineraryScreen}
           options={{
-            title: "Edit Itinerary",
+            title: "edit itinerary",
             headerStyle: { backgroundColor: "#FFFFFF" },
             headerTintColor: "black",
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
@@ -161,7 +161,7 @@ const App = () => {
           name="ConfirmedItinerary"
           component={ConfirmedItinerary}
           options={{
-            title: "Confirmed",
+            title: "final itinerary",
             headerStyle: { backgroundColor: "#FFFFFF" },
             headerTintColor: "black",
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },

@@ -107,7 +107,7 @@ const ConfirmedItinerary = () => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.headerRow}>
-          <Text style={styles.header}>final itinerary: </Text>
+          {/* <Text style={styles.header}>final itinerary: </Text> */}
           {userCard && userCard.location && (
             <Text style={styles.location}>{userCard.location}</Text>
           )}
