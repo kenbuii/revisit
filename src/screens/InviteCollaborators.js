@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
   View,
   Text,
@@ -179,7 +179,8 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 15,
+    fontFamily: "RobotoMono-Regular",
   },
   list: {
     paddingBottom: 20,
@@ -206,7 +207,9 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   username: {
-    fontSize: 16,
+    fontSize: 15,
+    color: "black",
+    fontFamily: "RobotoMono-Regular",
   },
   checkbox: {
     fontSize: 20,
