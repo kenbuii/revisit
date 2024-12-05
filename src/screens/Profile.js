@@ -138,22 +138,6 @@ const Profile = () => {
               <View style={styles.underline} />
             )}
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.tab}
-            onPress={() => setActiveTab("edit itinerary")}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab === "edit itinerary" && styles.activeTabText,
-              ]}
-            >
-              edit itineraries
-            </Text>
-            {activeTab === "edit itinerary" && (
-              <View style={styles.underline} />
-            )}
-          </TouchableOpacity>
         </View>
 
         {/* Starred Cards */}
@@ -216,18 +200,6 @@ const Profile = () => {
             />
           </View>
         )}
-
-        {/* Edit Itinerary Section */}
-        {activeTab === "edit itinerary" && (
-          <View style={styles.feed}>
-            <TouchableOpacity
-              style={styles.createCard}
-              onPress={() => navigation.navigate("EditItinerary")}
-            >
-              <Text style={styles.createCardText}>go to edit itinerary</Text>
-            </TouchableOpacity>
-          </View>
-        )}
       </View>
       <Navbar
         onPlanetPress={() => navigation.navigate("Search")}
@@ -266,7 +238,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: 10,
-    marginBottom: verticalScale(72),
+    marginBottom: verticalScale(50),
   },
   cardProfile: {
     flexDirection: "row",
