@@ -47,7 +47,10 @@ const CreateItineraryScreen = () => {
 
   const goToInviteCollaborators = () => {
     if (selectedItems.length === 0) {
-      Alert.alert("No Items Selected", "Please select at least one item to proceed.");
+      Alert.alert(
+        "No Items Selected",
+        "Please select at least one item to proceed."
+      );
       return;
     }
 
@@ -111,8 +114,11 @@ const CreateItineraryScreen = () => {
           contentContainerStyle={styles.list}
         />
       )}
-      <TouchableOpacity style={styles.nextButton} onPress={goToInviteCollaborators}>
-        <Text style={styles.nextButtonText}>Next</Text>
+      <TouchableOpacity
+        style={styles.nextButton}
+        onPress={goToInviteCollaborators}
+      >
+        <Text style={styles.nextButtonText}>next</Text>
       </TouchableOpacity>
 
       <NavigationConfirmationModal
@@ -122,14 +128,14 @@ const CreateItineraryScreen = () => {
         onLeave={handleConfirmNavigation}
       />
 
-      <Navbar
+      {/* <Navbar
         onPlanetPress={() => handleNavigation("Search")}
         onAddPress={() => handleNavigation("CreateItinerary")}
         onStarPress={() => handleNavigation("Profile")}
         isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
         isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
         isStarActiveOnProfileScreen={activeNavItem === "Profile"}
-      />
+      /> */}
     </View>
   );
 };
@@ -141,8 +147,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   header: {
-    fontSize: 24,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontFamily: "RobotoMono-Bold",
     textAlign: "center",
     marginBottom: 20,
   },

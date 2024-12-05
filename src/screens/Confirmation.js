@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "RobotoMono-Bold",
     color: "black",
     textTransform: "lowercase",

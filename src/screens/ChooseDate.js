@@ -13,8 +13,18 @@ import Navbar from "../components/navbar"; // Import Navbar component
 const ChooseDate = () => {
   const navigation = useNavigation();
 
-  const [fromDate, setFromDate] = useState({ month: "", day: "", year: "", time: "" });
-  const [toDate, setToDate] = useState({ month: "", day: "", year: "", time: "" });
+  const [fromDate, setFromDate] = useState({
+    month: "",
+    day: "",
+    year: "",
+    time: "",
+  });
+  const [toDate, setToDate] = useState({
+    month: "",
+    day: "",
+    year: "",
+    time: "",
+  });
 
   const handleNext = () => {
     console.log("From Date:", fromDate);
@@ -25,7 +35,9 @@ const ChooseDate = () => {
   React.useEffect(() => {
     navigation.setOptions({
       headerTitle: "",
-      headerLeft: () => <HeaderBackButton onPress={() => navigation.goBack()} />,
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => navigation.goBack()} />
+      ),
     });
   }, [navigation]);
 
@@ -74,17 +86,17 @@ const ChooseDate = () => {
       <View style={styles.content}>
         {/* Header text */}
         <Text style={styles.headerTitle}>choose your travel dates</Text>
-  
+
         {/* Date inputs */}
         {renderDateInput("from", fromDate, setFromDate)}
         {renderDateInput("to", toDate, setToDate)}
-  
+
         {/* Confirm button */}
         <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
           <Text style={styles.nextButtonText}>confirm</Text>
         </TouchableOpacity>
       </View>
-  
+
       {/* Navbar at the bottom */}
       <Navbar
         onStarPress={() => navigation.navigate("Profile")}
@@ -93,7 +105,7 @@ const ChooseDate = () => {
         style={styles.navbar}
       />
     </View>
-  );  
+  );
 };
 
 const styles = StyleSheet.create({
@@ -158,36 +170,37 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     backgroundColor: "#E03616",
-    borderRadius: 30,
-    height: 60,
+    alignSelf: "center",
+    borderRadius: 25,
+    width: "50%",
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
-    alignSelf: "center",
-    width: "60%",
-    marginTop: 50, 
+    marginBottom: 20,
   },
   nextButtonText: {
-    fontFamily: "RobotoMono-Bold",
-    fontSize: 20,
     color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    fontFamily: "RobotoMono-Regular",
   },
   navbar: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    height: 70, 
-    width: "100%", 
-    backgroundColor: "white", 
+    height: 70,
+    width: "100%",
+    backgroundColor: "white",
   },
   headerTitle: {
+    fontSize: 20,
     fontFamily: "RobotoMono-Bold",
-    fontSize: 24, 
     color: "black",
     textAlign: "center",
-    marginBottom: 30, 
+    marginBottom: 30,
     textTransform: "lowercase",
-  },  
+  },
 });
 
 export default ChooseDate;
