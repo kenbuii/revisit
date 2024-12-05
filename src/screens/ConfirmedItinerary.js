@@ -30,6 +30,15 @@ const ConfirmedItinerary = () => {
   const [editingActivity, setEditingActivity] = useState(null);
   const [activities, setActivities] = useState({});
 
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: "",
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => handleNavigation("goBack")} />
+      ),
+    });
+  }, [navigation]);
+
   const fetchUserCreatedCards = async () => {
     setIsLoading(true);
     try {
