@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF3F3",
   },
   optionText: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: "center",
     color: "black",
     fontFamily: "RobotoMono-Regular",
