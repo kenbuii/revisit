@@ -1,5 +1,4 @@
-// This is the confirmed itinerary screen, after EditItinerary has been used
-//TODO: add functionality for download and share
+// This is the FINAL CONFIRMED ITINERARY SCREEN
 
 import React, { useEffect, useState } from "react";
 import { 

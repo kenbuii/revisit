@@ -24,13 +24,13 @@ const NavigationConfirmationModal = ({
               style={[styles.modalButton, styles.stayButton]}
               onPress={onStay}
             >
-              <Text style={[styles.modalButtonText, styles.stayButtonText]}>Stay</Text>
+              <Text style={[styles.modalButtonText, styles.stayButtonText]}>stay</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.modalButton, styles.leaveButton]}
               onPress={onLeave}
             >
-              <Text style={[styles.modalButtonText, styles.leaveButtonText]}>Leave</Text>
+              <Text style={[styles.modalButtonText, styles.leaveButtonText]}>leave</Text>
             </TouchableOpacity>
           </View>
         </View>
