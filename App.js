@@ -15,6 +15,7 @@ import ConfirmedItinerary from "./src/screens/ConfirmedItinerary";
 import ChooseDate from "./src/screens/ChooseDate"; // Import the ChooseDate screen
 import * as SplashScreen from "expo-splash-screen";
 import Confirmation from "./src/screens/Confirmation"; // Import the new Confirmation screen
+import customBackButton from "./src/components/customBackButton";
 
 import { useFonts } from "expo-font";
 
@@ -44,6 +45,8 @@ const App = () => {
           gestureEnabled: false, // Disable swipe gestures for all screens
           animationEnabled: false, // Disable transitions
           gestureDirection: "horizontal", // Disable horizontal swipe gestures on iOS and Android
+          headerBackTitle: " ",
+          headerTitleStyle: { display: "none" },
         }}
       >
         {/* Search Screen with no header */}
@@ -137,7 +140,7 @@ const App = () => {
           name="EditItinerary"
           component={EditItineraryScreen}
           options={{
-            //title: "edit itinerary",
+            title: "",
             headerStyle: { backgroundColor: "#FFFFFF" },
             headerTintColor: "black",
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
@@ -161,7 +164,7 @@ const App = () => {
           name="ConfirmedItinerary"
           component={ConfirmedItinerary}
           options={{
-            //title: "final itinerary",
+            title: "",
             headerStyle: { backgroundColor: "#FFFFFF" },
             headerTintColor: "black",
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
