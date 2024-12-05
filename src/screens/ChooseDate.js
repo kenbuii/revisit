@@ -13,18 +13,8 @@ import Navbar from "../components/navbar"; // Import Navbar component
 const ChooseDate = () => {
   const navigation = useNavigation();
 
-  const [fromDate, setFromDate] = useState({
-    month: "",
-    day: "",
-    year: "",
-    time: "",
-  });
-  const [toDate, setToDate] = useState({
-    month: "",
-    day: "",
-    year: "",
-    time: "",
-  });
+  const [fromDate, setFromDate] = useState({ month: "", day: "", year: "", time: "" });
+  const [toDate, setToDate] = useState({ month: "", day: "", year: "", time: "" });
 
   const handleNext = () => {
     console.log("From Date:", fromDate);
@@ -35,9 +25,7 @@ const ChooseDate = () => {
   React.useEffect(() => {
     navigation.setOptions({
       headerTitle: "",
-      headerLeft: () => (
-        <HeaderBackButton onPress={() => navigation.goBack()} />
-      ),
+      headerLeft: () => <HeaderBackButton onPress={() => navigation.goBack()} />,
     });
   }, [navigation]);
 
@@ -50,23 +38,23 @@ const ChooseDate = () => {
           placeholder="00:00"
           placeholderTextColor="#999"
           value={dateState.time}
+          keyboardType="numeric"
+          maxLength={5} // Ensure no more than HH:MM is entered
           onChangeText={(text) => {
-            const cleanedText = text.replace(/[^0-9]/g, ""); // Remove non-digit characters
-            let formattedTime = cleanedText;
-        
-            if (cleanedText.length > 2) {
-              formattedTime =
-                cleanedText.slice(0, 2) + ":" + cleanedText.slice(2, 4); // Insert colon
+            const formattedText = text.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+            let hours = formattedText.slice(0, 2);
+            let minutes = formattedText.slice(2, 4);
+
+            if (hours.length === 1 && parseInt(hours) > 2) {
+              hours = `0${hours}`; // Add leading 0 if hour is 3-9
             }
-        
-            if (formattedTime.length > 5) {
-              formattedTime = formattedTime.slice(0, 5); // Limit to HH:MM format
-            }
-        
+            if (hours.length > 2) hours = hours.slice(0, 2); // Keep only the first two digits
+            if (minutes.length > 2) minutes = minutes.slice(0, 2); // Keep only the first two digits
+
+            const formattedTime = `${hours}${minutes ? ":" + minutes : ""}`; // Combine hours and minutes
             setDateState({ ...dateState, time: formattedTime });
           }}
-          keyboardType="numeric"
-        />        
+        />
       </View>
       <View style={styles.dateInputContainer}>
         <TextInput
@@ -98,21 +86,19 @@ const ChooseDate = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        {/* Header text */}
+      <View style={styles.headerContainer}>
         <Text style={styles.headerTitle}>choose your travel dates</Text>
-
-        {/* Date inputs */}
-        {renderDateInput("from", fromDate, setFromDate)}
-        {renderDateInput("to", toDate, setToDate)}
-
-        {/* Confirm button */}
-        <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
-          <Text style={styles.nextButtonText}>confirm</Text>
-        </TouchableOpacity>
       </View>
 
-      {/* Navbar at the bottom */}
+      <View style={styles.dateInputSection}>
+        {renderDateInput("from", fromDate, setFromDate)}
+        {renderDateInput("to", toDate, setToDate)}
+      </View>
+
+      <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
+        <Text style={styles.nextButtonText}>confirm</Text>
+      </TouchableOpacity>
+
       <Navbar
         onStarPress={() => navigation.navigate("Profile")}
         isPlanetActiveOnSearchScreen={false}
@@ -128,10 +114,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-  content: {
-    flex: 1, // Ensures content takes up available space
+  headerContainer: {
+    alignItems: "center",
+    marginTop: 20, // Add some margin from the top
+  },
+  headerTitle: {
+    fontFamily: "RobotoMono-Bold",
+    fontSize: 24,
+    color: "black",
+    textAlign: "center",
+    textTransform: "lowercase",
+  },
+  dateInputSection: {
+    flex: 1, // Take the remaining vertical space
+    justifyContent: "center", // Center the date inputs vertically
     paddingHorizontal: 20,
-    justifyContent: "center", // Center the date inputs and button
   },
   dateContainer: {
     alignItems: "center",
@@ -207,14 +204,6 @@ const styles = StyleSheet.create({
     height: 70,
     width: "100%",
     backgroundColor: "white",
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontFamily: "RobotoMono-Bold",
-    color: "black",
-    textAlign: "center",
-    marginBottom: 30,
-    textTransform: "lowercase",
   },
 });
 
