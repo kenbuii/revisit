@@ -8,12 +8,15 @@ import Itinerary from "./src/screens/DayDetail";
 import ActivityDetail from "./src/screens/ActivityDetail"; // Corrected path for ActivityDetail
 import CreateItineraryScreen from "./src/screens/CreateItineraryScreen.js"; // Import the new CreateItineraryScreen
 import InviteCollaborators from "./src/screens/InviteCollaborators.js"; // Import the InviteCollaborators screen
+import SelectAttractions from "./src/screens/SelectAttractions.js"; // Import the new SelectAttractions screen
 import EditItineraryScreen from "./src/screens/EditItinerary";
-import * as SplashScreen from "expo-splash-screen";
-import { useFonts } from "expo-font";
-import { supabase } from "./src/services/supabaseClient";
 import AddActivities from "./src/screens/AddActivities";
 import ConfirmedItinerary from "./src/screens/ConfirmedItinerary";
+import ChooseDate from "./src/screens/ChooseDate"; // Import the ChooseDate screen
+import * as SplashScreen from "expo-splash-screen";
+import Confirmation from "./src/screens/Confirmation"; // Import the new Confirmation screen
+
+import { useFonts } from "expo-font";
 
 const Stack = createNativeStackNavigator();
 
@@ -97,7 +100,8 @@ const App = () => {
           name="CreateItinerary"
           component={CreateItineraryScreen}
           options={{
-            title: "Create Itinerary",
+            title: "",
+            headerTitleStyle:{ fontFamily: "RobotoMono-Bold"},
             headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
             headerTintColor: "black", // Set Back Button color
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
@@ -109,10 +113,22 @@ const App = () => {
           name="InviteCollaborators"
           component={InviteCollaborators}
           options={{
-            title: "Invite Collaborators",
+            title: "",
             headerStyle: { backgroundColor: "#FFFFFF" }, // Customize header background color
             headerTintColor: "black", // Set Back Button color
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 }, // Customize title style
+          }}
+        />
+
+        {/* SelectAttractions Screen */}
+        <Stack.Screen
+          name="SelectAttractions"
+          component={SelectAttractions}
+          options={{
+            title: "Select Attractions",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
           }}
         />
 
@@ -151,10 +167,33 @@ const App = () => {
             headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
           }}
         />
+
+        {/* ChooseDate Screen */}
+        <Stack.Screen
+          name="ChooseDate"
+          component={ChooseDate}
+          options={{
+            title: "Choose Date",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
+          }}
+        />
+
+        <Stack.Screen
+          name="Confirmation"
+          component={Confirmation}
+          options={{
+            title: "",
+            headerStyle: { backgroundColor: "#FFFFFF" },
+            headerTintColor: "black",
+            headerTitleStyle: { fontFamily: "RobotoMono-Bold", fontSize: 20 },
+          }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-

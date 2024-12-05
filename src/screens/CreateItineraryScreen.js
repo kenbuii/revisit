@@ -8,33 +8,31 @@ import {
   ActivityIndicator,
   Alert,
 } from "react-native";
-import { supabase } from "../services/supabaseClient";
 import { useNavigation } from "@react-navigation/native";
+import Navbar from "../components/navbar";
+import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const CreateItineraryScreen = () => {
   const [starredItems, setStarredItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedItems, setSelectedItems] = useState([]);
+  const [activeNavItem, setActiveNavItem] = useState(null);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState(null);
+
   const navigation = useNavigation();
 
-  // Fetch starred items from the database
-  const fetchStarredItems = async () => {
-    setIsLoading(true);
-    const { data, error } = await supabase
-      .from("cards")
-      .select("*")
-      .eq("myStar", true); // Assuming "myStar" marks the starred items
-
-    if (error) {
-      console.error("Error fetching starred items:", error.message);
-    } else {
-      setStarredItems(data);
-    }
-    setIsLoading(false);
-  };
-
+  // Set hardcoded starred items
   useEffect(() => {
-    fetchStarredItems();
+    const hardcodedItems = [
+      { id: 1, title: "new york" },
+      { id: 2, title: "san francisco" },
+      { id: 3, title: "rome" },
+      { id: 4, title: "estonia" },
+      { id: 5, title: "france" },
+    ];
+    setStarredItems(hardcodedItems);
+    setIsLoading(false);
   }, []);
 
   const toggleSelection = (item) => {
@@ -55,6 +53,29 @@ const CreateItineraryScreen = () => {
 
     // Navigate to InviteCollaborators screen and pass selected items
     navigation.navigate("InviteCollaborators", { selectedItems });
+  };
+
+  const handleNavigation = (destination) => {
+    setActiveNavItem(destination);
+    setPendingNavigation(destination);
+    setShowExitModal(true);
+  };
+
+  const handleConfirmNavigation = () => {
+    if (pendingNavigation === "goBack") {
+      navigation.goBack();
+    } else if (pendingNavigation) {
+      navigation.navigate(pendingNavigation);
+    }
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
+  };
+
+  const handleStay = () => {
+    setShowExitModal(false);
+    setPendingNavigation(null);
+    setActiveNavItem(null);
   };
 
   const renderItem = ({ item }) => (
@@ -78,8 +99,8 @@ const CreateItineraryScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Where would you like to go?</Text>
-      <Text style={styles.subheader}>(Multi-select available)</Text>
+      <Text style={styles.header}>where would you like to go?</Text>
+      <Text style={styles.subheader}></Text>
       {isLoading ? (
         <ActivityIndicator size="large" color="#E03616" />
       ) : (
@@ -93,6 +114,22 @@ const CreateItineraryScreen = () => {
       <TouchableOpacity style={styles.nextButton} onPress={goToInviteCollaborators}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
+
+      <NavigationConfirmationModal
+        visible={showExitModal}
+        onRequestClose={() => setShowExitModal(false)}
+        onStay={handleStay}
+        onLeave={handleConfirmNavigation}
+      />
+
+      <Navbar
+        onPlanetPress={() => handleNavigation("Search")}
+        onAddPress={() => handleNavigation("CreateItinerary")}
+        onStarPress={() => handleNavigation("Profile")}
+        isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
+        isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
+        isStarActiveOnProfileScreen={activeNavItem === "Profile"}
+      />
     </View>
   );
 };
@@ -107,13 +144,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 10,
+    marginBottom: 20,
   },
   subheader: {
     fontSize: 14,
     textAlign: "center",
     color: "gray",
     marginBottom: 20,
+    fontFamily: "RobotoMono-Regular",
   },
   list: {
     paddingBottom: 20,
@@ -134,22 +172,28 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     color: "black",
+    fontFamily: "RobotoMono-Regular",
   },
   selectedOptionText: {
     color: "#E03616",
     fontWeight: "bold",
+    fontFamily: "RobotoMono-Regular",
   },
   nextButton: {
     backgroundColor: "#E03616",
-    padding: 15,
-    borderRadius: 10,
+    alignSelf: "center",
+    borderRadius: 25,
+    width: "50%",
+    height: 50,
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    marginBottom: 20,
   },
   nextButtonText: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
+    fontFamily: "RobotoMono-Regular",
   },
 });
 
