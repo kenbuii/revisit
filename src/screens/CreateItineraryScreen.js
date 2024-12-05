@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Navbar from "../components/navbar";
+import { HeaderBackButton } from "@react-navigation/elements";
 import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const CreateItineraryScreen = () => {
@@ -21,6 +22,15 @@ const CreateItineraryScreen = () => {
   const [pendingNavigation, setPendingNavigation] = useState(null);
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: "",
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => navigation.goBack()} />
+      ),
+    });
+  }, [navigation]);
 
   // Set hardcoded starred items
   useEffect(() => {

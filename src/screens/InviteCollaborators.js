@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Navbar from "../components/navbar";
+import { HeaderBackButton } from "@react-navigation/elements";
 import NavigationConfirmationModal from "../components/NavigationConfirmationModal";
 
 const InviteCollaborators = () => {
@@ -39,6 +40,15 @@ const InviteCollaborators = () => {
   const [activeNavItem, setActiveNavItem] = useState(null);
   const [showExitModal, setShowExitModal] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState(null);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: "",
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => navigation.goBack()} />
+      ),
+    });
+  }, [navigation]);
 
   const toggleCollaboratorSelection = (username) => {
     if (selectedCollaborators.includes(username)) {

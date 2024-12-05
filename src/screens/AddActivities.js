@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   confirmText: {
     color: "white",
     fontFamily: "RobotoMono-Regular",
-    fontSize: 18,
+    fontSize: 16,
   },
   modalContainer: {
     flex: 1,

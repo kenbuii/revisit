@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { HeaderBackButton } from "@react-navigation/elements";
 import { useNavigation } from "@react-navigation/native"; // Import useNavigation
 import ConfettiCannon from "react-native-confetti-cannon"; // Confetti effect library
 
 const Confirmation = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const navigation = useNavigation(); // Get navigation object
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: "",
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => handleNavigation("goBack")} />
+      ),
+    });
+  }, [navigation]);
 
   useEffect(() => {
     // Trigger confetti after a slight delay to simulate a confirmation process
