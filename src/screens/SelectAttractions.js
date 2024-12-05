@@ -135,7 +135,7 @@ const SelectAttractions = () => {
 
       {selectedActivities.length > 0 && (
         <TouchableOpacity style={styles.confirmButton} onPress={handleConfirm}>
-          <Text style={styles.confirmText}>Confirm</Text>
+          <Text style={styles.confirmText}>confirm</Text>
         </TouchableOpacity>
       )}
     </View>
