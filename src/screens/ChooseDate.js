@@ -13,8 +13,18 @@ import Navbar from "../components/navbar"; // Import Navbar component
 const ChooseDate = () => {
   const navigation = useNavigation();
 
-  const [fromDate, setFromDate] = useState({ month: "", day: "", year: "", time: "" });
-  const [toDate, setToDate] = useState({ month: "", day: "", year: "", time: "" });
+  const [fromDate, setFromDate] = useState({
+    month: "",
+    day: "",
+    year: "",
+    time: "",
+  });
+  const [toDate, setToDate] = useState({
+    month: "",
+    day: "",
+    year: "",
+    time: "",
+  });
 
   const handleNext = () => {
     console.log("From Date:", fromDate);
@@ -25,7 +35,9 @@ const ChooseDate = () => {
   React.useEffect(() => {
     navigation.setOptions({
       headerTitle: "",
-      headerLeft: () => <HeaderBackButton onPress={() => navigation.goBack()} />,
+      headerLeft: () => (
+        <HeaderBackButton onPress={() => navigation.goBack()} />
+      ),
     });
   }, [navigation]);
 
@@ -120,7 +132,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontFamily: "RobotoMono-Bold",
-    fontSize: 24,
+    fontSize: 20,
     color: "black",
     textAlign: "center",
     textTransform: "lowercase",
