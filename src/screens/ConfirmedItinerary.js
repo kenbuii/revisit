@@ -107,7 +107,7 @@ const ConfirmedItinerary = () => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.headerRow}>
-          <Text style={styles.header}>final itinerary: </Text>
+          {/* <Text style={styles.header}>final itinerary: </Text> */}
           {userCard && userCard.location && (
             <Text style={styles.location}>{userCard.location}</Text>
           )}
@@ -153,13 +153,67 @@ const ConfirmedItinerary = () => {
                   </TouchableOpacity>
                 </View>
                 <View style={styles.activitiesList}>
-                  {dayActivities.map((activity) => (
-                    <View key={activity.id} style={styles.activityItem}>
-                      <Text style={styles.activityText}>
-                        {activity.activity_name}
-                      </Text>
+                  {expandedDay === day ? (
+                    <View>
+                      {day === '1' ? (
+                        <>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>8:30AM - 11:00AM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nSt. Peter's Basilica. Arrive early to beat the crowds! Don't miss Michelangelo's Pietà and climb the dome for panoramic views of Rome. Remember to dress modestly - shoulders and knees must be covered."}
+                            </Text>
+                          </Text>
+                          <Text style={styles.activityText}>{"\n"}</Text>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>11:30AM - 2:00PM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nThe Colosseum. Pre-book your tickets to avoid long lines. Explore the amphitheater and learn about gladiatorial contests. The underground level tours are fascinating if available."}
+                            </Text>
+                          </Text>
+                          <Text style={styles.activityText}>{"\n"}</Text>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>2:30PM - 5:00PM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nThe Roman Forum. Right next to the Colosseum, explore the heart of ancient Rome. Don't miss the Temple of Saturn, House of the Vestals, and Arch of Titus. Consider getting a guided tour to fully understand the historical significance."}
+                            </Text>
+                          </Text>
+                        </>
+                      ) : day === '2' ? (
+                        <>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>12:30PM - 2:00PM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nLunch at Pizzeria da Baffetto. This beloved Roman institution is famous for their thin-crust Roman-style pizza. Try their classic Margherita or the house special with mushrooms."}
+                            </Text>
+                          </Text>
+                          <Text style={styles.activityText}>{"\n"}</Text>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>2:30PM - 4:30PM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nShopping at La Rinascente. This upscale department store offers Italian and international brands. Don't miss the rooftop terrace for great views of the city."}
+                            </Text>
+                          </Text>
+                          <Text style={styles.activityText}>{"\n"}</Text>
+                          <Text>
+                            <Text style={[styles.activityText, styles.boldTime]}>5:00PM - 7:30PM:</Text>
+                            <Text style={styles.activityText}>
+                              {"\nVilla Borghese. End your day with a peaceful stroll through Rome's most beautiful park. Visit the Borghese Gallery (advance booking required), rent a rowboat on the lake, or simply enjoy the gardens. Perfect for sunset!"}
+                            </Text>
+                          </Text>
+                        </>
+                      ) : (
+                        dayActivities.map(activity => activity.activity_name).join('\n')
+                      )}
                     </View>
-                  ))}
+                  ) : (
+                    dayActivities.map((activity) => (
+                      <View key={activity.id} style={styles.activityItem}>
+                        <Text style={styles.activityText}>
+                          {activity.activity_name}
+                        </Text>
+                      </View>
+                    ))
+                  )}
                 </View>
                 {expandedDay === day && (
                   <TouchableOpacity 
@@ -232,6 +286,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  scrollView: {
+    flex: 1,
+  },
+  contentContainer: {
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingBottom: 100,
+  },
   headerContainer: {
     alignItems: 'center',
     marginTop: 5,
@@ -249,11 +311,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'RobotoMono-Bold',
     color: '#E03616',
-  },
-  contentContainer: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 20,
   },
   imageContainer: {
     width: 333,
@@ -352,6 +409,7 @@ const styles = StyleSheet.create({
     minHeight: 300,
     zIndex: 1000,
     elevation: 5,
+    position: 'relative',
   },
   editButton: {
     position: 'absolute',
@@ -364,6 +422,10 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     color: '#959191',
+  },
+  boldTime: {
+    fontFamily: 'RobotoMono-Bold',
+    fontSize: 14,
   },
 });
 
