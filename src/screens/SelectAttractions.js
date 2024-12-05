@@ -78,7 +78,7 @@ const SelectAttractions = () => {
     //     if (error) throw error;
 
     //     // Navigate to ChooseDate screen
-        navigation.navigate("ChooseDate");
+    navigation.navigate("ChooseDate");
     //   }
     // } catch (error) {
     //   console.error("Error saving activities:", error.message);
@@ -101,7 +101,7 @@ const SelectAttractions = () => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View>
-          <Text style={styles.heading}>select your attractions</Text> 
+          <Text style={styles.heading}>select your attractions</Text>
         </View>
         <View style={styles.buttonContainer}>
           {activities.map((activity, index) => (
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   heading: {
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: "RobotoMono-Bold",
     color: "black",
     textAlign: "center",
