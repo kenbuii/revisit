@@ -1,3 +1,5 @@
+//hardcoded list of attractions that shows up in the itinerary creation flow
+
 import React, { useState, useEffect } from "react";
 import {
   View,

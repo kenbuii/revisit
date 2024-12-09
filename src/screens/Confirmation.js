@@ -1,3 +1,5 @@
+// this is the page that shows after a user confirms their dates in an itinerary creation flow
+
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
 import { HeaderBackButton } from "@react-navigation/elements";

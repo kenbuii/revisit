@@ -21,11 +21,26 @@ import NavigationConfirmationModal from "../components/NavigationConfirmationMod
 const AddActivities = () => {
   const navigation = useNavigation();
   const [activities, setActivities] = useState([
-    { activity_name: "san francisco", activity_type: "location" },
-    { activity_name: "new york", activity_type: "location" },
-    { activity_name: "estonia", activity_type: "location" },
-    { activity_name: "france", activity_type: "location" },
-    { activity_name: "rome", activity_type: "location" },
+    { activity_name: "colosseum", activity_type: "location" },
+    { activity_name: "pantheon", activity_type: "location" },
+    { activity_name: "trevi fountain", activity_type: "location" },
+    { activity_name: "roman forum", activity_type: "location" },
+    { activity_name: "vatican museums", activity_type: "location" },
+    { activity_name: "st peter's basilica", activity_type: "location" },
+    { activity_name: "spanish steps", activity_type: "location" },
+    { activity_name: "roscioli", activity_type: "restaurant" },
+    { activity_name: "armando al pantheon", activity_type: "restaurant" },
+    { activity_name: "da enzo al 29", activity_type: "restaurant" },
+    { activity_name: "la pergola", activity_type: "restaurant" },
+    { activity_name: "pierluigi", activity_type: "restaurant" },
+    { activity_name: "salumeria roscioli", activity_type: "restaurant" },
+    { activity_name: "il pagliaccio", activity_type: "restaurant" },
+    { activity_name: "via condotti", activity_type: "shopping" },
+    { activity_name: "via del corso", activity_type: "shopping" },
+    { activity_name: "galleria alberto sordi", activity_type: "shopping" },
+    { activity_name: "via cola di rienzo", activity_type: "shopping" },
+    { activity_name: "porta portese market", activity_type: "shopping" },
+    { activity_name: "via dei giubbonari", activity_type: "shopping" }
   ]);
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);

@@ -170,7 +170,7 @@ const DetailsScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: 'white',
   },
   scrollContainer: {
     paddingHorizontal: 20,

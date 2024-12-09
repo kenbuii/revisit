@@ -40,6 +40,7 @@ const CreateItineraryScreen = () => {
       { id: 3, title: "rome" },
       { id: 4, title: "estonia" },
       { id: 5, title: "france" },
+      { id: 6, title: "search for more" }, //TODO: IF clicked, opens up search screen
     ];
     setStarredItems(hardcodedItems);
     setIsLoading(false);
@@ -137,15 +138,6 @@ const CreateItineraryScreen = () => {
         onStay={handleStay}
         onLeave={handleConfirmNavigation}
       />
-
-      {/* <Navbar
-        onPlanetPress={() => handleNavigation("Search")}
-        onAddPress={() => handleNavigation("CreateItinerary")}
-        onStarPress={() => handleNavigation("Profile")}
-        isPlanetActiveOnSearchScreen={activeNavItem === "Search"}
-        isAddActiveOnOtherScreens={activeNavItem === "CreateItinerary"}
-        isStarActiveOnProfileScreen={activeNavItem === "Profile"}
-      /> */}
     </View>
   );
 };

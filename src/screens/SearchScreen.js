@@ -5,7 +5,7 @@ import {
   StyleSheet,
   TextInput,
   FlatList,
-  Image,
+  Image,  
   Dimensions,
   TouchableOpacity,
   ActivityIndicator,
@@ -324,10 +324,11 @@ const SearchScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "white",
+    alignItems: "center",
     paddingTop: verticalScale(48),
   },
   searchBar: {

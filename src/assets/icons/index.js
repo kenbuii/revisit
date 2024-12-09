@@ -24,6 +24,7 @@ import textEdit from "./textEdit.png";
 import maximize from "./maximize.png";
 import minimize from "./minimize.png";
 import orangeEdit from "./orangeEdit.png";
+import activeUsers from "./activeUsers.png";
 
 export {
   star,
@@ -52,4 +53,5 @@ export {
   maximize,
   minimize,
   orangeEdit,
+  activeUsers,
 };

@@ -130,7 +130,8 @@ const EditItineraryScreen = () => {
     setShowExitModal(true);
   };
 
-  const handleConfirmNavigation = () => {
+  const handleConfirmNavigation = 
+  () => {
     if (pendingNavigation === "goBack") {
       navigation.goBack();
     } else if (pendingNavigation) {
@@ -348,7 +349,7 @@ const EditItineraryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: 'white',
   },
   headerContainer: {
     alignItems: "center",

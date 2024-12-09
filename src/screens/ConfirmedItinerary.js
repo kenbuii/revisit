@@ -29,6 +29,9 @@ const ConfirmedItinerary = () => {
   const [expandedDay, setExpandedDay] = useState(null);
   const [editingActivity, setEditingActivity] = useState(null);
   const [activities, setActivities] = useState({});
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [pendingNavigation, setPendingNavigation] = useState(null);
+  const [activeNavItem, setActiveNavItem] = useState(null);
 
   useEffect(() => {
     navigation.setOptions({
@@ -78,6 +81,12 @@ const ConfirmedItinerary = () => {
   useEffect(() => {
     fetchUserCreatedCards();
   }, []);
+
+  const handleNavigation = (destination) => {
+    setActiveNavItem(destination);
+    setPendingNavigation(destination);
+    setShowExitModal(true);
+  };
 
   const handleShare = async () => {
     try {
@@ -135,19 +144,26 @@ const ConfirmedItinerary = () => {
                 source={{ uri: userCard.imageUrl }}
                 style={styles.mainImage}
               />
+
             </View>
-            <View style={styles.actionButtons}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("EditItinerary")}
-              >
-                <Image source={icons.orangeEdit} style={styles.actionIcon} />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setDownloadModalVisible(true)}>
-                <Image source={icons.download} style={styles.actionIcon} />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={handleShare}>
-                <Image source={icons.share} style={styles.actionIcon} />
-              </TouchableOpacity>
+            <View style={styles.buttonsRow}>
+              <View style={styles.collaboratorsButton}>
+                <TouchableOpacity onPress={() => navigation.navigate("InviteCollaborators")}>
+                  <Image source={icons.activeUsers} style={styles.actionIcon} />
+                </TouchableOpacity>
+              </View>
+              
+              <View style={styles.actionButtons}>
+                <TouchableOpacity onPress={() => navigation.navigate("EditItinerary")}>
+                  <Image source={icons.orangeEdit} style={styles.actionIcon} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setDownloadModalVisible(true)}>
+                  <Image source={icons.download} style={styles.actionIcon} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleShare}>
+                  <Image source={icons.share} style={styles.actionIcon} />
+                </TouchableOpacity>
+              </View>
             </View>
 
             {Object.entries(activities).map(([day, dayActivities]) => (
@@ -374,6 +390,7 @@ const styles = StyleSheet.create({
     width: 350,
     resizeMode: "cover",
     marginBottom: 10,
+    position: 'relative',
   },
   mainImage: {
     width: 360,
@@ -381,12 +398,21 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 20,
   },
+  buttonsRow: {
+    width: 333,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  collaboratorsButton: {
+    flexDirection: "row",
+    gap: 15,
+    width: 100,
+  },
   actionButtons: {
     flexDirection: "row",
     gap: 15,
-    alignSelf: "flex-end",
-    marginRight: 20,
-    marginBottom: 10,
   },
   actionIcon: {
     width: 24,
@@ -485,6 +511,15 @@ const styles = StyleSheet.create({
   boldTime: {
     fontFamily: "RobotoMono-Bold",
     fontSize: 14,
+  },
+  activeUsersIcon: {
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+    width: 24,
+    height: 24,
+    tintColor: 'white',
+    zIndex: 1,
   },
 });
 

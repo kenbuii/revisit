@@ -212,6 +212,7 @@ const Profile = () => {
 
 const styles = StyleSheet.create({
   profileContainer: {
+    flex: 1,
     backgroundColor: "blue",
     alignItems: "center",
   },
