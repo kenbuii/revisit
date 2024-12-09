@@ -41,6 +41,14 @@ const ConfirmedItinerary = () => {
       ),
     });
   }, [navigation]);
+  // useEffect(() => {
+  //   navigation.setOptions({
+  //     headerTitle: "",
+  //     headerLeft: () => (
+  //       <HeaderBackButton onPress={() => handleNavigation("goBack")} />
+  //     ),
+  //   });
+  // }, [navigation]);
 
   const fetchUserCreatedCards = async () => {
     setIsLoading(true);
