@@ -4,13 +4,8 @@
 ![revisit_poster](https://github.com/user-attachments/assets/3d754f6b-631d-4858-9e68-2d8fb23efb05)
 
 ## key people:
-Ken Bui - Product Engineer
+<img width="608" alt="Screenshot 2025-01-22 at 9 40 32 PM" src="https://github.com/user-attachments/assets/a7d977cc-7e5b-4379-8ffa-5da3edfe477c" />
 
-Emily Liang - Product Manager
-
-Ilaria Chen - Product Manager and Software Engineer
-
-Tyler Huang - Software Engineer
 
 ## instructions for running on local:
 1. download as .zip, unzip and go into revisit folder
